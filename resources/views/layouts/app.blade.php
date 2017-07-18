@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
-    {{--<script src="{{ asset('js/script.js') }}"></script>--}}
+    <script src="{{ asset('js/script.js') }}"></script>
 
 
 
@@ -21,6 +21,7 @@
     <link href="{!! asset('theme/css/plugins/datapicker/datepicker3.css') !!}" rel="stylesheet">
     <link href="{!! asset('theme/css/plugins/jasny/jasny-bootstrap.min.css') !!}" rel="stylesheet">
     <link href="{!! asset('theme/css/plugins/dataTables/datatables.min.css') !!}" rel="stylesheet">
+    <script src="https://use.fontawesome.com/a086f7a707.js"></script>
 
 
 
@@ -64,12 +65,10 @@
 <!-- Data picker -->
 <script src="{!! asset('theme/js/plugins/datapicker/bootstrap-datepicker.js') !!}"></script>
 <script src="{!! asset('theme/js/plugins/dataTables/datatables.min.js') !!}"></script>
-
 <script src="{!! asset('theme/js/plugins/jasny/jasny-bootstrap.min.js') !!}"></script>
 
 <!-- Custom and plugin javascript -->
 <script src="{!! asset('theme/js/inspinia.js') !!}"></script>
-<script src="{!! asset('theme/js/plugins/pace/pace.min.js') !!}"></script>
 
 
 
