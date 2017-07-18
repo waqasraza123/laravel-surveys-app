@@ -44,4 +44,11 @@ class HomeController extends Controller
                 return view('home');
         }
     }
+
+    public function thankYou() {
+        return view('pages.thank-you');
+    }
+
+
+
 }

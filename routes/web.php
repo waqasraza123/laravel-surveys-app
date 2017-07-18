@@ -24,6 +24,8 @@ Auth::routes();
 Route::get('/register/verify/{code}', 'Auth\verifyController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/thank-you', 'HomeController@thankYou')->name('thankYou');
+
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::post('/profile', 'ProfileController@update')->name('profileUpdate');

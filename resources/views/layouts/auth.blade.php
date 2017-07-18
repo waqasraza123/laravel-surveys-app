@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
-    {{--<script src="{{ asset('js/script.js') }}"></script>--}}
+    <script src="{{ asset('js/script.js') }}"></script>
 
 
 
@@ -25,24 +25,14 @@
 
 
 </head>
-<body>
+<body class="gray-bg">
 
 
 
 <!-- Wrapper-->
 <div id="wrapper">
 
-    <!-- Navigation -->
-@include('layouts.navigation')
 
-<!-- Page wraper -->
-    <div id="page-wrapper" class="gray-bg">
-
-        <!-- Page wrapper -->
-    @include('layouts.topnavbar')
-
-    <!-- Page wrapper -->
-    @include('layouts.sub')
 
 
     <!-- Main view  -->
@@ -50,11 +40,8 @@
 
 
 
-    <!-- Footer -->
-        @include('layouts.footer')
 
-    </div>
-    <!-- End page wrapper-->
+
 
 </div>
 <!-- End wrapper-->
@@ -77,7 +64,7 @@
 
 
 
-    <!-- Scripts -->
+<!-- Scripts -->
 {{--    <script src="{{ asset('js/app.js') }}"></script>--}}
 </body>
 </html>

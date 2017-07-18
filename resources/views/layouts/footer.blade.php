@@ -1,4 +1,8 @@
-<footer class="main-footer">
-    <!-- Default to the left -->
-    <strong>Copyright © 2017 <a href="#">Company</a>.</strong> All rights reserved.
-</footer>
+<div class="footer">
+    <div class="pull-right">
+        Example text
+    </div>
+    <div>
+        <strong>Copyright</strong> Example Company &copy; 2014-2017
+    </div>
+</div>
