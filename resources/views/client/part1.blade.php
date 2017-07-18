@@ -1,17 +1,20 @@
-@extends('layouts.client')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="container">
+
+        <div class="row">
+
         <div class="col-md-10 col-md-offset-1">
             <form class="form" method="post" action="/questioner/{{ $code }}/part/1">
                 {{ csrf_field() }}
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="text-center"><h3>Part 1</h3></div>
-                        <hr>
-                        <div class="text-center"><b>Instructions</b></div>
-                        Please rate the following statements using the scale below.
+
+
+                    <h1 class="logo-name" style="font-size: 65px; margin-left: -5px;">Part A</h1>
+
+                    <h2>Instructions</h2>
+                 Please rate the following statements using the scale below.
                         <ul>
                             <li>I STRONGLY AGREE with the statement. I do this vast majority of the time.</li>
                             <li>I AGREE with the statement. I do this most of the time.</li>
@@ -20,8 +23,10 @@
                             <li>I STRONGLY DISAGREE with the statement. I almost never do this, if at all.</li>
                             <li>This DOESN'T APPLY to me. I wouldn’t never even think about doing this, let alone do it.</li>
                         </ul>
-                    </div>
-                    <div class="panel-body">
+
+
+                    <div class="ibox float-e-margins" style="margin-top: 40px">
+                        <div class="ibox-content">
                         @foreach($questions as $key => $question)
                             <div class="form-group">
                                 <label class="control-label" for="{{ $key+1 }}">{{ $key+1 }}. {{ $question }}</label><br/>
@@ -57,6 +62,7 @@
                     </div>
                 </div>
             </form>
+        </div>
         </div>
     </div>
 </div>

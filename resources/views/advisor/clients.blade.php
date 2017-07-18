@@ -3,7 +3,6 @@
 @section('content')
 
 
-
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <div class="col-lg-12">
@@ -14,38 +13,39 @@
                             <table class="table table-striped table-bordered table-hover dataTables-example" >
                                 <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Email Address</th>
-                                    <th>Status</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Mobile</th>
+                                    <th>Report Status</th>
+                                    <th>Report</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php $count = 1; ?>
-                                @foreach($reports as $report)
-                                    <tr>
-                                        <td>{{ $count++ }}</td>
-                                        <td>{{ $report["first_name"] }}</td>
-                                        <td>{{ $report["last_name"] }}</td>
-                                        <td>{{ $report["email"] }}</td>
-                                        <td>
-                                            @if($report["completed"])
-                                                <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Report</a>
-                                            @else
-                                                Not Completed
-                                            @endif
-                                        </td>
-                                    </tr>
-                                @endforeach
+
+                                {{--@foreach($advisors as $advisor)--}}
+                                    {{--<tr>--}}
+                                        {{--<td>{{ $advisor["name"] }}</td>--}}
+                                        {{--<td>{{ $advisor["email"] }}</td>--}}
+                                        {{--<td>{{ $advisor["mobile_number"] }}</td>--}}
+                                        {{--<td>{{ $advisor["company_position"] }}</td>--}}
+                                        {{--<td>65</td>--}}
+                                        {{--<td>Active</td>--}}
+                                        {{--<td><a class="btn btn-white btn-bitbucket" onclick="approveAdvisor({{ $advisor["id"] }}, '{{ $advisor["name"] }}')">--}}
+                                                {{--<i class="fa fa-check-square-o"></i>--}}
+                                            {{--</a>--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                {{--@endforeach--}}
+
+
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Email Address</th>
-                                    <th>Status</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Mobile</th>
+                                    <th>Report Status</th>
+                                    <th>Report</th>
                                 </tr>
                                 </tfoot>
                             </table>
@@ -94,5 +94,6 @@
         });
 
     </script>
+
 
 @endsection

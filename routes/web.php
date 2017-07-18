@@ -53,6 +53,7 @@ Route::get('/reports/new', 'ReportsController@new');
 Route::post('/reports/new', 'ReportsController@create');
 Route::get('/reports/view', 'ReportsController@view');
 Route::get('/reports/view/{code}', 'ReportsController@show');
+Route::get('/clients', 'ReportsController@clients');
 
 //////////////////////////////////////////////////////////////
 ///////////////////////// For Admin //////////////////////////

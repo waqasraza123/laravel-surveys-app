@@ -1,18 +1,23 @@
-@extends('layouts.client')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="container">
+
+        <div class="row">
+
         <div class="col-md-10 col-md-offset-1">
             <form class="form" method="post" action="/questioner/{{ $code }}/part/2">
                 {{ csrf_field() }}
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="text-center"><h3>Part 2</h3></div>
-                        <hr>
-                        Please look at the following pairs of words and choose the word that is MORE LIKE YOU.
-                    </div>
-                    <div class="panel-body">
+
+                <h1 class="logo-name" style="font-size: 65px; margin-left: -5px;">Part B</h1>
+
+                <h2>Instructions</h2>
+                Please look at the following pairs of words and choose the word that is MORE LIKE YOU.
+
+
+                <div class="ibox float-e-margins" style="margin-top: 40px">
+                    <div class="ibox-content">
                         @foreach($questions as $key => $question)
                             <div class="form-group">
                                 <table>
@@ -46,6 +51,7 @@
                     </div>
                 </div>
             </form>
+        </div>
         </div>
     </div>
 </div>

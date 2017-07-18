@@ -51,7 +51,7 @@ class ReportsController extends Controller
 
         $this->sendClientEmail(Auth::user()->name, $code, $request->email, $request->first_name . ' ' . $request->last_name);
 
-        return back()->withErrors(['success'=>'New client added successfully. An email has been sent to the client with the link of questioner.'])->with('tokens', $firm->tokens_available);
+        return back()->withErrors(['success'=>'New client added successfully. An email has been sent to the client with the link to the questioner.'])->with('tokens', $firm->tokens_available);
     }
 
     public function view(){
@@ -82,6 +82,12 @@ class ReportsController extends Controller
             return redirect("/home");
         
         return $code;
+    }
+
+
+    public function clients(){
+
+        return view('advisor.clients');
     }
 
     protected function validator(array $data)
