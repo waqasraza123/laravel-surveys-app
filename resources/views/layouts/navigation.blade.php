@@ -33,7 +33,7 @@
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/tokens/purchase">Purchase</a></li>
                             <li><a href="/tokens/history">Purchase History</a></li>
-                            <li><a href="/tokens/usage">Usage History</a></li>
+                            {{--<li><a href="/tokens/usage">Usage History</a></li>--}}
                         </ul>
                     </li>
 
