@@ -1,17 +1,27 @@
 @extends('layouts.reports')
 
+@section('content')
 <!-- Page 1 -->
 
 <table class="one">
     <tr>
         <td><img src="/images/reports/intro.png" width="100%">
             <h1>Confidential Report – {{ $data["first_name"] }} {{ $data["last_name"] }}</h1><!--TODO (client name)-->
-            <h3>
+            <h3 class="page1">
                 1122<br/>
                 Double Dominant Profile<br/>
                 The Analyst - Implementer
             </h3>
         </td>
+    </tr>
+</table>
+
+
+<!-- Section Page 1 -->
+
+<table class="internal">
+    <tr>
+        <td><img src="/images/reports/section1.png" alt="" width="100%"></td>
     </tr>
 </table>
 
@@ -38,14 +48,22 @@
 <table class="internal">
     <tr>
         <td>
-            <h3>Investor DNA – 1122 - YOUR PROFILE SUMMARY</h3>
-
             <img src="/images/reports/chart.png" width="100%" alt="">
         </td>
     </tr>
-    <tr style="background: #32404f; color: #fff">
-        <td style="padding: 5px">
-            <p>Your Investor DNA profile measures how you prefer to process investment information (Intellectual vs. Instinctive), how you prefer to make your investment decisions (Analytical vs. Beliefs), How you prefer to plan, organise and manage your investments (Structured vs. Flexible), and your preference for new, novel or traditional investments. (Creative vs. Practical) Your profile also identifies your appetite for risk, preferred asset classes, propensity for unconscious investment bias and Adviser behaviours that build or reduce trust.  Investor DNA identifies your primary and secondary investment styles: Analyst, Implementer, Humanitarian or Entrepreneur. An individual can be dominant in one or more of these four styles, and all of us possess all four styles to varying degrees, with your strongest score representing your ‘home base’ or default position.  There is no single best style or combination of styles, as each has its own specific advantages & disadvantages. Successful investing requires a balance between your rational and emotional mind and the challenge is to develop your non-dominant investment styles to enable better investment decisions.</p>
+    <tr>
+        <td style="padding: 5px" class="page2">
+            <p>Your Investor DNA profile measures how you prefer to process investment information <span>(Intellectual vs. Instinctive)</span>,
+                how you prefer to make your investment decisions <span>(Analytical vs. Beliefs)</span>, How you prefer to plan, organise
+                and manage your investments <span>(Structured vs. Flexible)</span>, and your preference for new, novel or traditional investments.
+                <span>(Creative vs. Practical)</span> Your profile also identifies your appetite for risk, preferred asset classes, propensity
+                for unconscious investment bias and Adviser behaviours that build or reduce trust.  Investor DNA identifies your
+                primary and secondary investment styles: Analyst, Implementer, Humanitarian or Entrepreneur. An individual can
+                be dominant in one or more of these four styles, and all of us possess all four styles to varying degrees, with
+                your strongest score representing your ‘home base’ or default position.  There is no single best style or combination
+                of styles, as each has its own specific advantages & disadvantages. Successful investing requires a balance between
+                your rational and emotional mind and the challenge is to develop your non-dominant investment styles to enable better
+                investment decisions.</p>
         </td>
     </tr>
 </table>
@@ -54,7 +72,7 @@
 
 <table class="internal" style="border: 7px solid #666666; padding: 10px; margin-bottom: 30px">
     <tr>
-        <td colspan="3">
+        <td colspan="3" class="page4">
             <h3>Investor DNA – Personal Profile – Investor Style Dashboard</h3>
         </td>
     </tr>
@@ -85,7 +103,7 @@
 
 <table class="internal">
     <tr>
-        <td>
+        <td width="50%">
             <table class="inside" cellspacing="0" style="width: 99%; float: left; text-align: left">
                 <tr>
                     <th style="width: 80%">
@@ -96,19 +114,19 @@
                 </tr>
                 <tr>
                     <td>Factual</td>
-                    <td class="sha"></td>
+                    <td class="sha">X</td>
                 </tr>
                 <tr>
                     <td>Analytical</td>
-                    <td class="sha"></td>
+                    <td class="sha">X</td>
                 </tr>
                 <tr>
                     <td>Practical </td>
-                    <td class="sha"></td>
+                    <td class="sha">X</td>
                 </tr>
                 <tr>
                     <td>Methodical</td>
-                    <td class="sha"></td>
+                    <td class="sha">X</td>
                 </tr>
                 <tr>
                     <td>Interpersonal </td>
@@ -132,41 +150,41 @@
             <table class="inside" cellspacing="0" style="width: 99%; float: right; text-align: left">
                 <tr>
                     <th style="width: 80%">
-                        General Characteristics
+                        Decision-Making
                     </th>
                     <th>
                     </th>
                 </tr>
                 <tr>
-                    <td>Factual</td>
+                    <td>Analytical based on facts & figures</td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>Completes rigorous due diligence</td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>Follows a step-by-step process </td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>Detailed and meticulous</td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>Based on personal values & beliefs </td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Analytical</td>
+                    <td>Relies on their intuitive insight</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Practical </td>
+                    <td>Thinks laterally & ‘outside the box’</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Methodical</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Interpersonal </td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Social</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Conceptual</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Creative</td>
+                    <td>Challenges the ‘status quo’</td>
                     <td class="sha"></td>
                 </tr>
             </table>
@@ -180,41 +198,41 @@
             <table class="inside" cellspacing="0" style="width: 99%; float: left; text-align: left">
                 <tr>
                     <th style="width: 80%">
-                        General Characteristics
+                        Investment Strengths
                     </th>
                     <th>
                     </th>
                 </tr>
                 <tr>
-                    <td>Factual</td>
+                    <td>Rational</td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>Rigorous</td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>Organised </td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>Detailed</td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>Intuitive </td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Analytical</td>
+                    <td>Inclusive</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Practical </td>
+                    <td>Integrator</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Methodical</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Interpersonal </td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Social</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Conceptual</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Creative</td>
+                    <td>Innovator</td>
                     <td class="sha"></td>
                 </tr>
             </table>
@@ -223,42 +241,42 @@
             <table class="inside" cellspacing="0" style="width: 99%; float: right; text-align: left">
                 <tr>
                     <th style="width: 80%">
-                        General Characteristics
+                        Investment Weaknesses
                     </th>
                     <th>
                     </th>
                 </tr>
                 <tr>
-                    <td>Factual</td>
+                    <td>May fail to consider all available data</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Analytical</td>
+                    <td>May base decisions on limited analysis</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Practical </td>
+                    <td>May overlook critical details or facts </td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Methodical</td>
+                    <td>May be too disorganised or lack focus</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Interpersonal </td>
-                    <td class="sha"></td>
+                    <td>May be closed off to different opinions </td>
+                    <td class="sha">X</td>
                 </tr>
                 <tr>
-                    <td>Social</td>
-                    <td class="sha"></td>
+                    <td>May lack genuine empathy for others</td>
+                    <td class="sha">X</td>
                 </tr>
                 <tr>
-                    <td>Conceptual</td>
-                    <td class="sha"></td>
+                    <td>May lose sight of the ‘bigger picture’</td>
+                    <td class="sha">X</td>
                 </tr>
                 <tr>
-                    <td>Creative</td>
-                    <td class="sha"></td>
+                    <td>May not think ‘outside the square’</td>
+                    <td class="sha">X</td>
                 </tr>
             </table>
         </td>
@@ -271,41 +289,37 @@
             <table class="inside" cellspacing="0" style="width: 99%; float: left; text-align: left">
                 <tr>
                     <th style="width: 80%">
-                        General Characteristics
+                        Appetite for Risk
                     </th>
                     <th>
                     </th>
                 </tr>
                 <tr>
-                    <td>Factual</td>
+                    <td>Very High</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Analytical</td>
+                    <td>High</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Practical </td>
+                    <td>Moderate to High </td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Methodical</td>
+                    <td>Moderate</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Interpersonal </td>
+                    <td>Low to Moderate</td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>Low</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Social</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Conceptual</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Creative</td>
+                    <td>Very Low</td>
                     <td class="sha"></td>
                 </tr>
             </table>
@@ -314,42 +328,38 @@
             <table class="inside" cellspacing="0" style="width: 99%; float: right; text-align: left">
                 <tr>
                     <th style="width: 80%">
-                        General Characteristics
+                        Suitable Asset Classes
                     </th>
                     <th>
                     </th>
                 </tr>
                 <tr>
-                    <td>Factual</td>
+                    <td>Derivatives – Options FX</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Analytical</td>
+                    <td>Equities – Australian</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Practical </td>
-                    <td class="sha"></td>
+                    <td>Equities – International - Blue Chips </td>
+                    <td class="sha">X</td>
                 </tr>
                 <tr>
-                    <td>Methodical</td>
-                    <td class="sha"></td>
+                    <td>Property Residential</td>
+                    <td class="sha">X</td>
                 </tr>
                 <tr>
-                    <td>Interpersonal </td>
-                    <td class="sha"></td>
+                    <td>Property – Industrial, Commercial </td>
+                    <td class="sha">X</td>
                 </tr>
                 <tr>
-                    <td>Social</td>
-                    <td class="sha"></td>
+                    <td>Fixed Interest – Bonds, Hybrids</td>
+                    <td class="sha">X</td>
                 </tr>
                 <tr>
-                    <td>Conceptual</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Creative</td>
-                    <td class="sha"></td>
+                    <td>Cash, bank deposits, accounts, bullion</td>
+                    <td class="sha">X</td>
                 </tr>
             </table>
         </td>
@@ -362,41 +372,41 @@
             <table class="inside" cellspacing="0" style="width: 99%; float: left; text-align: left">
                 <tr>
                     <th style="width: 80%">
-                        General Characteristics
+                        Preferred Communication Style
                     </th>
                     <th>
                     </th>
                 </tr>
                 <tr>
-                    <td>Factual</td>
+                    <td>Visual – Prefers pictures & diagrams</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Analytical</td>
+                    <td>Auditory – Prefers the spoken word</td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>Kinaesthetic – Interprets via feelings </td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Practical </td>
+                    <td>Prefers written documentation/reports</td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>Prefers a direct and factual approach </td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>Prefers a detailed approach</td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>Prefers an interpersonal style</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Methodical</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Interpersonal </td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Social</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Conceptual</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Creative</td>
+                    <td>Prefers a big picture holistic approach</td>
                     <td class="sha"></td>
                 </tr>
             </table>
@@ -404,42 +414,42 @@
         <td>
             <table class="inside" cellspacing="0" style="width: 99%; float: right; text-align: left">
                 <tr>
-                    <th style="width: 80%">
-                        General Characteristics
+                    <th style="width: 80%; background: red;">
+                        Under Pressure...
                     </th>
-                    <th>
+                    <th style="background: red;">
                     </th>
                 </tr>
                 <tr>
-                    <td>Factual</td>
+                    <td>May suffer from ‘analysis paralysis’</td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>May become overly stubborn</td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>May retreat into excessive details </td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>May be overly rigid and inflexible</td>
+                    <td class="sha">X</td>
+                </tr>
+                <tr>
+                    <td>May become irrational or illogical </td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Analytical</td>
+                    <td>May be overly emotional or sensitive</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Practical </td>
+                    <td>May become too vague or lost in ideas</td>
                     <td class="sha"></td>
                 </tr>
                 <tr>
-                    <td>Methodical</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Interpersonal </td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Social</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Conceptual</td>
-                    <td class="sha"></td>
-                </tr>
-                <tr>
-                    <td>Creative</td>
+                    <td>May overlook critical details</td>
                     <td class="sha"></td>
                 </tr>
             </table>
@@ -452,8 +462,8 @@
 
 <table class="internal">
     <tr>
-        <td colspan="2">
-            <h3 style="text-align: left">INVESTMENT STYLE SUMMARY <br/>
+        <td colspan="2" class="page5">
+            <h3>INVESTMENT STYLE SUMMARY <br/>
                 DOUBLE DOMINANT PROFILE:  THE ANALYST - IMPLEMENTER</h3>
         </td>
     </tr>
@@ -468,6 +478,12 @@
         </td>
     </tr>
 
+    <tr>
+        <td><img src="/images/reports/p12.jpg" alt="" width="180px" style="padding-top: 20px"></td>
+        <td style="vertical-align: middle"><p class="italic">(Blue- Green) has left-brain, neo-cortex dominant and left-brain, limbic dominant thinking preferences. Key descriptors include being thorough, logical, analytical, numerical, factual, planned, process driven, procedural, sequential, orderly, detailed, administrative, controlled, structured, and safekeeping. This combination provides a high level of rigor and a focus on results. An investor with this profile gathers all the relevant facts to enable them to conduct
+                a detailed analysis in an objective manner, and then defines the steps required for 1. effective pragmatic implementation. This profile has a moderate appetite for risk,2. preferring investments that produce reliable and consistent returns.</p>
+        </td>
+    </tr>
     <tr>
         <td colspan="2">
             <h4 style="padding-top: 20px">1.	General characteristics of your investment style:</h4>
@@ -505,6 +521,15 @@
     </tr>
 </table>
 
+<!-- Section Page 2 -->
+
+<table class="internal">
+    <tr>
+        <td>
+            <img src="/images/reports/section2.png" alt="" width="100%">
+        </td>
+    </tr>
+</table>
 
 <!-- Page 7 -->
 
@@ -519,7 +544,7 @@
         <td>
             <table class="bias" cellspacing="0">
                 <tr>
-                    <th class="first" width="150px">BIAS</th>
+                    <th class="first" width="160px">BIAS</th>
                     <th>STATUS</th>
                     <th>DEFINITION AND IMPACT</th>
                     <th class="last">CORRECTIVE ACTION</th>
@@ -601,7 +626,7 @@
     </tr>
 </table>
 
-<table class="internal biasl">
+<table class="internal biasl key">
     <tr>
         <td>K</td>
         <td><img src="/images/reports/red.png" alt=""> Red Alert! ! - You have a <u>high probability</u> of being susceptible to this form of bias. </td>
@@ -626,10 +651,7 @@
         </td>
     </tr>
     <tr>
-        <td> <!-- TODO Second column display image based client selection in PART D
-                   Very Important = high.png
-                   Important = medium.png
-                   Somewhat important and unimportant = low.png -->
+        <td>
             <table class="trust" cellspacing="0">
                 <tr>
                     <th class="first" width="150px">BIAS</th>
@@ -810,7 +832,7 @@
     </tr>
 </table>
 
-<table class="internal trustl">
+<table class="internal trustl key">
     <tr>
         <td>K</td>
         <td><img src="/images/reports/high.png" width="32px" alt=""> Red Alert! ! - You have a <u>high probability</u> of being susceptible to this form of bias. </td>
@@ -849,8 +871,21 @@
 
         </td>
     </tr>
-    <tr><td><h3>Investor DNA: Decision-Making Model – 1122 Profile:</h3></td></tr>
+    <tr><td><h3 style="text-align: left">Investor DNA: Decision-Making Model – 1122 Profile:</h3>
+            <p class="italic">The relative importance of the criteria below depends upon the strength of your quadrant scores.
+                (See scores on page 6) The higher the quadrant score, the greater the level of influence on your investment decisions.
+                Optimal decision-making involves both rigorous factual analysis (left-brain) and your intuition. (right-brain)</p>
+        </td></tr>
     <tr><td><img src="/images/reports/p9.jpg" width="100%" alt=""></td></tr>
+</table>
+
+
+<!-- Section Page 3 -->
+
+<table class="internal">
+    <tr>
+        <td><img src="/images/reports/section3.png" alt="" width="100%"></td>
+    </tr>
 </table>
 
 <!-- Page 10 -->
@@ -862,7 +897,7 @@
         </td>
     </tr>
     <tr>
-        <td> <!-- TODO display one of the following images based client answer to PART C-->
+        <td>
             @if($data["part3"] == "5")
                 <img src="/images/reports/highp.png" width="100%" alt="">
             @elseif($data["part3"] == "4")
@@ -878,7 +913,33 @@
     </tr>
     <tr>
         <td>
-            <h4>Your default risk position: Low to Moderate Risk</h4>
+            <h4>Your default risk position:
+                @if($data["part3"] == "5")
+                    High
+                @elseif($data["part3"] == "4")
+                    Moderate To High
+                @elseif($data["part3"] == "3")
+                    Moderate
+                @elseif($data["part3"] == "2")
+                    Low To Moderate
+                @elseif($data["part3"] == "1")
+                    Low
+                @endif
+            </h4>
+
+            <p>Your profile indicates that you are comfortable with all asset classes in the
+                @if($data["part3"] == "5")
+                    High
+                @elseif($data["part3"] == "4")
+                    Moderate To High
+                @elseif($data["part3"] == "3")
+                    Moderate
+                @elseif($data["part3"] == "2")
+                    Low To Moderate
+                @elseif($data["part3"] == "1")
+                    Low
+                @endif
+                investment risk category as indicated above in the Asset Pyramid</p>
 
             <p>As you value rational analysis and safekeeping, your investment decisions on the whole tend to be more conservative and less speculative. Your conservative nature serves to limit the amount of investment risk you are prepared to accept, with a prime focus on safekeeping and consolidation.  Your analytical approach means you conduct rigorous due diligence on all potential new investments, carefully calculating the level of risk involved. Your safekeeping approach ensures that all legal and financial act compliance requirements are met. Indeed it is unlikely that you will proceed unless there is supportive data and all compliance requirements are met.</p>
 
@@ -893,28 +954,215 @@
 
 <!-- Page 11 -->
 
+<table class="internal">
+    <tr>
+        <td>
+            <h4>In summary, your approach to risk can be best characterised as follows:</h4>
+            <ul>
+                <li>Generally a low to moderate appetite for risk.</li>
+                <li>More conservative than speculative.</li>
+                <li>Prefers a factual, analytical, planned, detailed approach when data is available.</li>
+                <li>Ensures that all investment options satisfy all relevant compliance requirements.</li>
+                <li>Adopts a naturally structured, safekeeping and methodical approach to minimise risk.</li>
+                <li>Examines all potential risks in detail based on available data and detailed analysis.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4>UNDER PRESSURE...</h4>
+            <ul>
+                <li>May retreat into facts, figures, or excessive analysis. (i.e. “analysis paralysis”)</li>
+                <li>May become overly stubborn or quickly dismissive of other’s views.</li>
+                <li>May become pre-occupied with the rules, regulations, or bureaucratic processes.</li>
+                <li>May overlook people’s feelings and be seen as somewhat emotionally detached.</li>
+                <li>May not see the ‘forest for the trees’, losing sight of the big picture.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td class="page11">
+            <p>Investment Strategy x Risk x Asset Class:</p>
+            <img src="/images/reports/p11.jpg" alt="" width="100%">
+        </td>
+    </tr>
 
+</table>
 
 
 <!-- Page 12 -->
 
+<table class="internal">
+    <tr>
+        <td><img src="/images/reports/p12.jpg" alt="" width="120px"></td>
+        <td style="vertical-align: middle"><h4>7. THE ANALYST - IMPLEMENTER - 1122 PROFILE - SUMMARY:</h4></td>
+    </tr>
+    <tr>
+    <tr>
+        <td colspan="2">
+            <h4 class="serif">INVESTOR STYLE STRENGTHS:</h4>
+            <div class="pbox">
+                <h4>Key Investment Style Strengths/Descriptors:</h4>
+                <ol>
+                    <li>Your investment decisions are based on the facts, figures, analysis and logic.</li>
+                    <li>You prefer to communicate through words supported by documents, tables and graphs.</li>
+                    <li>You are factual, analytical, methodical and detailed in your approach.</li>
+                    <li>You are highly intellectual and have an inquisitive and logical mind.</li>
+                    <li>You are more conservative than speculative in approach.</li>
+                    <li>You ensure that all potential investments are compliant with all legislative requirements.</li>
+                    <li>You adopt a systematic ‘step-by-step’ approach to your investment activities.</li>
+                    <li>You have an eye for detail, studying the ‘fine print’ in investment documentation.</li>
+                    <li>You are pragmatic and results focused, seeing things through to completion.</li>
+                    <li>You prefer to focus on one thing at a time.</li>
+                </ol>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <h4 class="serif">INVESTOR STYLE VULNERABILITIES:</h4>
+            <div class="pbox2">
+                <h4>Key Investment Style Vulnerabilities:</h4>
+                <ol>
+                    <li>May be caught up in excessive fact-finding, data collection or analysis. (i.e. ‘analysis paralysis’)</li>
+                    <li>May lose sight of the ‘bigger picture’ or be consumed in the detail.</li>
+                    <li>May overlook the feelings of others or be perceived as clinical or emotionally detached.</li>
+                    <li>May be overly concerned with financial rules, regulations and legal compliance matters.</li>
+                    <li>May be overly structured or rigid in their thinking or have difficulty thinking ‘outside the box’.</li>
+                </ol>
+            </div>
+        </td>
+    </tr>
 
+
+
+
+</table>
 
 
 <!-- Page 13 -->
 
-
+<table class="internal">
+    <tr>
+        <td>
+            <h4>8. THE ANALYST - IMPLEMENTER - 1122 PROFILE - KEY RECOMMENDATIONS:</h4>
+            <img src="/images/reports/p13.jpg" alt="" width="100%">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4>Key recommendations for improved decision-making and investment success:</h4>
+            <ol>
+                <li>Try to avoid over analysing things to ensure that you still make timely investment decisions.</li>
+                <li>When communicating to others, acknowledging both their words and tone/feelings.</li>
+                <li>Draw upon a diverse range of views and opinions in reaching your investment decisions.</li>
+                <li>Be willing to shift ground on your views for greater flexibility; be less righteous.</li>
+                <li>Remain open to considering new investments that lack definitive proof and track record.</li>
+                <li>Keep the ‘big picture’ in mind to help guide your investment decisions and actions.</li>
+                <li>Avoid being caught up in excessive bureaucratic or process matters.</li>
+                <li>When change challenges your ‘comfort zone’, feel the fear and do it anyway.</li>
+                <li>Let go of your need to be in control and learn how to effectively delegate to others.</li>
+                <li>Be less judgemental of others who are less detailed or pragmatic as you are.</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="pbox3">
+                <p> And the Key Recommendation is to...</p>
+                <p class="italic">Suspend your initial judgement when making your investment decisions and remain open to the views of others in the investment field.</p>
+            </div>
+        </td>
+    </tr>
+</table>
 
 
 <!-- Page 14 -->
 
-
+<table class="internal">
+    <tr>
+        <td>
+            <h4> 9. THE ANALYST - IMPLEMENTER - 1122 PROFILE - ADVISER COMMUNICATION TIPS:</h4>
+            <img src="/images/reports/p14.jpg" alt="" width="100%">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4>An Adviser working with your investor style needs to:</h4>
+            <ol>
+                <li>Present all of the available facts, information and data to support all recommendations.</li>
+                <li>Present the factual details first and then work back up to the ‘big picture’.</li>
+                <li>Present information in its raw form in financial tables, graphs and spreadsheets.</li>
+                <li>Conduct a thorough risk and return analysis for all potential investments.</li>
+                <li>Ensure that you are well prepared and across all the finer details.</li>
+                <li>Provide a structured, sequential step-by-step and detailed financial plan.</li>
+                <li>Set clear goals and milestones to enable regular performance review against the plan.</li>
+                <li>Present your arguments and make the point quickly, efficiently and without ‘waffling’.</li>
+                <li>Provide thorough documentation and record all key decisions and agreed actions.</li>
+                <li>Explain how potential investments satisfy all compliance requirements under law.</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4>And during a MARKET DOWNTURN your adviser needs to...</h4>
+            <ul>
+                <li>Explain any reasons behind the current cyclic market and what’s driving the volatility.</li>
+                <li>Present a higher level of factual information, data and further analysis on the situation.</li>
+                <li>Re-affirm the overall strategy and logic underpinning your long-term financial goals.</li>
+                <li>Provide theoretical models to help your client understand the market dynamics.</li>
+                <li>Provide a step-by-step action plan to monitor and address the situation.</li>
+            </ul>
+        </td>
+    </tr>
+</table>
 
 
 <!-- Page 15 -->
 
+<table class="internal">
+    <tr>
+        <td><img src="/images/reports/p12.jpg" alt="" width="120px"></td>
+        <td style="vertical-align: middle"><h4>10. THE ANALYST - IMPLEMENTER - 1122 PROFILE COMMUNICATION STYLE:</h4></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="page15">
+            <p>By understanding your Investor DNA style, your adviser will be better equipped to ‘tune into your wavelength’ and be a much more effective communicator.</p>
+            <p>Analysts prefer to communicate through the written word favoring reports that show facts, figures, data and the numbers <span>(i.e. the WHAT?);</span> Implementers
+                prefer to communicate in clear and concise documentation presented in a structured, sequential and orderly manner <span>(i.e. the HOW?);</span> Humanitarians have a preference for
+                personal connection and kinesthetic (feelings) communication, ‘sensing’ things through body language and voice tone, often ‘reading between the lines’ <span>(i.e. the WHO?);</span>
+                and Entrepreneurs prefer to communicate visually through pictures, diagrams and graphs that illuminate patterns in data, helping them ‘connect the dots’
+                and see the ‘big picture’. <span>(i.e. the WHY?)</span></p>
+            <h4>Identifying your preferred ‘Communication Sequence Map’:</h4>
+                <p>A communication sequence map represents your preferred method and order of communication – your preferred ‘communication sequence’ based on the relative strength of each of your
+                    four quadrant scores. Please review your scores for each of your four Investor DNA quadrants and rank them from highest (1) though to lowest (4). Transpose these rankings into the
+                    four boxes below. Next, draw an arrow connecting the 4 colored boxes in the order of their preference scores, from 1 to 2, to 3, to 4. This represents the ideal sequence of
+                    communication for maximum impact, showing your starting point (1) and the recommended order of communication.</p>
 
+            <img src="/images/reports/p15.jpg" alt="" width="100%">
+        </td>
+    </tr>
+</table>
 
 
 
 <!-- Page 16 -->
+
+    <table class="internal">
+        <tr>
+            <td>
+                <div class="pbox4">
+                    <h3>DISCLAIMER AND COPYRIGHT</h3>
+                    <p>TKH Group Trust (ABN 13 186 714 215) is the author and owner of Investor DNA and its logo, brand, profiles,
+                        websites, tools, materials, processes and systems.</p>
+                    <p>All text in the Investor DNA Personal Profile including recommendations, are of a general nature only and is limited to an individual investor’s investment psychology. TKH Group International PTY LTD (ACN 613731445) as trustee for the TKH Group Trust does not provide any financial advice whatsoever and does not make any specific investment product recommendations, claims or guarantees regarding the financial performance of any investment product selected individually or through a third party and/or adviser that has been accredited in the Investor DNA system.</p>
+                    <p>TKH Group International PTY LTD and its directors, shareholders, employees, suppliers, licensees and associates will not be held liable for any losses or damages, investment or otherwise, whatsoever arising from the use of the Investor DNA profiling system. By proceeding with and using the Investment DNA profiling system you and any affiliated companies, directly or indirectly, agrees unconditionally not to pursue legal action against TKH Group International Pty Ltd, TKH Group Trust and their directors, shareholders, employees, suppliers, licensees and associates.</p>
+                    <p>The Investor DNA is protected under trademark 01808732 issued under Australian law. Investor DNA and its logo, brand, profiles, websites, tools, materials, processes and systems are owned by TKH Group Trust and are subject to copyright, and may not be used in any manner other than its intended purpose, nor outside the conditions as specified in the Investor DNA licensing agreement. Any and all breaches will be prosecuted under law.</p>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+
+@endsection

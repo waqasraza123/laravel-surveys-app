@@ -14,14 +14,20 @@
                     <h1 class="logo-name" style="font-size: 65px; margin-left: -5px;">Part A</h1>
 
                     <h2>Instructions</h2>
-                 Please rate the following statements using the scale below.
-                        <ul>
-                            <li>I STRONGLY AGREE with the statement. I do this vast majority of the time.</li>
-                            <li>I AGREE with the statement. I do this most of the time.</li>
-                            <li>I SOMEWHAT AGREE with the statement. I do this sometimes and sometimes I don't.</li>
-                            <li>I DISAGREE with the statement. I seldom do this.</li>
-                            <li>I STRONGLY DISAGREE with the statement. I almost never do this, if at all.</li>
-                            <li>This DOESN'T APPLY to me. I wouldn’t never even think about doing this, let alone do it.</li>
+                Please rate the following statements using the scale below.
+                        <ul> 
+                            <li>SPOT ON - this is  me!</li>
+                             
+                            <li>VERY CLOSE  to me</li>
+                             
+                            <li>QUITE like me</li>
+                             
+                            <li>SOMEWHAT like me</li>
+                             
+                            <li>A BIT like me</li>
+                             
+                            <li>NOT LIKE ME at all</li>
+
                         </ul>
 
 
@@ -31,22 +37,22 @@
                             <div class="form-group">
                                 <label class="control-label" for="{{ $key+1 }}">{{ $key+1 }}. {{ $question }}</label><br/>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="5" required @if($saved_input[$key+1] == "5") checked @endif> Strongly	Agree
+                                    <input type="radio" name="{{ $key+1 }}" value="5" required @if($saved_input[$key+1] == "5") checked @endif> SPOT ON - this is  me!
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="4" required @if($saved_input[$key+1] == "4") checked @endif> Agree
+                                    <input type="radio" name="{{ $key+1 }}" value="4" required @if($saved_input[$key+1] == "4") checked @endif> VERY CLOSE  to me
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="3" required @if($saved_input[$key+1] == "3") checked @endif> Somewhat	Agree
+                                    <input type="radio" name="{{ $key+1 }}" value="3" required @if($saved_input[$key+1] == "3") checked @endif> QUITE like me
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="2" required @if($saved_input[$key+1] == "2") checked @endif> Disagree
+                                    <input type="radio" name="{{ $key+1 }}" value="2" required @if($saved_input[$key+1] == "2") checked @endif> SOMEWHAT like me
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="1" required @if($saved_input[$key+1] == "1") checked @endif> Strongly Disagree
+                                    <input type="radio" name="{{ $key+1 }}" value="1" required @if($saved_input[$key+1] == "1") checked @endif> A BIT like me
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="0" required @if($saved_input[$key+1] == "0") checked @endif> Doesn't Apply
+                                    <input type="radio" name="{{ $key+1 }}" value="0" required @if($saved_input[$key+1] == "0") checked @endif> NOT LIKE ME at all
                                 </label>
                             </div>
                             @if($key < count($questions) - 1)
