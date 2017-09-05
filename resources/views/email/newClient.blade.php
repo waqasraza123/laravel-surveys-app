@@ -18,9 +18,9 @@
 
 <p>Dear {{ $client }},</p>
 
-<p>{{ $advisor }} from {{ $firm }} have invited you to take the Investor DNA questioner.</p>
+<p>{{ $advisor }} from {{ $firm }} have invited you to take the Investor DNA questionnaire.</p>
 
-<p><a href="{{ URL::to('questioner/' . $code) }}">Click Here</a> to complete your questioner.</p>
+<p><a href="{{ URL::to('questioner/' . $code) }}">Click Here</a> to complete your questionnaire.</p>
 
 
 <p>Kind Regards,<br/>

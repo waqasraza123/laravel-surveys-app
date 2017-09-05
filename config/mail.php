@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'mailgun'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'from@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'accounts@investordna.com.au'),
+        'name' => env('MAIL_FROM_NAME', 'Investor DNA'),
     ],
 
     /*
@@ -119,5 +119,6 @@ return [
             resource_path('views/vendor/mail'),
         ],
     ],
+
 
 ];

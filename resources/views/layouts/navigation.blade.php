@@ -41,18 +41,21 @@
 
 
             @elseif (Auth::user()->role == "advisor")
-                    <li @if (Request::is('home')) class="active" @endif><a href="/home"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
-                    <li><a href="/clients"><i class="fa fa-users"></i> <span>Clients</span></a></li>
+                    <li @if (Request::is('home')) class="active" @endif><a href="{{url('/home')}}"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
+                    {{--<li><a href="/clients"><i class="fa fa-users"></i> <span>Clients</span></a></li>--}}
 
                      <li class="treeview @if (Request::is('reports/*')) active @endif">
                         <a href="/reports/new"><i class="fa fa-file-text"></i> <span>Reports</span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/reports/new">New Report</a></li>
-                            <li><a href="/reports/view">View Reports</a></li>
+                            <li><a href="{{url('/reports/new')}}">New Report</a></li>
+                            <li><a href="{{url('/reports/view')}}">View Reports</a></li>
                         </ul>
                     </li>
-                    <li @if (Request::is('profile')) class="active" @endif><a href="/profile"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                    <li @if (Request::is('profile')) class="active" @endif><a href="{{url('/profile')}}"><i class="fa fa-user"></i> <span>Profile</span></a></li>
                 @endif
+
+
+
 
 
 

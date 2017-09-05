@@ -57,6 +57,7 @@ class profileController extends Controller
 
         $user->save();
 
+
         return back()->with(Auth::user()->toArray())->withErrors(['profileUpdated'=>'Profile Updated Successfully']);
     }
 

@@ -44,7 +44,7 @@
                         @endforeach
                     </div>
                     <div class="panel-footer">
-                        <a href="/questioner/{{ $code }}/part/1"><button type="button" class="btn btn-primary">Back</button></a>
+                        <a href="http://innsite.net.au/mm/public/questioner/{{ $code }}/part/1"><button type="button" class="btn btn-primary">Back</button></a>
                         <div style="float:right">
                             <button type="submit" class="btn btn-primary">Save & Next</button>
                         </div>

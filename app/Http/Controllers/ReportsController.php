@@ -225,7 +225,7 @@ class ReportsController extends Controller
     function sendClientEmail($advisor, $code, $email, $name, $firm){
         Mail::send('email.newClient', ["advisor" => $advisor, "code" => $code, "client" => $name, "firm" => $firm], function($message) use ($email, $name){
             $message->to($email, $name)
-                ->subject('Questioner Invititon');
+                ->subject('Investor DNA Questionnaire');
         });
     }
 
