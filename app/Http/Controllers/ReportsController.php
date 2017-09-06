@@ -141,7 +141,7 @@ class ReportsController extends Controller
 
         //// Part 2 Scores ////
         for($i = 1; $i <= count($response[1]); $i++){
-            $scores[$this->partBAnswers($i, $response[1][$i])] += 1;
+            $scores[$this->partBAnswers($i, $response[1][$i])] += 3;
         }
 
         return "{A" . $scores['blue'] . ", B" . $scores['green'] . ", C" . $scores['red'] . ", D" . $scores['yellow'] . "}";
@@ -161,14 +161,14 @@ class ReportsController extends Controller
 
         //// Part 2 Scores ////
         for($i = 1; $i <= count($response[1]); $i++){
-            $scores[$this->partBAnswers($i, $response[1][$i])] += 1;
+            $scores[$this->partBAnswers($i, $response[1][$i])] += 3;
         }
 
         //// Calculating Percentage ////
-        $scores['blue'] = (($scores['blue'] * 100) / 87);
-        $scores['green'] = (($scores['green'] * 100) / 87);
-        $scores['red'] = (($scores['red'] * 100) / 87);
-        $scores['yellow'] = (($scores['yellow'] * 100) / 87);
+        $scores['blue'] = (($scores['blue'] * 100) / 111);
+        $scores['green'] = (($scores['green'] * 100) / 111);
+        $scores['red'] = (($scores['red'] * 100) / 111);
+        $scores['yellow'] = (($scores['yellow'] * 100) / 111);
 
         //// allocate low, med, high ////
         foreach($scores as $key => $score){
