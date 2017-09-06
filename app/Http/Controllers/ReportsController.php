@@ -191,6 +191,80 @@ class ReportsController extends Controller
         }
     }
 
+    protected function partASubCatScores($response){
+        $response = unserialize($response);
+        $answers = $this->partASubCatAnswers();
+
+        $scores = [
+            "analytical" => 0,
+            "beliefs" => 0,
+            "structured" => 0,
+            "flexible" => 0,
+            "creative" => 0,
+            "practical" => 0,
+            "intellectual" => 0,
+            "instinctive" => 0,
+        ];
+
+        foreach($answers as $key => $cat){
+            $scores[$cat] += $response[0][$key];
+        }
+
+        return $scores;
+    }
+
+    protected function partASubCatAnswers(){
+        return [
+            1 => "analytical",
+            25 => "analytical",
+            37 => "analytical",
+            45 => "analytical",
+            57 => "analytical",
+
+            3 => "beliefs",
+            15 => "beliefs",
+            27 => "beliefs",
+            39 => "beliefs",
+            19 => "beliefs",
+
+            6 => "structured",
+            18 => "structured",
+            30 => "structured",
+            42 => "structured",
+            50 => "structured",
+
+            7 => "flexible",
+            31 => "flexible",
+            40 => "flexible",
+            44 => "flexible",
+            60 => "flexible",
+
+            4 => "creative",
+            12 => "creative",
+            24 => "creative",
+            28 => "creative",
+            36 => "creative",
+
+            2 => "practical",
+            14 => "practical",
+            26 => "practical",
+            38 => "practical",
+            54 => "practical",
+
+            9 => "intellectual",
+            17 => "intellectual",
+            29 => "intellectual",
+            41 => "intellectual",
+            49 => "intellectual",
+
+            16 => "instinctive",
+            35 => "instinctive",
+            52 => "instinctive",
+            55 => "instinctive",
+            47 => "instinctive",
+        ];
+    }
+
     protected function partBAnswers($row, $opt){
         $answers = [
             ["blue", "red"],
