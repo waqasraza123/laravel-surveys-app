@@ -57,12 +57,30 @@
     </div>
         </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.10/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.10/sweetalert2.min.css">
 <script>
     var arr = [0, 0, 0, 0];
     var old = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     function clicked(opt, row){
         if(arr[opt-1] >= 4){
+            var text;
+            switch(opt){
+                case 4:
+                    text = "Very Important"; break;
+                case 3:
+                    text = "Important"; break;
+                case 2:
+                    text = "Somewhat Important"; break;
+                case 1:
+                    text = "Unimportant"; break;
+            }
+            swal(
+              'Error!',
+              "you have already selected {" + text + "} 4 times",
+              'warning'
+            );
             return false;
         }
         else if (old[row-1] != opt){
