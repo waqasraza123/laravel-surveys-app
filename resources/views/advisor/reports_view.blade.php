@@ -19,7 +19,7 @@
                                     <th>Last Name</th>
                                     <th>Email Address</th>
                                     <th>Score</th>
-                                    <th>Risk Appetite</th>
+                                    {{--<th>Risk Appetite</th>--}}
                                     <th>Report</th>
                                 </tr>
                                 </thead>
@@ -38,7 +38,7 @@
                                                 Not Completed
                                             @endif
                                         </td>
-                                        <td></td>
+                                        {{--<td></td>--}}
                                         <td>
                                             @if($report["completed"])
                                                 <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Report</a>
