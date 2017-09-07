@@ -14,7 +14,7 @@
                             <table class="table table-striped table-bordered table-hover dataTables-example" >
                                 <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>Created</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Email Address</th>
@@ -27,7 +27,7 @@
                                 <?php $count = 1; ?>
                                 @foreach($reports as $report)
                                     <tr>
-                                        <td>{{ $count++ }}</td>
+                                        <td>{{ $report["created_at"] }}</td>
                                         <td>{{ $report["first_name"] }}</td>
                                         <td>{{ $report["last_name"] }}</td>
                                         <td>{{ $report["email"] }}</td>

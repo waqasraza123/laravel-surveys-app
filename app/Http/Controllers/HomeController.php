@@ -46,7 +46,7 @@ class HomeController extends Controller
     }
 
     public function thankYou() {
-        return view('pages.thank-you');
+        return view('client.thankyou');
     }
 
 
