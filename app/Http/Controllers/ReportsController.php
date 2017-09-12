@@ -52,7 +52,7 @@ class ReportsController extends Controller
 
         $this->sendClientEmail(Auth::user()->name, $code, $request->email, $request->first_name . ' ' . $request->last_name, $firm->firm_name);
 
-        return back()->withErrors(['success'=>'New client added successfully. An email has been sent to the client with the link to the questioner.'])->with('tokens', $firm->tokens_available);
+        return back()->withErrors(['success'=>'New client added successfully. An email has been sent to the client with the link to the questionnaire.'])->with('tokens', $firm->tokens_available);
     }
 
     public function view(){

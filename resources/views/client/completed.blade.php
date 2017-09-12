@@ -8,7 +8,7 @@
                 <div class="panel-heading text-center"><b>ERROR</b></div>
 
                 <div class="panel-body">
-                    This questioner is already completed.
+                    This questionnaire is already completed.
                 </div>
             </div>
         </div>

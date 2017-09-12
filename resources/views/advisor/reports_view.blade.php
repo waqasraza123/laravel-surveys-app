@@ -20,7 +20,7 @@
                                     <th>Email Address</th>
                                     <th>Score</th>
                                     {{--<th>Risk Appetite</th>--}}
-                                    <th>Report</th>
+                                    <th>Investor DNA Profile </th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -41,7 +41,7 @@
                                         {{--<td></td>--}}
                                         <td>
                                             @if($report["completed"])
-                                                <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Report</a>
+                                                <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Investor DNA Profile</a>
                                             @else
                                                 Not Completed
                                             @endif

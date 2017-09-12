@@ -917,33 +917,6 @@
     </tr>
     <tr>
         <td>
-            <h4>Your default risk position:
-                @if($data["part3"] == "5")
-                    High
-                @elseif($data["part3"] == "4")
-                    Moderate To High
-                @elseif($data["part3"] == "3")
-                    Moderate
-                @elseif($data["part3"] == "2")
-                    Low To Moderate
-                @elseif($data["part3"] == "1")
-                    Low
-                @endif
-            </h4>
-
-            <p>Your profile indicates that you are comfortable with all asset classes in the
-                @if($data["part3"] == "5")
-                    High
-                @elseif($data["part3"] == "4")
-                    Moderate To High
-                @elseif($data["part3"] == "3")
-                    Moderate
-                @elseif($data["part3"] == "2")
-                    Low To Moderate
-                @elseif($data["part3"] == "1")
-                    Low
-                @endif
-                investment risk category as indicated above in the Asset Pyramid</p>
 
             @if($data["part3"] == "5")
                 <p>Your investment ‘appetite for risk’ is the extent to which you feel comfortable accepting a level of risk associated with a particular asset class or sub class. Your investment appetite for risk is a reflection of your thinking style and ‘genetic makeup’, your personal values and beliefs, and your investment experiences over time. Indeed, financial and investment ‘programming’ is passed on from parent to child, generation to generation. For example, a belief formed from an early age that ‘all debt is bad’ may lead an investor to shy away from any form of investment gearing which may be a legitimate strategy for this particular investor. This is but one example to illustrate how your attitude to risk, formed through experience can hold significant implications for how you approach your investment activity.</p>

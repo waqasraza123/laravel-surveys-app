@@ -64,7 +64,7 @@
                     </form>
                 @else
                     <div class="box-body">
-                        <h4>Error! You cannot create any report as your Firm's token balance is 0.</h4>
+                        <h4>You cannot create any report as your Firm's token balance is 0.</h4>
                     </div>
                 @endif
                 </div>

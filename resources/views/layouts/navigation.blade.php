@@ -45,10 +45,10 @@
                     {{--<li><a href="/clients"><i class="fa fa-users"></i> <span>Clients</span></a></li>--}}
 
                      <li class="treeview @if (Request::is('reports/*')) active @endif">
-                        <a href="/reports/new"><i class="fa fa-file-text"></i> <span>Reports</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <a href="/reports/new"><i class="fa fa-file-text"></i> <span>Investor DNA Profile </span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="{{url('/reports/new')}}">New Report</a></li>
-                            <li><a href="{{url('/reports/view')}}">View Reports</a></li>
+                            <li><a href="{{url('/reports/new')}}">Add New</a></li>
+                            <li><a href="{{url('/reports/view')}}">View </a></li>
                         </ul>
                     </li>
                     <li @if (Request::is('profile')) class="active" @endif><a href="{{url('/profile')}}"><i class="fa fa-user"></i> <span>Profile</span></a></li>

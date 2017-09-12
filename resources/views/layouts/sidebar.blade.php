@@ -26,15 +26,15 @@
                         <li><a href="/tokens/usage">Usage History</a></li>
                     </ul>
                 </li>
-                <li @if (Request::is('reports/view')) class="active" @endif><a href="/reports/view"><span>Reports</span></a></li>
+                <li @if (Request::is('reports/view')) class="active" @endif><a href="/reports/view"><span>Investor DNA Profile </span></a></li>
                 <li @if (Request::is('profile')) class="active" @endif><a href="/profile"><span>Profile</span></a></li>
             @elseif (Auth::user()->role == "advisor")
                 <li @if (Request::is('home')) class="active" @endif><a href="/home"><span>Home</span></a></li>
                 <li class="treeview @if (Request::is('reports/*')) active @endif">
                     <a href="/reports/new"><span>Reports</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="/reports/new">Add New Report</a></li>
-                        <li><a href="/reports/view">View Reports</a></li>
+                        <li><a href="/reports/new">Add New</a></li>
+                        <li><a href="/reports/view">View</a></li>
                     </ul>
                 </li>
                 <li @if (Request::is('profile')) class="active" @endif><a href="/profile"><span>Profile</span></a></li>

@@ -13,7 +13,8 @@
                 <h1 class="logo-name" style="font-size: 65px; margin-left: -5px;">Part D</h1>
 
                 <h2>Instructions</h2>
-                When considering the relationship you have with your Financial Adviser, please rate the following statements using the scale below. Please not that you can have no more than 4 items classified in each of the categories below. (i.e. No more than 4 items classified as ‘Very Important’, no more than 4 items classified as ‘Important’ etc.)
+                When considering the relationship you have with your Financial Adviser, please rate the following statements using the scale below.
+                Please not that you can have no more than 4 items classified in each of the categories below. (i.e. No more than 4 items classified as ‘Very Important’, no more than 4 items classified as ‘Important’ etc.)
                 <ul>
                     <li>VERY IMPORTANT  - This is very important to me when working with my adviser</li>
                     <li>IMPORTANT - This is important to me when working with my adviser</li>
@@ -77,9 +78,9 @@
                     text = "Unimportant"; break;
             }
             swal(
-              'Error!',
-              "you have already selected {" + text + "} 4 times",
-              'warning'
+              'Alert!',
+              "You have previously selected {" + text + "} four times which is the maximum number of responses permitted.",
+              'Please choose another response.'
             );
             return false;
         }
