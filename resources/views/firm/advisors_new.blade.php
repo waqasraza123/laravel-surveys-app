@@ -17,8 +17,6 @@
                                     <th>Email</th>
                                     <th>Mobile</th>
                                     <th>Position</th>
-                                    <th>Reports</th>
-                                    <th>Status</th>
                                     <th>Options</th>
                                 </tr>
                                 </thead>
@@ -47,8 +45,6 @@
                                     <th>Email</th>
                                     <th>Mobile</th>
                                     <th>Position</th>
-                                    <th>Reports</th>
-                                    <th>Status</th>
                                     <th>Options</th>
                                 </tr>
                                 </tfoot>

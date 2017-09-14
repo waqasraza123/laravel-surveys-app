@@ -11,12 +11,19 @@
                     <h1 class="logo-name">Investor DNA</h1>
 
                 </div>
-                <h2>Thanks for completing the Investor DNA questionnaire.
-                    Please contact your Financial adviser for your results</h2>
 
-                <a href="http://www.investordna.com.au">
-                    <button type="submit" class="btn btn-primary">Back</button>
-                </a>
+                {{--If Advisor --}}
+                <h2>Thank you for your registartion. Your firm's administrator has been notified.
+                    You will be able to login, when the account has been approved.
+                </h2>
+
+
+                {{--If Firm--}}
+                <h2>Thank you for your registartion. We have sent you an activation link.
+                Please click on the link within the email to activate and login to your account.
+                </h2>
+
+
 
 
                 <p class="m-t"> <small>Investor DNA &copy; 2017</small> </p>
