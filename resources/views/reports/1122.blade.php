@@ -99,6 +99,10 @@
         <td>Investment style:</td>
         <td>The Analyst - Implementer</td>
     </tr>
+    <tr>
+        <td>Quadrant scores:</td>
+        <td>{{ $data["individual_score"] }}</td>
+    </tr>
 </table>
 
 <table class="internal">

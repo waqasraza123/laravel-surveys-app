@@ -14,20 +14,14 @@
                     <h1 class="logo-name" style="font-size: 65px; margin-left: -5px;">Part A</h1>
 
                     <h2>Instructions</h2>
-                Please rate the following statements using the scale below.
+                        Please rate the following statements using the scale below.
                         <ul> 
-                            <li>SPOT ON - this is  me!</li>
-                             
-                            <li>VERY CLOSE  to me</li>
-                             
-                            <li>QUITE like me</li>
-                             
-                            <li>SOMEWHAT like me</li>
-                             
-                            <li>A BIT like me</li>
-                             
-                            <li>NOT LIKE ME at all</li>
-
+                            <li>5. SPOT ON - this is me!</li>
+                            <li>4. VERY CLOSE to me</li>
+                            <li>3. QUITE like me</li>
+                            <li>2. SOMEWHAT like me</li>
+                            <li>1. A BIT like me</li>
+                            <li>0. NOT LIKE ME at all</li>
                         </ul>
 
 
@@ -37,22 +31,22 @@
                             <div class="form-group">
                                 <label class="control-label" for="{{ $key+1 }}">{{ $key+1 }}. {{ $question }}</label><br/>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="5" required @if($saved_input[$key+1] == "5") checked @endif> SPOT ON - this is  me!
+                                    <input type="radio" name="{{ $key+1 }}" value="5" required @if($saved_input[$key+1] == "5") checked @endif> 5. SPOT ON - this is  me!
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="4" required @if($saved_input[$key+1] == "4") checked @endif> VERY CLOSE  to me
+                                    <input type="radio" name="{{ $key+1 }}" value="4" required @if($saved_input[$key+1] == "4") checked @endif> 4. ERY CLOSE  to me
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="3" required @if($saved_input[$key+1] == "3") checked @endif> QUITE like me
+                                    <input type="radio" name="{{ $key+1 }}" value="3" required @if($saved_input[$key+1] == "3") checked @endif> 3. QUITE like me
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="2" required @if($saved_input[$key+1] == "2") checked @endif> SOMEWHAT like me
+                                    <input type="radio" name="{{ $key+1 }}" value="2" required @if($saved_input[$key+1] == "2") checked @endif> 2. SOMEWHAT like me
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="1" required @if($saved_input[$key+1] == "1") checked @endif> A BIT like me
+                                    <input type="radio" name="{{ $key+1 }}" value="1" required @if($saved_input[$key+1] == "1") checked @endif> 1. A BIT like me
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="0" required @if($saved_input[$key+1] == "0") checked @endif> NOT LIKE ME at all
+                                    <input type="radio" name="{{ $key+1 }}" value="0" required @if($saved_input[$key+1] == "0") checked @endif> 0. NOT LIKE ME at all
                                 </label>
                             </div>
                             @if($key < count($questions) - 1)
