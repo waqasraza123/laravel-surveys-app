@@ -30,6 +30,20 @@
                         </select>
                 </div>
 
+                <div id="div_advisor">
+
+                    <div class="form-group{{ $errors->has('firm_code') && old('role') == 'advisor' ? ' has-error' : '' }}">
+
+                            <input id="firm_code" placeholder="Firm Code" type="text" class="form-control" name="firm_code" value="{{ old('firm_code') }}" required>
+
+                            @if ($errors->has('firm_code') && old('role') == 'advisor')
+                                <span class="help-block">
+                                            <strong>{{ $errors->first('firm_code') }}</strong>
+                                        </span>
+                            @endif
+                    </div>
+
+                </div>
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 
@@ -73,23 +87,6 @@
                                         <strong>{{ $errors->first('company_position') }}</strong>
                                     </span>
                         @endif
-                </div>
-
-
-
-                <div id="div_advisor">
-
-                    <div class="form-group{{ $errors->has('firm_code') && old('role') == 'advisor' ? ' has-error' : '' }}">
-
-                            <input id="firm_code" placeholder="Firm Code" type="text" class="form-control" name="firm_code" value="{{ old('firm_code') }}" required>
-
-                            @if ($errors->has('firm_code') && old('role') == 'advisor')
-                                <span class="help-block">
-                                            <strong>{{ $errors->first('firm_code') }}</strong>
-                                        </span>
-                            @endif
-                    </div>
-
                 </div>
 
                 <div id="div_firm" style="display:none">

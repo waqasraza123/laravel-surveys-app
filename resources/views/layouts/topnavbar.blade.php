@@ -4,7 +4,7 @@
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
         </div>
         <ul class="nav navbar-top-links navbar-right">
-            <li>My Firm Code - </li>
+            <li>{{ $code }} - </li>
             <li>
 
                 <a href="{{ route('logout') }}"

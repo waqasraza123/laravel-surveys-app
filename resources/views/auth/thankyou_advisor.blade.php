@@ -1,16 +1,24 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Admin Approval Required</div>
-                <div class="panel-body">
-                    You have been registered Successfully. Admin has been informed. You will be able to login after Admin approval.
+    <div class="container">
+
+
+        <div class="middle-box text-center loginscreen   animated fadeInDown">
+            <div>
+                <div>
+
+                    <h1 class="logo-name">Investor DNA</h1>
+
                 </div>
+
+                <h2>Thank you for your registartion. Your firm's administrator has been notified.
+                    You will be able to login, when the account has been approved.
+                </h2>
+
+                <p class="m-t"> <small>Investor DNA &copy; 2017</small> </p>
             </div>
         </div>
+
     </div>
-</div>
 @endsection

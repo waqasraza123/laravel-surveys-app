@@ -37,16 +37,23 @@ class HomeController extends Controller
 
         switch(Auth::user()->role){
             case "admin":
-                return view('home');
+                return view('admin.home')->with(["code" =>  "Administrator"]);
             case "firm":
-                return view('firm.home');
+                return view('firm.home')->with(["code" =>  Auth::user()->code]);
             case "advisor":
-                return view('home');
+                return view('home')->with(["code" =>  Auth::user()->firm_code]);
         }
     }
 
     public function thankYou() {
-        return view('pages.thank-you');
+        switch(Auth::user()->role){
+            case "admin":
+                return view('home');
+            case "firm":
+                return view('auth.thankyou_firm');
+            case "advisor":
+                return view('auth.thankyou_advisor');
+        }
     }
 
 
