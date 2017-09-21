@@ -4,7 +4,7 @@
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
         </div>
         <ul class="nav navbar-top-links navbar-right">
-            <li>{{ $code }} - </li>
+            <li><?php if(Auth::user()->role == "firm") echo Auth::user()->code; else if(Auth::user()->role == "advisor") echo Auth::user()->firm_code; ?> - </li>
             <li>
 
                 <a href="{{ route('logout') }}"

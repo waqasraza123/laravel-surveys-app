@@ -19,6 +19,7 @@
                                     <th>Advisor Name</th>
                                     <th>Score</th>
                                     <th>Report</th>
+                                    <th>Completion Date</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -39,6 +40,13 @@
                                         <td>
                                             @if($report["completed"])
                                                 <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Report</a>
+                                            @else
+                                                Not Completed
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($report["completed"])
+                                                {{ $report["updated_at"] }}
                                             @else
                                                 Not Completed
                                             @endif

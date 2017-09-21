@@ -68,6 +68,9 @@ class ReportsController extends Controller
                 $advisors = User::where('firm_code', Auth::user()->code)->get();
                 $reports = collect();
                 foreach($advisors as $advisor){
+                    if(isset($_GET['advisor']) && $_GET['advisor'] != $advisor->id)
+                        continue;
+
                     $temps = Report::where('advisor', $advisor->id)->get();
                     if($temps->count() > 0){
                         foreach($temps as $temp){

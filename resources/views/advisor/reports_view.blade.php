@@ -21,6 +21,7 @@
                                     <th>Score</th>
                                     {{--<th>Risk Appetite</th>--}}
                                     <th>Investor DNA Profile </th>
+                                    <th>Completion Date</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -42,6 +43,13 @@
                                         <td>
                                             @if($report["completed"])
                                                 <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Investor DNA Profile</a>
+                                            @else
+                                                Not Completed
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($report["completed"])
+                                                {{ $report["updated_at"] }}
                                             @else
                                                 Not Completed
                                             @endif

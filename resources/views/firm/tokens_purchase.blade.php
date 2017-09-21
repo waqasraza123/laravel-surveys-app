@@ -14,7 +14,7 @@
                     </div>
                     <div class="col-xs-6 text-right">
                         <span></span>
-                        <h2 style="margin-top: 8px" class="font-bold">88</h2>
+                        <h2 style="margin-top: 8px" class="font-bold">{{ $tokens }}</h2>
                     </div>
                 </div>
             </div>

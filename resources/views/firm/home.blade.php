@@ -28,7 +28,7 @@
                             </div>
                             <div class="col-xs-8 text-right">
                                 <span> Token Balance </span>
-                                <h2 class="font-bold">432</h2>
+                                <h2 class="font-bold">{{ $tokens_available }}</h2>
                             </div>
                         </div>
                 </div>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-xs-8 text-right">
                             <span> Completed Reports </span>
-                            <h2 class="font-bold">705</h2>
+                            <h2 class="font-bold">{{ $completed_reports }}</h2>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="col-xs-8 text-right">
                             <span> Active Advisors </span>
-                            <h2 class="font-bold">264</h2>
+                            <h2 class="font-bold">{{ $active_advisors }}</h2>
                         </div>
                     </div>
                 </div>
@@ -86,62 +86,18 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>23-06-2017</td>
-                                <td>Michael De Silva</td>
-                                <td>Aaron Busary</td>
-                                <td>
-                                    <a class="btn btn-white btn-bitbucket">
-                                        <i class="fa fa-download"></i>
-                                    </a>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>21-06-2017</td>
-                                <td>Mario Forbes</td>
-                                <td>Aaron Busary</td>
-                                <td>
-                                    <a class="btn btn-white btn-bitbucket">
-                                        <i class="fa fa-download"></i>
-                                    </a>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>19-06-2017</td>
-                                <td>Krystal Lewis</td>
-                                <td>Christine Fernandez</td>
-                                <td>
-                                    <a class="btn btn-white btn-bitbucket">
-                                        <i class="fa fa-download"></i>
-                                    </a>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>12-06-2017</td>
-                                <td>James Lee</td>
-                                <td>Mourad Benhaqi</td>
-                                <td>
-                                    <a class="btn btn-white btn-bitbucket">
-                                        <i class="fa fa-download"></i>
-                                    </a>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>01-06-2017</td>
-                                <td>Daniel Smith</td>
-                                <td>Aaron Busary</td>
-                                <td>
-                                    <a class="btn btn-white btn-bitbucket">
-                                        <i class="fa fa-download"></i>
-                                    </a>
-
-                                </td>
-                            </tr>
-
+                                @foreach($latest_reports as $report)
+                                    <tr>
+                                        <td>{{ $report->updated_at }}</td>
+                                        <td>{{ $report->first_name }} {{ $report->last_name }}</td>
+                                        <td>{{ $report->advisor_name }}</td>
+                                        <td>
+                                            <a class="btn btn-white btn-bitbucket" target="_blank" href="/reports/view/{{ $report->code }}">
+                                                <i class="fa fa-download"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -164,40 +120,12 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Aaron Busary</td>
-                                <td>75</td>
-                            </tr>
-                            <tr>
-                                <td>Mourad Benhaqi</td>
-                                <td>61</td>
-                            </tr>
-                            <tr>
-                                <td>Christine Fernandez</td>
-                                <td>54</td>
-                            </tr>
-                            <tr>
-                                <td>Lindsay Kelly</td>
-                                <td>31</td>
-                            </tr>
-                            <tr>
-                                <td>Craig Hatt</td>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>Taron Silva</td>
-                                <td>24</td>
-                            </tr>
-                            <tr>
-                                <td>Mark Stewart</td>
-                                <td>16</td>
-                            </tr>
-                            <tr>
-                                <td>Kylie Hobbs</td>
-                                <td>15</td>
-                            </tr>
-
-
+                                <tr>
+                                    @foreach($top_advisors as $advisor)
+                                        <td>{{ $advisor->name }}</td>
+                                        <td>{{ $advisor->reports }}</td>
+                                    @endforeach
+                                </tr>
                             </tbody>
                         </table>
                     </div>

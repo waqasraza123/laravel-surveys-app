@@ -29,7 +29,7 @@
                                         <td>{{ $advisor["email"] }}</td>
                                         <td>{{ $advisor["mobile_number"] }}</td>
                                         <td>{{ $advisor["company_position"] }}</td>
-                                        <td>65</td>
+                                        <td><a href="/reports/view?advisor={{ $advisor['id'] }}">{{ $advisor["total_reports"] }}</a></td>
                                         <td>Active</td>
                                         <td> <a class="btn btn-white btn-bitbucket">
                                                 <i class="fa fa-pencil"></i>

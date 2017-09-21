@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Mail;
 use app\User;
+use App\Report;
 use Illuminate\Http\Request;
 
 class viewAdvisorsController extends Controller
@@ -42,6 +43,9 @@ class viewAdvisorsController extends Controller
                                 ->where("status", true)
                                 ->get()
                                 ->toArray();
+                foreach($advisors as $key => $value)
+                    $advisors[$key]["total_reports"] = Report::where("advisor", $value["id"])->count();
+
                 return view("firm.advisors_approved")->with(["page_title" => "Approved Advisors", "advisors" => $advisors]);
             case "advisor":
                 redirect("/home");

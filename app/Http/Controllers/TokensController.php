@@ -28,7 +28,7 @@ class TokensController extends Controller
                 $rates = PriceRange::all();
                 if($rates->count() > 0)
                     $rates->last()->end = "∞";
-                return view("firm.tokens_purchase")->with(["page_title" => "Purchase Tokens", "rates" => $rates]);
+                return view("firm.tokens_purchase")->with(["page_title" => "Purchase Tokens", "rates" => $rates, "tokens" => Auth::user()->tokens_available]);
         }
     }
 
