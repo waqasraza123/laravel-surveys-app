@@ -34,7 +34,7 @@
                                     <input type="radio" name="{{ $key+1 }}" value="5" required @if($saved_input[$key+1] == "5") checked @endif> 5. SPOT ON - this is  me!
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="4" required @if($saved_input[$key+1] == "4") checked @endif> 4. ERY CLOSE  to me
+                                    <input type="radio" name="{{ $key+1 }}" value="4" required @if($saved_input[$key+1] == "4") checked @endif> 4. VERY CLOSE  to me
                                 </label>
                                 <label class="radio-inline">
                                     <input type="radio" name="{{ $key+1 }}" value="3" required @if($saved_input[$key+1] == "3") checked @endif> 3. QUITE like me

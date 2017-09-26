@@ -137,7 +137,7 @@ class RegisterController extends Controller
     function sendConfirmationEmail($user){
         Mail::send('email.verify', ["name" => $user->name, "confirmation_code" => $user->confirmation_code], function($message) use ($user){
             $message->to($user->email, $user->name)
-                ->subject('Verify your email address');
+                ->subject('Please verify your email address');
         });
     }
 

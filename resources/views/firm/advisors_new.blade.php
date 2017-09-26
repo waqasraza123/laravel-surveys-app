@@ -17,7 +17,7 @@
                                     <th>Email</th>
                                     <th>Mobile</th>
                                     <th>Position</th>
-                                    <th>Options</th>
+                                    <th>Approve</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -28,8 +28,6 @@
                                         <td>{{ $advisor["email"] }}</td>
                                         <td>{{ $advisor["mobile_number"] }}</td>
                                         <td>{{ $advisor["company_position"] }}</td>
-                                        <td>65</td>
-                                        <td>Active</td>
                                         <td><a class="btn btn-white btn-bitbucket" onclick="approveAdvisor({{ $advisor["id"] }}, '{{ $advisor["name"] }}')">
                                                 <i class="fa fa-check-square-o"></i>
                                             </a>
@@ -45,7 +43,7 @@
                                     <th>Email</th>
                                     <th>Mobile</th>
                                     <th>Position</th>
-                                    <th>Options</th>
+                                    <th>Approve</th>
                                 </tr>
                                 </tfoot>
                             </table>

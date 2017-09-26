@@ -1,19 +1,37 @@
-<!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <h2>Dear {{ $name }}</h2>
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 30px;
+            font-size:12px;
+        }
+    </style>
+</head>
 
-        <div>
-            Thanks for creating an account.
-            <br/>
-            Please follow the link below to verify your email address
-            <br/>
-            <a href="{{ URL::to('register/verify/' . $confirmation_code) }}">{{ URL::to('register/verify/' . $confirmation_code) }}</a><br/>
 
-        </div>
+<p>Dear {{ $name }},</p>
 
-    </body>
+<p>Thank you for creating an account with InvestorDNA.</p>
+
+<p>Please click on the link below to verify your email address and login.</p>
+
+<p><a href="{{ URL::to('register/verify/' . $confirmation_code) }}">Verify Email</a></p>
+
+<p>Kind Regards,<br/>
+
+    Team @ Investor DNA</p>
+
+
+<span style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #666;">
+                                Email disclaimer to go here<br/><br/></span>
+
+</body>
 </html>
+
+
+

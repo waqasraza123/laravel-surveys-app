@@ -19,7 +19,6 @@
                                     <th>Advisor Name</th>
                                     <th>Score</th>
                                     <th>Report</th>
-                                    <th>Completion Date</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -27,7 +26,13 @@
                                 @foreach($reports as $report)
                                     <tr>
                                         <td>{{ $report["id"] }}</td>
-                                        <td></td>
+                                        <td>
+                                            @if($report["completed"])
+                                                {{ $report["updated_at"] }}
+                                            @else
+                                                Not Completed
+                                            @endif
+                                        </td>
                                         <td>{{ $report["first_name"] }} {{ $report["last_name"] }}</td>
                                         <td>{{ $report["advisor_name"] }}</td>
                                         <td>
@@ -44,13 +49,7 @@
                                                 Not Completed
                                             @endif
                                         </td>
-                                        <td>
-                                            @if($report["completed"])
-                                                {{ $report["updated_at"] }}
-                                            @else
-                                                Not Completed
-                                            @endif
-                                        </td>
+
                                     </tr>
                                 @endforeach
                                 </tbody>
