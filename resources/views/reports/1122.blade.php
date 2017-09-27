@@ -103,6 +103,10 @@
         <td>Quadrant scores:</td>
         <td>{{ $data["individual_score"] }}</td>
     </tr>
+    <tr>
+        <td>Sub Categories scores:</td>
+        <td>{{ $data["subCatScores"] }}</td>
+    </tr>
 </table>
 
 <table class="internal">

@@ -10,6 +10,17 @@
 
                 @if (Auth::user()->role == "admin")
                     <li @if (Request::is('home')) class="active" @endif><a href="/home"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
+
+                    <li class="treeview @if (Request::is('advisors/*')) active @endif">
+                        <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Advisors</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="/advisors/approved">Active Advisors</a></li>
+                            <li><a href="/advisors/new">Pending Approval</a></li>
+                        </ul>
+                    </li>
+
+                    <li @if (Request::is('reports/view')) class="active" @endif><a href="/reports/view"><i class="fa fa-tachometer"></i> <span>Investor DNA Profile</span></a></li>
+
                     <li @if (Request::is('rates')) class="active" @endif><a href="/rates"><span>Token Rates</span></a></li>
                     <li @if (Request::is('profile')) class="active" @endif><a href="/profile"><span>Profile</span></a></li>
 

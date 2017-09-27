@@ -107,6 +107,8 @@ class ReportsController extends Controller
         $data->part3 = $this->getPart3Answer($data->response);
         $data->part4 = $this->getPart4Answer($data->response);
 
+        $data->subCatScores = $this->partASubCatScores($data->response);
+
         // $pdf = PDF::loadView('reports.'.$score, ['data' => $data]);
         // return $pdf->inline();
 
@@ -213,7 +215,9 @@ class ReportsController extends Controller
             $scores[$cat] += $response[0][$key];
         }
 
-        return $scores;
+        $result = "{C" . $scores["creative"] . ",P" . $scores["practical"] . ",A" . $scores["analytical"] . ",B" . $scores["beliefs"] . ",S" . $scores["structured"] . ",F" . $scores["flexible"] . ",iN" . $scores["intellectual"] . ",iS" . $scores["instinctive"] . "}";
+
+        return $result;
     }
 
     protected function partASubCatAnswers(){
