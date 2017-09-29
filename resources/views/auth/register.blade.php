@@ -19,13 +19,13 @@
 
                 <div class="form-group">
                         <select class="form-control" id="role" name="role" onchange="role_changed(this);">
-                            <option value="">Select Account Type</option>
-                            <option value="advisor">Advisor</option>
+                            {{--<option value="">Select Account Type</option>--}}
+                            <option value="advisor">Adviser</option>
 
                             @if (old('role') == 'firm')
-                                <option value="firm" selected>Firm</option>
+                                <option value="firm" selected>Financial Practice</option>
                             @else
-                                <option value="firm">Firm</option>
+                                <option value="firm">Financial Practice</option>
                             @endif
                         </select>
                 </div>

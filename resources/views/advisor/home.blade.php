@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="wrapper wrapper-content animated fadeInRight">
-    <div class="row">
-         <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>Investor DNA Profiles Generated
@@ -16,56 +16,56 @@
                         </div>
                     </div>
                 </div>
-         </div>
+            </div>
 
 
-        <div class="col-lg-4">
-            <div class="ibox float-e-margins">
-                <div class="ibox-content">
+            <div class="col-lg-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
                         <div class="row">
                             <div class="col-xs-4 text-center">
                                 <i class="fa fa-rocket fa-4x"></i>
                             </div>
                             <div class="col-xs-8 text-right">
-                                <span> Token Balance </span>
-                                <h2 class="font-bold">{{ $tokens_available }}</h2>
+                                <span> Tokens Used </span>
+                                <h2 class="font-bold"> </h2>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="ibox float-e-margins">
-                <div class="ibox-content">
-                    <div class="row">
-                        <div class="col-xs-4 text-center">
-                            <i class="fa fa-file fa-4x"></i>
-                        </div>
-                        <div class="col-xs-8 text-right">
-                            <span> Completed Investor DNA Profiles </span>
-                            <h2 class="font-bold">{{ $completed_reports }}</h2>
+            <div class="col-lg-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-xs-4 text-center">
+                                <i class="fa fa-file fa-4x"></i>
+                            </div>
+                            <div class="col-xs-8 text-right">
+                                <span> Completed Investor DNA Profiles </span>
+                                <h2 class="font-bold"> </h2>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="ibox float-e-margins">
-                <div class="ibox-content">
-                    <div class="row">
-                        <div class="col-xs-4 text-center">
-                            <i class="fa fa-users fa-4x"></i>
-                        </div>
-                        <div class="col-xs-8 text-right">
-                            <span> Active Advisers </span>
-                            <h2 class="font-bold">{{ $active_advisors }}</h2>
+            <div class="col-lg-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-xs-4 text-center">
+                                <i class="fa fa-users fa-4x"></i>
+                            </div>
+                            <div class="col-xs-8 text-right">
+                                <span> Active Advisers </span>
+                                <h2 class="font-bold"> </h2>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
         <div class="row">
 
@@ -79,25 +79,21 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>Date</th>
+                                <th>Created Date</th>
                                 <th>Client </th>
-                                <th>Adviser </th>
-                                <th>Investor DNA Profiles</th>
+                                <th>Investor DNA Profile</th>
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach($latest_reports as $report)
-                                    <tr>
-                                        <td>{{ $report->updated_at }}</td>
-                                        <td>{{ $report->first_name }} {{ $report->last_name }}</td>
-                                        <td>{{ $report->advisor_name }}</td>
-                                        <td>
-                                            <a class="btn btn-white btn-bitbucket" target="_blank" href="/reports/view/{{ $report->code }}">
-                                                <i class="fa fa-download"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <a class="btn btn-white btn-bitbucket" target="_blank" href="/reports/view/">
+                                            <i class="fa fa-download"></i>
+                                        </a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -120,12 +116,10 @@
                             </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    @foreach($top_advisors as $advisor)
-                                        <td>{{ $advisor->name }}</td>
-                                        <td>{{ $advisor->reports }}</td>
-                                    @endforeach
-                                </tr>
+                            <tr>
+                                    <td></td>
+                                    <td></td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -136,7 +130,7 @@
         </div>
 
 
-</div>
+    </div>
 
     <script src="{!! asset('theme/js/plugins/Chart.min.js') !!}"></script>
 

@@ -13,26 +13,19 @@
                             <table class="table table-striped table-bordered table-hover dataTables-example" >
                                 <thead>
                                 <tr>
-                                    <th>Report ID</th>
-                                    <th>Completion Date</th>
+                                    <th>Created Date</th>
                                     <th>Client Name</th>
-                                    <th>Advisor Name</th>
+                                    <th>Adviser Name</th>
                                     <th>Score</th>
-                                    <th>Report</th>
+                                    <th>Investor DNA Profile</th>
+                                    <th>Completion Date</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php $count = 1; ?>
                                 @foreach($reports as $report)
                                     <tr>
-                                        <td>{{ $report["id"] }}</td>
-                                        <td>
-                                            @if($report["completed"])
-                                                {{ $report["updated_at"] }}
-                                            @else
-                                                Not Completed
-                                            @endif
-                                        </td>
+                                        <td>{{ $report["created_at"] }}</td>
                                         <td>{{ $report["first_name"] }} {{ $report["last_name"] }}</td>
                                         <td>{{ $report["advisor_name"] }}</td>
                                         <td>
@@ -44,7 +37,14 @@
                                         </td>
                                         <td>
                                             @if($report["completed"])
-                                                <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Report</a>
+                                                <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Investor DNA Profile</a>
+                                            @else
+                                                Not Completed
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($report["completed"])
+                                                {{ $report["updated_at"] }}
                                             @else
                                                 Not Completed
                                             @endif
@@ -53,16 +53,16 @@
                                     </tr>
                                 @endforeach
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>Report ID</th>
-                                    <th>Completion Date</th>
-                                    <th>Client Name</th>
-                                    <th>Advisor Name</th>
-                                    <th>Score</th>
-                                    <th>Report</th>
-                                </tr>
-                                </tfoot>
+                                {{--<tfoot>--}}
+                                {{--<tr>--}}
+                                    {{--<th>Created Date</th>--}}
+                                    {{--<th>Client Name</th>--}}
+                                    {{--<th>Adviser Name</th>--}}
+                                    {{--<th>Score</th>--}}
+                                    {{--<th>Investor DNA Profile</th>--}}
+                                    {{--<th>Completion Date</th>--}}
+                                {{--</tr>--}}
+                                {{--</tfoot>--}}
                             </table>
                         </div>
 

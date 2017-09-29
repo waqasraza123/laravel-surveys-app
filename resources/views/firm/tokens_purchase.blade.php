@@ -57,7 +57,9 @@
                                     <label for="price" class="col-sm-2 control-label">Price ($)</label>
                                     <div class="col-sm-10">
                                         <input type="number" class="form-control" id="price" name="price" disabled>
+                                        <p><em>Total price includes GST</em></p>
                                     </div>
+
                                 </div>
                             </div>
                             <div class="box-footer text-right">
@@ -73,6 +75,7 @@
                                 </script>
                             </div>
                         </form>
+
                     @else
                         <div class="box-body">
                             <h4>You cannot purchase tokens until admin define token rates</h4>
@@ -81,8 +84,13 @@
 
                 </div>
             </div>
-        </div>
 
+            <p>Each Investor DNA profile requires ONE TOKEN. Your token balance reflects the number of tokens
+                purchased less the number of tokens used to date by advisers.</p>
+
+
+
+        </div>
 
         <div class="col-lg-6">
             <div class="ibox float-e-margins">
@@ -105,7 +113,7 @@
                             <tr>
                                 <td>{{ $rate["start"] }}</td>
                                 <td>{{ $rate["end"] }}</td>
-                                <td>${{ $rate["rate"] }}</td>
+                                <td>${{ $rate["rate"] }} AUD GST Inclusive</td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -120,6 +128,8 @@
                 </div>
             </div>
         </div>
+
+
     </div>
 
 

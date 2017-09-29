@@ -16,7 +16,7 @@
                                     <th>Email</th>
                                     <th>Mobile</th>
                                     <th>Position</th>
-                                    <th>Reports</th>
+                                    <th>Investor DNA Profiles</th>
                                     <th>Status</th>
                                     <th>Options</th>
                                 </tr>
@@ -51,7 +51,7 @@
                                     <th>Email</th>
                                     <th>Mobile</th>
                                     <th>Position</th>
-                                    <th>Reports</th>
+                                    <th>Investor DNA Profiles</th>
                                     <th>Status</th>
                                     <th>Options</th>
                                 </tr>
@@ -85,7 +85,7 @@
     });
 
     function deleteAdvisor(id, name){
-        if (confirm('Are you sure you want to delete advisor ' + name + '?')) {
+        if (confirm('Are you sure you want to delete adviser ' + name + '?')) {
             window.location = "/advisors/delete/"+id;
         }
     }

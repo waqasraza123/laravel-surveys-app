@@ -56,7 +56,8 @@ class HomeController extends Controller
 
                 return view('firm.home')->with($data);
             case "advisor":
-                return view('home');
+
+                return view('advisor.home');
         }
     }
 

@@ -14,13 +14,12 @@
                             <table class="table table-striped table-bordered table-hover dataTables-example" >
                                 <thead>
                                 <tr>
-                                    <th>Created</th>
+                                    <th>Created Date</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Email Address</th>
                                     <th>Score</th>
-                                    {{--<th>Risk Appetite</th>--}}
-                                    <th>Investor DNA Profile </th>
+                                    <th>Investor DNA Profile</th>
                                     <th>Completion Date</th>
                                 </tr>
                                 </thead>
@@ -39,7 +38,6 @@
                                                 Not Completed
                                             @endif
                                         </td>
-                                        {{--<td></td>--}}
                                         <td>
                                             @if($report["completed"])
                                                 <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Investor DNA Profile</a>
@@ -57,16 +55,17 @@
                                     </tr>
                                 @endforeach
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Email Address</th>
-                                    <th>Score</th>
-                                    <th>Report</th>
-                                </tr>
-                                </tfoot>
+                                {{--<tfoot>--}}
+                                {{--<tr>--}}
+                                    {{--<th>Created Date</th>--}}
+                                    {{--<th>First Name</th>--}}
+                                    {{--<th>Last Name</th>--}}
+                                    {{--<th>Email Address</th>--}}
+                                    {{--<th>Score</th>--}}
+                                    {{--<th>Investor DNA Profile</th>--}}
+                                    {{--<th>Completion Date</th>--}}
+                                {{--</tr>--}}
+                                {{--</tfoot>--}}
                             </table>
                         </div>
 

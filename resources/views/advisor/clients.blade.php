@@ -16,8 +16,8 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Mobile</th>
-                                    <th>Report Status</th>
-                                    <th>Report</th>
+                                    <th>Investor DNA Profile Status</th>
+                                    <th>Investor DNA Profile</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -39,15 +39,15 @@
 
 
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Mobile</th>
-                                    <th>Report Status</th>
-                                    <th>Report</th>
-                                </tr>
-                                </tfoot>
+                                {{--<tfoot>--}}
+                                {{--<tr>--}}
+                                    {{--<th>Name</th>--}}
+                                    {{--<th>Email</th>--}}
+                                    {{--<th>Mobile</th>--}}
+                                    {{--<th>Report Status</th>--}}
+                                    {{--<th>Report</th>--}}
+                                {{--</tr>--}}
+                                {{--</tfoot>--}}
                             </table>
                         </div>
 

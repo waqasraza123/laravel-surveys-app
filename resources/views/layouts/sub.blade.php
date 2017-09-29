@@ -3,7 +3,7 @@
         <h2>@yield('title')</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="index.html">Dashboard</a>
+                Dashboard
             </li>
             <li class="active">
                 <strong>@yield('title')</strong>

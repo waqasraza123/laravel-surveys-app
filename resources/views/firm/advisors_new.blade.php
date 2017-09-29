@@ -77,13 +77,13 @@
     });
 
     function approveAdvisor(id, name){
-        if (confirm('Are you sure you want to approve advisor ' + name + '?')) {
+        if (confirm('Are you sure you want to approve adviser ' + name + '?')) {
             window.location = "/advisors/approve/"+id;
         }
     }
 
     function deleteAdvisor(id, name){
-        if (confirm('Are you sure you want to delete advisor ' + name + '?')) {
+        if (confirm('Are you sure you want to delete adviser ' + name + '?')) {
             window.location = "/advisors/delete/"+id;
         }
     }

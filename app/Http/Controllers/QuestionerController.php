@@ -202,7 +202,7 @@ class QuestionerController extends Controller
 //33
             "I prefer my financial adviser to be factual and analytical in their approach. ",
 //34
-            "I prefer my financial advisor to be organised and structured in their approach.",
+            "I prefer my financial adviser to be organised and structured in their approach.",
 //35
             "I am passionate about things and not afraid to tell it like it is. ",
 //36

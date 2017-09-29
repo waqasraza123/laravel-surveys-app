@@ -13,9 +13,8 @@
                     <table id="usage_history" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>Sr.</th>
-                                <th>Advisor Name</th>
-                                <th>Advisor Email</th>
+                                <th>Adviser Name</th>
+                                <th>Adviser Email</th>
                                 <th>Client Name</th>
                                 <th>Client Email</th>
                                 <th>Timestamp</th>
@@ -25,7 +24,6 @@
                             <?php $count = 1; ?>
                             @foreach($entries as $entry)
                             <tr>
-                                <td>{{ $count++ }}</td>
                                 <td>{{ $entry["advisor_name"] }}</td>
                                 <td>{{ $entry["advisor_email"] }}</td>
                                 <td>{{ $entry["first_name"] }} {{ $entry["last_name"] }}</td>
@@ -36,9 +34,8 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>Sr.</th>
-                                <th>Advisor Name</th>
-                                <th>Advisor Email</th>
+                                <th>Adviser Name</th>
+                                <th>Adviser Email</th>
                                 <th>Client Name</th>
                                 <th>Client Email</th>
                                 <th>Timestamp</th>
