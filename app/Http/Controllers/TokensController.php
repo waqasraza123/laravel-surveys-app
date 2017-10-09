@@ -41,7 +41,9 @@ class TokensController extends Controller
             return back()->withErrors($validator);
 
         $rate  = $this->getRate($request->quantity);
-        $price = $request->quantity * $rate;
+        $subtotal = $request->quantity * $rate;
+        $gst = $subtotal * 0.1;
+        $price = $subtotal + $gst;
 
         $gateway = Omnipay::create('Stripe');
         $gateway->setApiKey(env('STRIPE_PRIVATE_KEY', ''));

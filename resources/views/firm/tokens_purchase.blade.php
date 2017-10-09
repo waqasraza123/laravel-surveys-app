@@ -54,7 +54,16 @@
                             </div>
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="price" class="col-sm-2 control-label">Price ($)</label>
+                                    <label for="gst" class="col-sm-2 control-label">GST ($)</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="gst" name="gst" disabled>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="price" class="col-sm-2 control-label">Total Price ($)</label>
                                     <div class="col-sm-10">
                                         <input type="number" class="form-control" id="price" name="price" disabled>
                                         <p><em>Total price includes GST</em></p>
@@ -157,7 +166,11 @@
     function setPrice(){
         var quantity = document.getElementById('quantity').value;
         var rate = calculate(quantity);
-        document.getElementById('price').value = quantity * rate;
+        var price = quantity * rate;
+        var gst = parseFloat((price * 0.1).toFixed(2));
+        var final = price + gst;
+        document.getElementById('gst').value = gst;
+        document.getElementById('price').value = final;
     }
 
     function calculate(quantity){
