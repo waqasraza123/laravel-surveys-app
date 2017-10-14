@@ -144,9 +144,11 @@ class ReportsController extends Controller
             $scores['yellow'] += $response[0][$i+3];
         }
 
-        //// Part 2 Scores ////
-        for($i = 1; $i <= count($response[1]); $i++){
-            $scores[$this->partBAnswers($i, $response[1][$i])] += 3;
+        // Part 2 Scores ////
+        foreach($response[1] as $key => $answer){
+            $sub = explode("-", $key);
+            if($sub[1] == 'a') $sub[1] = 1; else $sub[1] = 2;
+            $scores[$this->partBAnswers($sub[0], $sub[1])] += $answer;
         }
 
         return "{A" . $scores['blue'] . ", B" . $scores['green'] . ", C" . $scores['red'] . ", D" . $scores['yellow'] . "}";
@@ -164,9 +166,10 @@ class ReportsController extends Controller
             $scores['yellow'] += $response[0][$i+3];
         }
 
-        //// Part 2 Scores ////
-        for($i = 1; $i <= count($response[1]); $i++){
-            $scores[$this->partBAnswers($i, $response[1][$i])] += 3;
+        foreach($response[1] as $key => $answer){
+            $sub = explode("-", $key);
+            if($sub[1] == 'a') $sub[1] = 1; else $sub[1] = 2;
+            $scores[$this->partBAnswers($sub[0], $sub[1])] += $answer;
         }
 
         //// Calculating Percentage ////
