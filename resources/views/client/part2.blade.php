@@ -31,13 +31,13 @@
                                             </td>
                                             <td>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="{{ $key+1 }}-a" value="2" onclick="return clicked({{ $key+1 }}, 'a', 2);" required> Much Like Me
+                                                    <input type="radio" name="{{ $key+1 }}-a" value="2" onclick="return clicked({{ $key+1 }}, 'a', 2);" required @if(isset($saved_input[($key+1) . "-a"]) && $saved_input[($key+1) . "-a"] == "2") checked @endif> Much Like Me
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="{{ $key+1 }}-a" value="1" onclick="return clicked({{ $key+1 }}, 'a', 1);" required> Somewhat Like Me
+                                                    <input type="radio" name="{{ $key+1 }}-a" value="1" onclick="return clicked({{ $key+1 }}, 'a', 1);" required @if(isset($saved_input[($key+1) . "-a"]) && $saved_input[($key+1) . "-a"] == "1") checked @endif> Somewhat Like Me
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="{{ $key+1 }}-a" value="0" onclick="return clicked({{ $key+1 }}, 'a', 0);" required> Not At All
+                                                    <input type="radio" name="{{ $key+1 }}-a" value="0" onclick="return clicked({{ $key+1 }}, 'a', 0);" required @if(isset($saved_input[($key+1) . "-a"]) && $saved_input[($key+1) . "-a"] == "0") checked @endif> Not At All
                                                 </label>
                                             </td>
                                         </tr>
@@ -50,13 +50,13 @@
                                             </td>
                                             <td>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="{{ $key+1 }}-b" value="2" onclick="return clicked({{ $key+1 }}, 'b', 2);" required> Much Like Me
+                                                    <input type="radio" name="{{ $key+1 }}-b" value="2" onclick="return clicked({{ $key+1 }}, 'b', 2);" required @if(isset($saved_input[($key+1) . "-b"]) && $saved_input[($key+1) . "-b"] == "2") checked @endif> Much Like Me
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="{{ $key+1 }}-b" value="1" onclick="return clicked({{ $key+1 }}, 'b', 1);" required> Somewhat Like Me
+                                                    <input type="radio" name="{{ $key+1 }}-b" value="1" onclick="return clicked({{ $key+1 }}, 'b', 1);" required @if(isset($saved_input[($key+1) . "-b"]) && $saved_input[($key+1) . "-b"] == "1") checked @endif> Somewhat Like Me
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="{{ $key+1 }}-b" value="0" onclick="return clicked({{ $key+1 }}, 'b', 0);" required> Not At All
+                                                    <input type="radio" name="{{ $key+1 }}-b" value="0" onclick="return clicked({{ $key+1 }}, 'b', 0);" required @if(isset($saved_input[($key+1) . "-b"]) && $saved_input[($key+1) . "-b"] == "0") checked @endif> Not At All
                                                 </label>
                                             </td>
                                         </tr>

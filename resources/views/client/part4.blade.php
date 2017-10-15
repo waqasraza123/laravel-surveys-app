@@ -3,95 +3,138 @@
 @section('content')
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="container">
-    <div class="row">
+
+        <div class="row">
+
         <div class="col-md-10 col-md-offset-1">
-            <form class="form" id="part4Form" method="post" action="/questioner/{{ $code }}/submit">
+            <form class="form-horizontal" method="post" action="/questioner/{{ $code }}/part/4">
                 {{ csrf_field() }}
-
-
 
                 <h1 class="logo-name" style="font-size: 65px; margin-left: -5px;">Part D</h1>
 
                 <h2>Instructions</h2>
-                When considering the relationship you have with your Financial Adviser, please rate the following statements using the scale below.
-                Please not that you can have no more than 4 items classified in each of the categories below. (i.e. No more than 4 items classified as ‘Very Important’, no more than 4 items classified as ‘Important’ etc.)
-                <ul>
-                    <li>VERY IMPORTANT  - This is very important to me when working with my adviser</li>
-                    <li>IMPORTANT - This is important to me when working with my adviser</li>
-                    <li>SOMEWHAT IMPORTANT - This is somewhat important to me when working with my adviser</li>
-                    <li>UNIMPORTANT – This is not important to me.</li>
-                </ul>
-
+                Please select up to 4 faviourite hobbies/interests
+                </br>
+                Note: You can select less than 4 if you wish
 
                 <div class="ibox float-e-margins" style="margin-top: 40px">
                     <div class="ibox-content">
-                        @foreach($questions as $key => $question)
-                            <div class="form-group">
-                                <label class="control-label" for="{{ $key+1 }}">{{ $key+1 }}. {{ $question }}</label><br/>
-                                <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="4" onclick="return clicked(4, {{ $key+1 }});" required @if($saved_input[$key+1] == "4") checked @endif> Very Important
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="3" onclick="return clicked(3, {{ $key+1 }});" required @if($saved_input[$key+1] == "3") checked @endif> Important
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="2" onclick="return clicked(2, {{ $key+1 }});" required @if($saved_input[$key+1] == "2") checked @endif> Somewhat Important
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="1" onclick="return clicked(1, {{ $key+1 }});" required @if($saved_input[$key+1] == "1") checked @endif> Unimportant
-                                </label>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="information_technology" value="true" required @if(isset($saved_input["information_technology"])) checked @endif> Information Technology
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="computer_games" value="true" @if(isset($saved_input["computer_games"])) checked @endif> Computer Games
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="fantasy_sports" value="true" @if(isset($saved_input["fantasy_sports"])) checked @endif> Fantasy Sports
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="crosswords" value="true" @if(isset($saved_input["crosswords"])) checked @endif> Crosswords
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="home_improvements" value="true" @if(isset($saved_input["home_improvements"])) checked @endif> Home Improvements
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="cooking" value="true" @if(isset($saved_input["cooking"])) checked @endif> Cooking
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="reading" value="true" @if(isset($saved_input["reading"])) checked @endif> Reading
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="collectables" value="true" @if(isset($saved_input["collectables"])) checked @endif> Collectables
+                                  </label>
+                                </div>
                             </div>
-                            @if($key < count($questions) - 1)
-                                <hr>
-                            @endif
-                        @endforeach
+                            <div class="col-md-6">
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="music" value="true" @if(isset($saved_input["music"])) checked @endif> Music
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="acting" value="true" @if(isset($saved_input["acting"])) checked @endif> Acting
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" name="travel" value="true" @if(isset($saved_input["travel"])) checked @endif> Travel
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="sport" value="true" @if(isset($saved_input["sport"])) checked @endif> Sport
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="painting_drawing" value="true" @if(isset($saved_input["painting_drawing"])) checked @endif> Painting/Drawing
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="movies" value="true" @if(isset($saved_input["movies"])) checked @endif> Movies
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="creative_writing" value="true" @if(isset($saved_input["creative_writing"])) checked @endif> Creative Writing
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" name="photography" value="true" @if(isset($saved_input["photography"])) checked @endif> Photography
+                                  </label>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="panel-footer">
                         <a href="/questioner/{{ $code }}/part/3"><button type="button" class="btn btn-primary">Back</button></a>
                         <div style="float:right">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Save & Next</button>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-    </div>
         </div>
+    </div>
 </div>
+<script src="{{ asset('plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.10/sweetalert2.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.10/sweetalert2.min.css">
 <script>
-    var arr = [0, 0, 0, 0];
-    var old = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
-    function clicked(opt, row){
-        if(arr[opt-1] >= 4){
-            var text;
-            switch(opt){
-                case 4:
-                    text = "Very Important"; break;
-                case 3:
-                    text = "Important"; break;
-                case 2:
-                    text = "Somewhat Important"; break;
-                case 1:
-                    text = "Unimportant"; break;
-            }
-            swal(
-              'Alert!',
-              "You have previously selected {" + text + "} four times which is the maximum number of responses permitted.",
-              'Please choose another response.'
-            );
-            return false;
-        }
-        else if (old[row-1] != opt){
-            if(old[row-1] != 0){
-                arr[old[row-1]-1]--;
-            }
-            old[row-1] = opt;
-            arr[opt-1]++;
-            return true;
-        }
+var theCheckboxes = $("input[type='checkbox']");
+theCheckboxes.click(function()
+{
+    if (theCheckboxes.filter(":checked").length > 4){
+        this.checked = false;
+        swal(
+          'Alert!',
+          "You cannot select more than 4 options."
+        );
     }
+});
 </script>
+
 @endsection

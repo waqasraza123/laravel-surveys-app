@@ -77,8 +77,14 @@ Route::post('/questioner/{code}/part/2', 'QuestionerController@part2_submit');
 Route::get('/questioner/{code}/part/3', 'QuestionerController@part3');
 Route::post('/questioner/{code}/part/3', 'QuestionerController@part3_submit');
 Route::get('/questioner/{code}/part/4', 'QuestionerController@part4');
-Route::post('/questioner/{code}/submit', 'QuestionerController@part4_submit');
+Route::post('/questioner/{code}/part/4', 'QuestionerController@part4_submit');
+Route::get('/questioner/{code}/part/5', 'QuestionerController@part5');
+Route::post('/questioner/{code}/part/5', 'QuestionerController@part5_submit');
+Route::get('/questioner/{code}/part/6', 'QuestionerController@part6');
+Route::post('/questioner/{code}/part/6', 'QuestionerController@part6_submit');
+Route::get('/questioner/{code}/part/7', 'QuestionerController@part7');
+Route::post('/questioner/{code}/submit', 'QuestionerController@part7_submit');
 
 Route::get('/test', function () {
-
+    return "";
 });

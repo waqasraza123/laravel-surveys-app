@@ -674,9 +674,9 @@
                 <tr>
                     <td><h4>1. Adviser Track Record: </h4></td>
                     <td class="img">
-                        @if($data["part4"][1] == "4")
+                        @if($data["part7"][1] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part4"][1] == "3")
+                        @elseif($data["part7"][1] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -688,9 +688,9 @@
                 <tr>
                     <td><h4>2. Industry/Asset Track Record:  </h4></td>
                     <td class="img">
-                        @if($data["part4"][2] == "4")
+                        @if($data["part7"][2] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part4"][2] == "3")
+                        @elseif($data["part7"][2] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -702,9 +702,9 @@
                 <tr>
                     <td><h4>3. Client Centricity: </h4></td>
                     <td class="img">
-                        @if($data["part4"][3] == "4")
+                        @if($data["part7"][3] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part4"][3] == "3")
+                        @elseif($data["part7"][3] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -716,9 +716,9 @@
                 <tr>
                     <td><h4>4. Communication and listening skills: </h4></td>
                     <td class="img">
-                        @if($data["part4"][4] == "4")
+                        @if($data["part7"][4] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part4"][4] == "3")
+                        @elseif($data["part7"][4] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -730,9 +730,9 @@
                 <tr>
                     <td><h4>5. Character and Integrity:  </h4></td>
                     <td class="img">
-                        @if($data["part4"][5] == "4")
+                        @if($data["part7"][5] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part4"][5] == "3")
+                        @elseif($data["part7"][5] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -744,9 +744,9 @@
                 <tr>
                     <td><h4>6. Analytical and Rational:</h4></td>
                     <td class="img">
-                        @if($data["part4"][6] == "4")
+                        @if($data["part7"][6] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part4"][6] == "3")
+                        @elseif($data["part7"][6] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -758,9 +758,9 @@
                 <tr>
                     <td><h4>7. Regulatory Compliance:  </h4></td>
                     <td class="img">
-                        @if($data["part4"][7] == "4")
+                        @if($data["part7"][7] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part4"][7] == "3")
+                        @elseif($data["part7"][7] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -772,9 +772,9 @@
                 <tr>
                     <td><h4>8. Creativity and innovation:  </h4></td>
                     <td class="img">
-                        @if($data["part4"][8] == "4")
+                        @if($data["part7"][8] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part4"][8] == "3")
+                        @elseif($data["part7"][8] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -786,9 +786,9 @@
                 <tr>
                     <td><h4>9. Emotional control:  </h4></td>
                     <td class="img">
-                        @if($data["part4"][9] == "4")
+                        @if($data["part7"][9] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part4"][9] == "3")
+                        @elseif($data["part7"][9] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -800,9 +800,9 @@
                 <tr>
                     <td><h4>10. Focus on Results: </h4></td>
                     <td class="img">
-                        @if($data["part4"][10] == "4")
+                        @if($data["part7"][10] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part4"][10] == "3")
+                        @elseif($data["part7"][10] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -814,9 +814,9 @@
                 <tr>
                     <td><h4>11. Alignment on Values </h4></td>
                     <td class="img">
-                        @if($data["part4"][11] == "4")
+                        @if($data["part7"][11] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part4"][11] == "3")
+                        @elseif($data["part7"][11] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -828,9 +828,9 @@
                 <tr>
                     <td><h4>12. Numerical / Technical ability </h4></td>
                     <td class="img">
-                        @if($data["part4"][12] == "4")
+                        @if($data["part7"][12] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part4"][12] == "3")
+                        @elseif($data["part7"][12] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -910,15 +910,15 @@
     </tr>
     <tr>
         <td>
-            @if($data["part3"] == "5")
+            @if($data["part6"] == "5")
                 <img src="/images/reports/highp.png" width="100%" alt="">
-            @elseif($data["part3"] == "4")
+            @elseif($data["part6"] == "4")
                 <img src="/images/reports/moderate_to_high.png" width="100%" alt="">
-            @elseif($data["part3"] == "3")
+            @elseif($data["part6"] == "3")
                 <img src="/images/reports/moderate.png" width="100%" alt="">
-            @elseif($data["part3"] == "2")
+            @elseif($data["part6"] == "2")
                 <img src="/images/reports/low_to_moderate.png" width="100%" alt="">
-            @elseif($data["part3"] == "1")
+            @elseif($data["part6"] == "1")
                 <img src="/images/reports/lowp.png" width="100%" alt="">
             @endif
         </td>
@@ -926,26 +926,26 @@
     <tr>
         <td>
 
-            @if($data["part3"] == "5")
+            @if($data["part6"] == "5")
                 <p>Your investment ‘appetite for risk’ is the extent to which you feel comfortable accepting a level of risk associated with a particular asset class or sub class. It is part genetic, your biological ‘DNA’ and how this is shaped through experiences, including messages from parents and significant others from birth. Psychologists believe that these messages are accepted as true by the brain with little or no filtering up until the age of seven. Repeated messages create deep neural pathways in your brain that are ingrained and unconscious, shaping your values and beliefs. Financial ‘programming’ is passed on from parent to child, generation to generation, significantly influencing both your perception of what constitutes ‘acceptable risk’ and your investment decision-making. For example, a belief formed from an early age and reinforced over time that ‘debt is bad’ may cause an investor to avoid any form of debt structuring to leverage returns, such as negatively geared property despite it potentially being a legitimate wealth creation strategy.
                 </p>
                 <p>Self-awareness is key. It is vital to understand your own ‘financial programming’ and how it influences your investment decision-making in order to make better investment decisions. Your profile indicates that you are comfortable with all asset classes in the moderate to high investment risk category and other categories below, as indicated in the ‘Asset Pyramid’ above. This indicates that are comfortable with both defensive and growth assets that could include FX currency trading (FOREX), options, Australian and International equities, blue chip stocks, collectables, residential, industrial and/or commercial real estate, listed property vehicles, fixed interest, government bonds, corporate bonds, mortgages and some hybrid securities. It also indicates that you are also comfortable to bank deposits, terms deposits, savings and cheque accounts, cash management trusts, bullion and cash equivalents.
                 </p>
-            @elseif($data["part3"] == "4")
+            @elseif($data["part6"] == "4")
                 <p>Your investment ‘appetite for risk’ is the extent to which you feel comfortable accepting a level of risk associated with a particular asset class or sub class. It is part genetic, your biological ‘DNA’ and how this is shaped through experiences, including messages from parents and significant others from birth. Psychologists believe that these messages are accepted as true by the brain with little or no filtering up until the age of seven. Repeated messages create deep neural pathways in your brain that are ingrained and unconscious, shaping your values and beliefs. Financial ‘programming’ is passed on from parent to child, generation to generation, significantly influencing both your perception of what constitutes ‘acceptable risk’ and your investment decision-making. For example, a belief formed from an early age and reinforced over time that ‘debt is bad’ may cause an investor to avoid any form of debt structuring to leverage returns, such as negatively geared property despite it potentially being a legitimate wealth creation strategy.</p>
                 <p>Self-awareness is key. It is vital to understand your own ‘financial programming’ and how it influences your investment decision-making in order to make better investment decisions. Your profile indicates that you are comfortable with all asset classes in the moderate to high investment risk category and other categories below, as indicated in the ‘Asset Pyramid’ above. This indicates that are comfortable with both defensive and growth assets that could include Australian and International equities, blue chip stocks, collectables, residential, industrial and/or commercial real estate, listed property vehicles, fixed interest, government bonds, corporate bonds, mortgages and some hybrid securities. It also indicates that you are also comfortable to bank deposits, terms deposits, savings and cheque accounts, cash management trusts, bullion and cash equivalents.
                 </p>
-            @elseif($data["part3"] == "3")
+            @elseif($data["part6"] == "3")
                 <p>Your investment ‘appetite for risk’ is the extent to which you feel comfortable accepting a level of risk associated with a particular asset class or sub class. It is part genetic, your biological ‘DNA’ and how this is shaped through experiences, including messages from parents and significant others from birth. Psychologists believe that these messages are accepted as true by the brain with little or no filtering up until the age of seven. Repeated messages create deep neural pathways in your brain that are ingrained and unconscious, shaping your values and beliefs. Financial ‘programming’ is passed on from parent to child, generation to generation, significantly influencing both your perception of what constitutes ‘acceptable risk’ and your investment decision-making. For example, a belief formed from an early age and reinforced over time that ‘debt is bad’ may cause an investor to avoid any form of debt structuring to leverage returns, such as negatively geared property despite it potentially being a legitimate wealth creation strategy.
                 </p>
                 <p>Self-awareness is key. It is vital to understand your own ‘financial programming’ and how it influences your investment decision-making in order to make better investment decisions. Your profile indicates that you are comfortable with all asset classes in the moderate investment risk category and other categories below, as indicated in the ‘Asset Pyramid’ above. This indicates that are most comfortable with both defensive and growth assets that could include residential, industrial and/or commercial real estate, listed property vehicles, fixed interest, government bonds, corporate bonds, mortgages and some hybrid securities. It also indicates that you are comfortable with bank deposits, terms deposits, savings and cheque accounts, cash management trusts, bullion and cash equivalents.
                 </p>
-            @elseif($data["part3"] == "2")
+            @elseif($data["part6"] == "2")
                 <p>Your investment ‘appetite for risk’ is the extent to which you feel comfortable accepting a level of risk associated with a particular asset class or sub class. It is part genetic, your biological ‘DNA’ and how this is shaped through experiences, including messages from parents and significant others from birth. Psychologists believe that these messages are accepted as true by the brain with little or no filtering up until the age of seven. Repeated messages create deep neural pathways in your brain that are ingrained and unconscious, shaping your values and beliefs. Financial ‘programming’ is passed on from parent to child, generation to generation, significantly influencing both your perception of what constitutes ‘acceptable risk’ and your investment decision-making. For example, a belief formed from an early age and reinforced over time that ‘debt is bad’ may cause an investor to avoid any form of debt structuring to leverage returns, such as negatively geared property despite it potentially being a legitimate wealth creation strategy.
                 </p>
                 <p>Self-awareness is key. It is vital to understand your own ‘financial programming’ and how it influences your investment decision-making in order to make better investment decisions. Your profile indicates that you are comfortable with all asset classes in the low to moderate investment risk category and other categories below, as indicated in the ‘Asset Pyramid’ above. This indicates that are most comfortable with defensive assets that produce a fixed rate of return, and could include government bonds, corporate bonds, mortgages and some hybrid securities, and also low risk options including bank deposits, terms deposits, savings and cheque accounts, cash management trusts, bullion and/or cash equivalents.
                 </p>
-            @elseif($data["part3"] == "1")
+            @elseif($data["part6"] == "1")
                 <p>Your investment ‘appetite for risk’ is the extent to which you feel comfortable accepting a level of risk associated with a particular asset class or sub class. It is part genetic, your biological ‘DNA’ and how this is shaped through experiences, including messages from parents and significant others from birth. Psychologists believe that these messages are accepted as true by the brain with little or no filtering up until the age of seven. Repeated messages create deep neural pathways in your brain that are ingrained and unconscious, shaping your values and beliefs. Financial ‘programming’ is passed on from parent to child, generation to generation, significantly influencing both your perception of what constitutes ‘acceptable risk’ and your investment decision-making. For example, a belief formed from an early age and reinforced over time that ‘debt is bad’ may cause an investor to avoid any form of debt structuring to leverage returns, such as negatively geared property despite it potentially being a legitimate wealth creation strategy.
                 </p>
                 <p>Self-awareness is key. It is vital to understand your own ‘financial programming’ and how it influences your investment decision-making in order to make better investment decisions over time. Your profile indicates that you are comfortable with all asset classes in the low investment risk category as indicated in the ‘Asset Pyramid’ above. This indicates that are most comfortable with defensive assets that could include bank deposits, terms deposits, savings and cheque accounts, cash management trusts, bullion and cash equivalents.

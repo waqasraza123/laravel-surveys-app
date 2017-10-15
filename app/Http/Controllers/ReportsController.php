@@ -104,8 +104,8 @@ class ReportsController extends Controller
 
         $data->individual_score = $this->getIndividualScore($data->response);
 
-        $data->part3 = $this->getPart3Answer($data->response);
-        $data->part4 = $this->getPart4Answer($data->response);
+        $data->part6 = $this->getPart6Answer($data->response);
+        $data->part7 = $this->getPart7Answer($data->response);
 
         $data->subCatScores = $this->partASubCatScores($data->response);
 
@@ -122,14 +122,14 @@ class ReportsController extends Controller
         return view('advisor.clients');
     }
 
-    protected function getPart3Answer($response){
+    protected function getPart6Answer($response){
         $response = unserialize($response);
-        return $response[2]['part3'];
+        return $response[5]['part6'];
     }
 
-    protected function getPart4Answer($response){
+    protected function getPart7Answer($response){
         $response = unserialize($response);
-        return $response[3];
+        return $response[6];
     }
 
     protected function getIndividualScore($response){
@@ -144,11 +144,29 @@ class ReportsController extends Controller
             $scores['yellow'] += $response[0][$i+3];
         }
 
-        // Part 2 Scores ////
+        //// Part 2 Scores ////
         foreach($response[1] as $key => $answer){
             $sub = explode("-", $key);
             if($sub[1] == 'a') $sub[1] = 1; else $sub[1] = 2;
             $scores[$this->partBAnswers($sub[0], $sub[1])] += $answer;
+        }
+
+        //// part 3 Scores ////
+        foreach($response[2] as $key => $answer){
+            $scores[$this->partCAnswers($key)] += 2;
+        }
+
+        //// part 4 Scores ////
+        foreach($response[3] as $key => $answer){
+            $scores[$this->partDAnswers($key)] += 2;
+        }
+
+        //// Part 5 Scores ////
+        for($i = 1; $i <= count($response[4]); $i+=4){
+            $scores['green'] += $response[4][$i];
+            $scores['red'] += $response[4][$i+1];
+            $scores['blue'] += $response[4][$i+2];
+            $scores['yellow'] += $response[4][$i+3];
         }
 
         return "{A" . $scores['blue'] . ", B" . $scores['green'] . ", C" . $scores['red'] . ", D" . $scores['yellow'] . "}";
@@ -166,17 +184,36 @@ class ReportsController extends Controller
             $scores['yellow'] += $response[0][$i+3];
         }
 
+        //// Part 2 Scores ////
         foreach($response[1] as $key => $answer){
             $sub = explode("-", $key);
             if($sub[1] == 'a') $sub[1] = 1; else $sub[1] = 2;
             $scores[$this->partBAnswers($sub[0], $sub[1])] += $answer;
         }
 
+        //// part 3 Scores ////
+        foreach($response[2] as $key => $answer){
+            $scores[$this->partCAnswers($key)] += 2;
+        }
+
+        //// part 4 Scores ////
+        foreach($response[3] as $key => $answer){
+            $scores[$this->partDAnswers($key)] += 2;
+        }
+
+        //// Part 5 Scores ////
+        for($i = 1; $i <= count($response[4]); $i+=4){
+            $scores['green'] += $response[4][$i];
+            $scores['red'] += $response[4][$i+1];
+            $scores['blue'] += $response[4][$i+2];
+            $scores['yellow'] += $response[4][$i+3];
+        }
+
         //// Calculating Percentage ////
-        $scores['blue'] = (($scores['blue'] * 100) / 111);
-        $scores['green'] = (($scores['green'] * 100) / 111);
-        $scores['red'] = (($scores['red'] * 100) / 111);
-        $scores['yellow'] = (($scores['yellow'] * 100) / 111);
+        $scores['blue'] = (($scores['blue'] * 100) / 131);
+        $scores['green'] = (($scores['green'] * 100) / 131);
+        $scores['red'] = (($scores['red'] * 100) / 131);
+        $scores['yellow'] = (($scores['yellow'] * 100) / 131);
 
         //// allocate low, med, high ////
         foreach($scores as $key => $score){
@@ -304,6 +341,52 @@ class ReportsController extends Controller
         ];
 
         return $answers[$row-1][$opt-1];
+    }
+
+    protected function partCAnswers($opt){
+        $array = [
+            "maths" => "blue",
+            "science" => "blue",
+            "physics" => "blue",
+            "chemistry" => "blue",
+            "languages" => "green",
+            "legal_studies" => "green",
+            "geography" => "green",
+            "history" => "green",
+            "social_studies" => "red",
+            "music" => "red",
+            "religion" => "red",
+            "psychology" => "red",
+            "art" => "yellow",
+            "design" => "yellow",
+            "politics" => "yellow",
+            "english" => "yellow",
+        ];
+
+        return $array[$opt];
+    }
+
+    protected function partDAnswers($opt){
+        $array = [
+            "information_technology" => "blue",
+            "computer_games" => "blue",
+            "fantasy_sports" => "blue",
+            "crosswords" => "blue",
+            "home_improvements" => "green",
+            "cooking" => "green",
+            "reading" => "green",
+            "collectables" => "green",
+            "music" => "red",
+            "acting" => "red",
+            "travel" => "red",
+            "sport" => "red",
+            "painting_drawing" => "yellow",
+            "movies" => "yellow",
+            "creative_writing" => "yellow",
+            "photography" => "yellow",
+        ];
+
+        return $array[$opt];
     }
 
     function sendClientEmail($advisor, $code, $email, $name, $firm){

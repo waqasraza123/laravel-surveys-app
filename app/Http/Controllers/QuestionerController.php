@@ -100,7 +100,7 @@ class QuestionerController extends Controller
         else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3'))
             return redirect('/questioner/'.$code.'/part/3');
 
-        return view('client.part4')->with(['code'=>$code, 'questions'=>$this->part4_questions(), 'saved_input'=>session('part4')]);
+        return view('client.part4')->with(['code'=>$code, 'saved_input'=>session('part4')]);
     }
 
     public function part4_submit($code, Request $request){
@@ -112,6 +112,84 @@ class QuestionerController extends Controller
         else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3'))
             return redirect('/questioner/'.$code.'/part/3');
 
+        session(['part4' => $request->all()]);
+
+        return redirect('/questioner/'.$code.'/part/5');
+    }
+
+    public function part5($code){
+        $report = Report::where('code', $code)->get();
+        if($report->count() != 1)
+            return view('client.error');
+        else if($report->first()->completed)
+            return view('client.completed');
+        else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3') || !session()->has('part4'))
+            return redirect('/questioner/'.$code.'/part/4');
+
+        return view('client.part5')->with(['code'=>$code, 'questions'=>$this->part5_questions(), 'saved_input'=>session('part5')]);
+    }
+
+    public function part5_submit($code, Request $request){
+        $report = Report::where('code', $code)->get();
+        if($report->count() != 1)
+            return view('client.error');
+        else if($report->first()->completed)
+            return view('client.completed');
+        else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3') || !session()->has('part4'))
+            return redirect('/questioner/'.$code.'/part/4');
+
+        session(['part5' => $request->all()]);
+        
+        return redirect('/questioner/'.$code.'/part/6');
+    }
+
+    public function part6($code){
+        $report = Report::where('code', $code)->get();
+        if($report->count() != 1)
+            return view('client.error');
+        else if($report->first()->completed)
+            return view('client.completed');
+        else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3') || !session()->has('part4') || !session()->has('part5'))
+            return redirect('/questioner/'.$code.'/part/5');
+
+        return view('client.part6')->with(['code'=>$code, 'saved_input'=>session('part6')]);
+    }
+
+    public function part6_submit($code, Request $request){
+        $report = Report::where('code', $code)->get();
+        if($report->count() != 1)
+            return view('client.error');
+        else if($report->first()->completed)
+            return view('client.completed');
+        else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3') || !session()->has('part4') || !session()->has('part5'))
+            return redirect('/questioner/'.$code.'/part/5');
+
+        session(['part6' => $request->all()]);
+
+        return redirect('/questioner/'.$code.'/part/7');
+    }
+
+    public function part7($code){
+        $report = Report::where('code', $code)->get();
+        if($report->count() != 1)
+            return view('client.error');
+        else if($report->first()->completed)
+            return view('client.completed');
+        else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3') || !session()->has('part4') || !session()->has('part5') || !session()->has('part6'))
+            return redirect('/questioner/'.$code.'/part/6');
+
+        return view('client.part7')->with(['code'=>$code, 'questions'=>$this->part7_questions(), 'saved_input'=>session('part7')]);
+    }
+
+    public function part7_submit($code, Request $request){
+        $report = Report::where('code', $code)->get();
+        if($report->count() != 1)
+            return view('client.error');
+        else if($report->first()->completed)
+            return view('client.completed');
+        else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3') || !session()->has('part4') || !session()->has('part5') || !session()->has('part6'))
+            return redirect('/questioner/'.$code.'/part/6');
+
         $temp1 = session('part1');
         unset($temp1["_token"]);
 
@@ -121,10 +199,19 @@ class QuestionerController extends Controller
         $temp3 = session('part3');
         unset($temp3["_token"]);
 
-        $temp4 = $request->all();
+        $temp4 = session('part4');
         unset($temp4["_token"]);
 
-        $report->first()->response = serialize([$temp1, $temp2, $temp3, $temp4]);
+        $temp5 = session('part5');
+        unset($temp5["_token"]);
+
+        $temp6 = session('part6');
+        unset($temp6["_token"]);
+
+        $temp7 = $request->all();
+        unset($temp7["_token"]);
+
+        $report->first()->response = serialize([$temp1, $temp2, $temp3, $temp4, $temp5, $temp6, $temp7]);
         $report->first()->completed = true;
         $report->first()->save();
 
@@ -288,7 +375,28 @@ class QuestionerController extends Controller
         ];
     }
 
-    protected function part4_questions(){
+    protected function part5_questions(){
+        return [
+            "I am a saver rather than a spender",
+            "I always strive to live within my means",
+            "I am very careful about how I spend my money",
+            "I have a financial budget that I stick to every month",
+            "Money is a means to an end and not an end in itself",
+            "I am generous with my money and help others out if needed",
+            "I like to spend my money on friends and family",
+            "I like to spend my money on travel and life experiences rather than on material possessions",
+            "I put aside a regular amount each month towards my financial goals",
+            "I know what my bank balance is at any given time",
+            "I keen a tight reign on my spending and don't fritter money away",
+            "It is important to me to be in control of my finances at all times",
+            "I am a spender rather than a saver",
+            "I take a big picture approach to my finances and don't pay much attention to the details",
+            "I think you need to borrow money to make money",
+            "I like to spend my money on big ticket items",
+        ];
+    }
+
+    protected function part7_questions(){
         return [
             "I prefer an adviser that has a successful track record, as at the end of the day it’s about getting the results",
             "I prefer to invest in sectors or shares that have a successful track record over time, as the best predictor of future success is past success",
