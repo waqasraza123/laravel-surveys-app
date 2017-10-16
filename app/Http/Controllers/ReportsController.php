@@ -62,7 +62,8 @@ class ReportsController extends Controller
             case "advisor":
                 $reports = Report::where('advisor',Auth::id())->get()->reverse();
                 foreach($reports as $report)
-                    $report->score = $this->getScore($report->response);
+                    if($report->completed)
+                        $report->score = $this->getScore($report->response);
                 return view('advisor.reports_view')->with(['reports'=>$reports]);
             case "firm":
                 $advisors = User::where('firm_code', Auth::user()->code)->get();

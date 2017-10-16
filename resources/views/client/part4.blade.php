@@ -24,7 +24,7 @@
                             <div class="col-md-6">
                                 <div class="checkbox">
                                   <label>
-                                    <input type="checkbox" name="information_technology" value="true" required @if(isset($saved_input["information_technology"])) checked @endif> Information Technology
+                                    <input type="checkbox" name="information_technology" value="true" @if(isset($saved_input["information_technology"])) checked @endif> Information Technology
                                   </label>
                                 </div>
                                 <div class="checkbox">
