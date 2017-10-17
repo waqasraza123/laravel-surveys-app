@@ -6,13 +6,19 @@
                 <?php if(Auth::user()->role == "advisor")
                     echo "Firm Name - " . \App\User::where("code", Auth::user()->firm_code)->get()->first()->name . "|";
                 ?>
-                Financial Practice ID - <?php if(Auth::user()->role == "firm") echo Auth::user()->code; else if(Auth::user()->role == "advisor") echo Auth::user()->firm_code; ?> |
-                Firm Registration Date -
+
                 <?php
                     if(Auth::user()->role == "firm")
-                        echo date("F j, Y", strtotime(Auth::user()->created_at));
+                        echo 'Financial Practice ID - ' . Auth::user()->code;
                     else if(Auth::user()->role == "advisor")
-                        echo date("F j, Y", strtotime(\App\User::where("code", Auth::user()->firm_code)->get()->first()->created_at));
+                        echo 'Financial Practice ID - ' . Auth::user()->firm_code;
+                ?>
+
+                <?php
+                    if(Auth::user()->role == "firm")
+                        echo ' | Firm Registration Date -' . date("F j, Y", strtotime(Auth::user()->created_at));
+                    else if(Auth::user()->role == "advisor")
+                        echo ' | Firm Registration Date -' . date("F j, Y", strtotime(\App\User::where("code", Auth::user()->firm_code)->get()->first()->created_at));
                 ?>
             </p>
         </div>
