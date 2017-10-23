@@ -18,6 +18,8 @@
 
     <link rel="stylesheet" href="{!! asset('theme/css/vendor.css') !!}" />
     <link rel="stylesheet" href="{!! asset('theme/css/app.css') !!}" />
+    <link rel="stylesheet" href="{!! asset('css/custom.css') !!}" />
+
     <link href="{!! asset('theme/css/plugins/datapicker/datepicker3.css') !!}" rel="stylesheet">
     <link href="{!! asset('theme/css/plugins/jasny/jasny-bootstrap.min.css') !!}" rel="stylesheet">
     <link href="{!! asset('theme/css/plugins/dataTables/datatables.min.css') !!}" rel="stylesheet">
@@ -34,24 +36,23 @@
 <div id="wrapper">
 
     <!-- Navigation -->
-@include('layouts.navigation')
+    @include('layouts.navigation')
 
-<!-- Page wraper -->
+    <!-- Page wraper -->
     <div id="page-wrapper" class="gray-bg">
 
         <!-- Page wrapper -->
-    @include('layouts.topnavbar')
+        @include('layouts.topnavbar')
 
-    <!-- Page wrapper -->
-    @include('layouts.sub')
-
-
-    <!-- Main view  -->
-    @yield('content')
+        <!-- Page wrapper -->
+        @include('layouts.sub')
 
 
+        <!-- Main view  -->
+        @yield('content')
 
-    <!-- Footer -->
+
+        <!-- Footer -->
         @include('layouts.footer')
 
     </div>

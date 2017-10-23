@@ -45,6 +45,7 @@ class HomeController extends Controller
                 $data = array();
                 $data["tokens_available"] = Auth::user()->tokens_available;
                 $data["active_advisors"] = User::where(["role" => "advisor", "firm_code" => Auth::user()->code, "status" => true])->count();
+                $data["pending_advisors"] = User::where(["role" => "advisor", "firm_code" => Auth::user()->code, "status" => false])->count();
                 $data["latest_reports"] = $this->getFirmLatestReports();
                 $data["top_advisors"] = $this->getFirmTopAdvisors();
 

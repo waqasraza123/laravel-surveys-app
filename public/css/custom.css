@@ -1,0 +1,15 @@
+@media (min-width: 768px) {
+    #page-wrapper {
+        position: inherit;
+        margin: 0 0 0 280px;
+        min-height: 2002px;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-static-side {
+        z-index: 2001;
+        position: absolute;
+        width: 280px;
+    }
+}

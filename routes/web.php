@@ -19,6 +19,9 @@ Route::get('/clear_cache', function() {
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/logout', function () {
+    return view('pages.logout');
+});
 
 Auth::routes();
 Route::get('/register/verify/{code}', 'Auth\verifyController@index');

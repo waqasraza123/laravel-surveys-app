@@ -29,23 +29,13 @@
                                         <td>{{ $advisor["mobile_number"] }}</td>
                                         <td>{{ $advisor["company_position"] }}</td>
                                         <td><a class="btn btn-white btn-bitbucket" onclick="approveAdvisor({{ $advisor["id"] }}, '{{ $advisor["name"] }}')">
-                                                <i class="fa fa-check-square-o"></i>
+                                                <i class="fa fa-check-square-o" style="color: transparent;"></i>
                                             </a>
                                         </td>
                                     </tr>
                                 @endforeach
 
-
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Mobile</th>
-                                    <th>Position</th>
-                                    <th>Approve</th>
-                                </tr>
-                                </tfoot>
                             </table>
                         </div>
 

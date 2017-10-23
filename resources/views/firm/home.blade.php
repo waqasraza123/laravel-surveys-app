@@ -19,14 +19,14 @@
          </div>
 
 
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
                         <div class="row">
-                            <div class="col-xs-4 text-center">
-                                <i class="fa fa-rocket fa-4x"></i>
+                            <div class="col-xs-2 text-center">
+                                <i class="fa fa-dollar fa-4x"></i>
                             </div>
-                            <div class="col-xs-8 text-right">
+                            <div class="col-xs-10 text-right">
                                 <span> Token Balance </span>
                                 <h2 class="font-bold">{{ $tokens_available }}</h2>
                             </div>
@@ -34,14 +34,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
                     <div class="row">
-                        <div class="col-xs-4 text-center">
+                        <div class="col-xs-2 text-center">
                             <i class="fa fa-file fa-4x"></i>
                         </div>
-                        <div class="col-xs-8 text-right">
+                        <div class="col-xs-10 text-right">
                             <span> Completed Investor DNA Profiles </span>
                             <h2 class="font-bold">{{ $completed_reports }}</h2>
                         </div>
@@ -49,15 +49,30 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
                     <div class="row">
-                        <div class="col-xs-4 text-center">
+                        <div class="col-xs-2 text-center">
                             <i class="fa fa-users fa-4x"></i>
                         </div>
-                        <div class="col-xs-8 text-right">
-                            <span> Active Advisers </span>
+                        <div class="col-xs-10 text-right">
+                            <span> Advisers - Pending Approval</span>
+                            <h2 class="font-bold">{{ $pending_advisors }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-xs-2 text-center">
+                            <i class="fa fa-users fa-4x"></i>
+                        </div>
+                        <div class="col-xs-10 text-right">
+                            <span> Advisers - Active </span>
                             <h2 class="font-bold">{{ $active_advisors }}</h2>
                         </div>
                     </div>

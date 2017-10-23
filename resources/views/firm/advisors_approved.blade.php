@@ -45,17 +45,6 @@
 
 
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Mobile</th>
-                                    <th>Position</th>
-                                    <th>Investor DNA Profiles</th>
-                                    <th>Status</th>
-                                    <th>Options</th>
-                                </tr>
-                                </tfoot>
                             </table>
                         </div>
 
