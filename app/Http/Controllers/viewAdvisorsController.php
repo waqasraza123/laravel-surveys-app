@@ -23,7 +23,7 @@ class viewAdvisorsController extends Controller
             case "firm":
                 $advisors = User::where("role", "advisor")
                                 ->where("firm_code", Auth::user()->code)
-                                ->where("status", false)
+                                ->where("firm_approved", false)
                                 ->get()
                                 ->toArray();
                 return view("firm.advisors_new")->with(["page_title" => "New Advisors", "advisors" => $advisors]);
@@ -40,7 +40,7 @@ class viewAdvisorsController extends Controller
             case "firm":
                 $advisors = User::where("role", "advisor")
                                 ->where("firm_code", Auth::user()->code)
-                                ->where("status", true)
+                                ->where("firm_approved", true)
                                 ->get()
                                 ->toArray();
                 foreach($advisors as $key => $value)
@@ -52,6 +52,20 @@ class viewAdvisorsController extends Controller
         }
     }
 
+    //Advisor approved by Firm
+    public function firmApprove($id){
+        $user = User::find($id);
+        if($user->firm_code == Auth::user()->code){
+            $user->firm_approved = true;
+            $user->save();
+        }
+//        $this->sendVerifiedEmail($user);
+        return back();
+    }
+
+
+
+    //Advisor approved by Admin
     public function approve($id){
         $user = User::find($id);
         if($user->firm_code == Auth::user()->code){

@@ -68,7 +68,7 @@
 
     function approveAdvisor(id, name){
         if (confirm('Are you sure you want to approve adviser ' + name + '?')) {
-            window.location = "/advisors/approve/"+id;
+            window.location = "/advisors/firm-approve/"+id;
         }
     }
 

@@ -40,8 +40,9 @@ Route::post('/profile/updatePassword', 'ProfileController@updatePassword')->name
 
 Route::get('/advisors/new', 'viewAdvisorsController@new')->name('advisors_new');
 Route::get('/advisors/approved', 'viewAdvisorsController@approved')->name('advisors_approved');
-Route::get('/advisors/approve/{id}', 'viewAdvisorsController@approve');
 Route::get('/advisors/delete/{id}', 'viewAdvisorsController@delete');
+Route::get('/advisors/firm-approve/{id}', 'viewAdvisorsController@firmApprove');
+
 
 Route::get('/tokens/purchase', 'TokensController@index');
 Route::post('/tokens/purchase', 'TokensController@purchase');
@@ -67,6 +68,8 @@ Route::get('/1122', 'ReportsController@viewReport');
 Route::get('/rates', 'TokenRatesController@index');
 Route::post('/rates/new', 'TokenRatesController@new');
 Route::post('/rates/clear', 'TokenRatesController@clear');
+Route::get('/advisors/approve/{id}', 'viewAdvisorsController@approve');
+
 
 //////////////////////////////////////////////////////////////
 ///////////////////////// For Client /////////////////////////
