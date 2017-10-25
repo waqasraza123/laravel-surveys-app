@@ -29,22 +29,14 @@
                                         <td>{{ $transactions["created_at"] }}</td>
                                         <td>{{ $transactions["tokens"] }}</td>
                                         <td>{{ $transactions["rate"] }}</td>
-                                        <td>{{ $transactions["tokens"] * $transactions["rate"] }}</td>
+                                        <td>{{ $transactions["tokens"] * $transactions["rate"] + ($transactions["tokens"] * $transactions["rate"]) * 0.1}}</td>
                                         <th><a class="btn btn-white btn-bitbucket">
                                                 <i class="fa fa-download"></i>
                                             </a></th>
                                     </tr>
                                 @endforeach
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>Purchase Date</th>
-                                    <th>Token Amount</th>
-                                    <th>Token Price</th>
-                                    <th>Total Price</th>
-                                    <th>Receipt</th>
-                                </tr>
-                                </tfoot>
+
                             </table>
                         </div>
 

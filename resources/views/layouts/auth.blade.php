@@ -18,6 +18,8 @@
 
     <link rel="stylesheet" href="{!! asset('theme/css/vendor.css') !!}" />
     <link rel="stylesheet" href="{!! asset('theme/css/app.css') !!}" />
+    <link rel="stylesheet" href="{!! asset('css/custom.css') !!}" />
+
     <link href="{!! asset('theme/css/plugins/datapicker/datepicker3.css') !!}" rel="stylesheet">
     <link href="{!! asset('theme/css/plugins/jasny/jasny-bootstrap.min.css') !!}" rel="stylesheet">
     <link href="{!! asset('theme/css/plugins/dataTables/datatables.min.css') !!}" rel="stylesheet">

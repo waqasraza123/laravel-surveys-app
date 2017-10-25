@@ -20,6 +20,13 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+
+    //Logout
+    public function performLogout(Request $request) {
+        Auth::logout();
+        return redirect('/logouta');
+    }
+
     /**
      * Show the application dashboard.
      *

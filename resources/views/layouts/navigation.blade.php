@@ -66,10 +66,43 @@
                             <li><a href="{{url('/reports/view')}}">View </a></li>
                         </ul>
                     </li>
-                    <li @if (Request::is('profile')) class="active" @endif><a href="{{url('/profile')}}"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                    <li @if (Request::is('profile')) class="active" @endif><a href="{{url('/profile')}}"><i class="fa fa-user"></i> <span>Adviser Profile</span></a></li>
+
                 @endif
 
         </ul>
+
+
+        <div class="info">
+            <ul class="info">
+                <li><?php if(Auth::user()->role == "advisor")
+                        echo "<b>Firm Name</b>" .'<br/> - '. \App\User::where("code", Auth::user()->firm_code)->get()->first()->name;
+                    ?></li>
+                <li><?php
+                    if(Auth::user()->role == "firm")
+                        echo '<b>Financial Practice ID</b>' .'<br/> - '. Auth::user()->code;
+                    else if(Auth::user()->role == "advisor")
+                        echo '<b>Financial Practice ID</b>' .'<br/> - '. Auth::user()->firm_code;
+                    ?>
+                </li>
+                <li>
+                    <?php
+                    if(Auth::user()->role == "firm")
+                        echo '<b>Firm Registration Date</b>' .'<br/> - '. date("F j, Y", strtotime(Auth::user()->created_at));
+                    else if(Auth::user()->role == "advisor")
+                        echo '<b>Firm Registration Date</b>' .'<br/> - '. date("F j, Y", strtotime(\App\User::where("code", Auth::user()->firm_code)->get()->first()->created_at));
+                    ?>
+                </li>
+                <li>
+                    <?php if(Auth::user()->role == "advisor")
+                        echo "<b>Accreditation date</b>" .'<br/> - '. \App\User::where("code", Auth::user()->firm_code)->get()->first()->name;
+                    ?></li>
+                </li>
+
+
+
+            </ul>
+        </div>
 
     </div>
 </nav>

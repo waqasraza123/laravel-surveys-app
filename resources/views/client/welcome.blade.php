@@ -24,7 +24,7 @@
 
                     <p>There are no right or wrong answers, only different investment styles that hold significant implications for your investment success.</p>
 
-                    <p>There are 4 sections to the questionnaire and will take you approximately 20 minutes to complete.</p>
+                    <p>The questionnaire should take you approximately 20 to 25 minutes to complete.</p>
 
                     <p>When completed, you will receive your own Investment DNA profile and your adviser will walk you through the results.</p>
 

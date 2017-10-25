@@ -19,12 +19,12 @@
             </div>
 
 
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="ibox float-e-margins">
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-xs-4 text-center">
-                                <i class="fa fa-rocket fa-4x"></i>
+                                <i class="fa fa-dollar fa-4x"></i>
                             </div>
                             <div class="col-xs-8 text-right">
                                 <span> Tokens Used </span>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="ibox float-e-margins">
                     <div class="ibox-content">
                         <div class="row">
@@ -49,27 +49,27 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-content">
-                        <div class="row">
-                            <div class="col-xs-4 text-center">
-                                <i class="fa fa-users fa-4x"></i>
-                            </div>
-                            <div class="col-xs-8 text-right">
-                                <span> Active Advisers </span>
-                                <h2 class="font-bold"> </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{--<div class="col-lg-4">--}}
+                {{--<div class="ibox float-e-margins">--}}
+                    {{--<div class="ibox-content">--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col-xs-4 text-center">--}}
+                                {{--<i class="fa fa-users fa-4x"></i>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-xs-8 text-right">--}}
+                                {{--<span> Active Advisers </span>--}}
+                                {{--<h2 class="font-bold"> </h2>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
         </div>
 
         <div class="row">
 
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>Last 5 Investor DNA Profiles Generated</h5>
@@ -101,30 +101,30 @@
             </div>
 
 
-            <div class="col-lg-6">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>Top Advisers by Investor DNA Profiles Generated </h5>
-                    </div>
-                    <div class="ibox-content">
+            {{--<div class="col-lg-6">--}}
+                {{--<div class="ibox float-e-margins">--}}
+                    {{--<div class="ibox-title">--}}
+                        {{--<h5>Top Advisers by Investor DNA Profiles Generated </h5>--}}
+                    {{--</div>--}}
+                    {{--<div class="ibox-content">--}}
 
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>Adviser </th>
-                                <th>Investor DNA Profiles</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                    <td></td>
-                                    <td></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+                        {{--<table class="table table-striped">--}}
+                            {{--<thead>--}}
+                            {{--<tr>--}}
+                                {{--<th>Adviser </th>--}}
+                                {{--<th>Investor DNA Profiles</th>--}}
+                            {{--</tr>--}}
+                            {{--</thead>--}}
+                            {{--<tbody>--}}
+                            {{--<tr>--}}
+                                    {{--<td></td>--}}
+                                    {{--<td></td>--}}
+                            {{--</tr>--}}
+                            {{--</tbody>--}}
+                        {{--</table>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
 
         </div>
@@ -160,7 +160,9 @@
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero:true
+                            min: 1,
+                            max: 20,
+                            stepSize: 5,
                         }
                     }]
                 }

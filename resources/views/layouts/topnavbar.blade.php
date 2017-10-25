@@ -1,6 +1,6 @@
 <div class="row border-bottom">
     <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
+        <div class="navbar-header" style="display: none;">
             {{--<a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>--}}
             <p style="margin: 0px; padding: 0px 25px; line-height: 60px">
                 <?php if(Auth::user()->role == "advisor")

@@ -12,7 +12,7 @@
 
                 </div>
 
-                <h2  style="line-height: 32px">Thank you for your registartion. Your firm's administrator has been notified.
+                <h2  style="line-height: 32px">Thank you for your registration. Your firm's administrator has been notified.
                     You will be able to login, when the account has been approved.
                 </h2>
 

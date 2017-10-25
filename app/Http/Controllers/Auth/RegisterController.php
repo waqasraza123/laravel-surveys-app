@@ -161,7 +161,7 @@ class RegisterController extends Controller
 
     function create_firm_code(){
         while(true){
-            $code = "F" . rand(1000,9999);
+            $code = "FP" . rand(1000,9999);
             if(User::where('code', $code)->count() < 1)
                 return $code;
         }

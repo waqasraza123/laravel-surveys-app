@@ -12,7 +12,7 @@
 
                 </div>
 
-                <h2  style="line-height: 32px">Thank you for your registartion. We have sent you an activation link.
+                <h2  style="line-height: 32px">Thank you for your registration. We have sent you an activation link.
                 Please click on the link within the email to activate and login to your account.
                 </h2>
 

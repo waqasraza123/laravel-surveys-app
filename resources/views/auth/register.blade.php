@@ -34,7 +34,7 @@
 
                     <div class="form-group{{ $errors->has('firm_code') && old('role') == 'advisor' ? ' has-error' : '' }}">
 
-                            <input id="firm_code" placeholder="Firm Code" type="text" class="form-control" name="firm_code" value="{{ old('firm_code') }}" required>
+                            <input id="firm_code" placeholder="Financial Practice Code" type="text" class="form-control" name="firm_code" value="{{ old('firm_code') }}" required>
 
                             @if ($errors->has('firm_code') && old('role') == 'advisor')
                                 <span class="help-block">
