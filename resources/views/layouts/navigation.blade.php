@@ -95,7 +95,7 @@
                 </li>
                 <li>
                     <?php if(Auth::user()->role == "advisor")
-                        echo "<b>Accreditation date</b>" .'<br/> - '. \App\User::where("code", Auth::user()->firm_code)->get()->first()->name;
+                        echo "<b>Accreditation date</b>" .'<br/> - '. Auth::user()->accreditation_date;
                     ?></li>
                 </li>
 
