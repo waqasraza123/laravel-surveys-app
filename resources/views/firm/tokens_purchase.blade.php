@@ -41,8 +41,8 @@
                             {{ csrf_field() }}
                             <div class="box-body">
                                 <div class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
-                                    <label for="quantity" class="col-sm-3 control-label">Quantity</label>
-                                    <div class="col-sm-9">
+                                    <label for="quantity" class="col-sm-6 control-label">Token Quantity</label>
+                                    <div class="col-sm-6">
                                         <input type="number" class="form-control" id="quantity" name="quantity" min="1" value="{{ old('quantity') }}" onkeyup="setPrice()" required>
                                         @if ($errors->has('quantity'))
                                             <span class="help-block">
@@ -54,8 +54,8 @@
                             </div>
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="price" class="col-sm-3 control-label">Price ($)</label>
-                                    <div class="col-sm-9">
+                                    <label for="price" class="col-sm-6 control-label">Price Per Token</label>
+                                    <div class="col-sm-6">
                                         <input type="number" class="form-control" id="rate" name="rate" disabled>
                                     </div>
 
@@ -63,8 +63,17 @@
                             </div>
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="gst" class="col-sm-3 control-label">GST ($)</label>
-                                    <div class="col-sm-9">
+                                    <label for="price" class="col-sm-6 control-label">Total Cost ex GST</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control" id="pricex" name="pricex" disabled>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="gst" class="col-sm-6 control-label">GST amount</label>
+                                    <div class="col-sm-6">
                                         <input type="number" class="form-control" id="gst" name="gst" disabled>
                                     </div>
 
@@ -72,10 +81,9 @@
                             </div>
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="price" class="col-sm-3 control-label">Total Price ($)</label>
-                                    <div class="col-sm-9">
+                                    <label for="price" class="col-sm-6 control-label">GRAND TOTAL GST Inclusive</label>
+                                    <div class="col-sm-6">
                                         <input type="number" class="form-control" id="price" name="price" disabled>
-                                        <p><em>Total price includes GST</em></p>
                                     </div>
 
                                 </div>
@@ -178,9 +186,11 @@
         var price = quantity * rate;
         var gst = parseFloat((price * 0.1).toFixed(2));
         var final = price + gst;
+        var net = price
         document.getElementById('gst').value = gst;
         document.getElementById('rate').value = rate;
         document.getElementById('price').value = final;
+        document.getElementById('pricex').value = net;
     }
 
     function calculate(quantity){

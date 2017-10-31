@@ -16,9 +16,11 @@
                                 <thead>
                                 <tr>
                                     <th>Purchase Date</th>
-                                    <th>Token Amount</th>
-                                    <th>Token Price</th>
-                                    <th>Total Price</th>
+                                    <th>Total Quantity Purchased</th>
+                                    <th>Token Per Price</th>
+                                    <th>Total Cost ex GST</th>
+                                    <th>GST amount</th>
+                                    <th>GRAND TOTAL GST Inclusive</th>
                                     <th>Receipt</th>
                                 </tr>
                                 </thead>
@@ -29,6 +31,8 @@
                                         <td>{{ $transactions["created_at"] }}</td>
                                         <td>{{ $transactions["tokens"] }}</td>
                                         <td>{{ $transactions["rate"] }}</td>
+                                        <td>{{ $transactions["tokens"] * $transactions["rate"] }}</td>
+                                        <td>{{ ($transactions["tokens"] * $transactions["rate"]) * 0.1  }}</td>
                                         <td>{{ $transactions["tokens"] * $transactions["rate"] + ($transactions["tokens"] * $transactions["rate"]) * 0.1}}</td>
                                         <th><a class="btn btn-white btn-bitbucket">
                                                 <i class="fa fa-download"></i>

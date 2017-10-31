@@ -28,6 +28,7 @@
 
                     <p>When completed, you will receive your own Investment DNA profile and your adviser will walk you through the results.</p>
 
+                    <p>If you need to exit the questionnaire before finishing, please complete the current section of the questionnaire and hit save. This will allow you to return to your questionniare at a latter time for completion using your questionnaire email link</p>
 
                 </div>
                 <div class="panel-footer text-center">

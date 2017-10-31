@@ -3,8 +3,8 @@
 
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
-                <div class="dropdown profile-element">
-                    <img src="{{url('images/adminLogo.png')}}" alt="" width="235px">
+                <div class="dropdown profile-element" style="text-align: center;">
+                    <img src="{{url('images/adminLogo.png')}}" alt="" width="190px" style=" padding-top: 10px">
                 </div>
             </li>
 

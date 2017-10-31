@@ -13,7 +13,7 @@
                 <h1 class="logo-name" style="font-size: 65px; margin-left: -5px;">Part B</h1>
 
                 <h2>Instructions</h2>
-                Please look at the following pairs of words and choose the word that is MORE LIKE YOU.
+                Please read the following pairs of words and select the word that is MOST LIKE YOU.
 
 
                 <div class="ibox float-e-margins" style="margin-top: 40px">

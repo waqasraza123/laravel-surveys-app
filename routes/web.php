@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/logout', function () {
-    return view('pages.logout');
+    return redirect('http://www.investordna.com.au/');
 });
 
 Auth::routes();

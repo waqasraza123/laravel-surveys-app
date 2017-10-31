@@ -8,8 +8,8 @@
         <div class="middle-box text-center loginscreen   animated fadeInDown">
             <div>
                 <div>
-
-                    <h1 class="logo-name">Investor DNA</h1>
+                    <img src="images/logoi.png" alt="">
+                    <h1 style="margin-top:0px"  class="logo-name">Investor DNA</h1>
 
                 </div>
                 <h2>Login</h2>

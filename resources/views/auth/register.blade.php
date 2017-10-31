@@ -9,7 +9,8 @@
         <div>
             <div>
 
-                <h1 class="logo-name">Investor DNA</h1>
+                <img src="images/logoi.png" alt="">
+                <h1 style="margin-top:0px" class="logo-name">Investor DNA</h1>
 
             </div>
             <h3>Create an account</h3>
@@ -159,7 +160,7 @@
 
                     <div class="form-group{{ $errors->has('firm_phone') && old('role') == 'firm' ? ' has-error' : '' }}">
 
-                            <input id="firm_phone" placeholder="Firm Phone Number" type="text" class="form-control" name="firm_phone" value="{{ old('firm_phone') }}">
+                            <input id="firm_phone" placeholder="Phone Number" type="text" class="form-control" name="firm_phone" value="{{ old('firm_phone') }}">
 
                             @if ($errors->has('firm_phone') && old('role') == 'firm')
                                 <span class="help-block">
@@ -167,6 +168,7 @@
                                         </span>
                             @endif
                     </div>
+
 
                 </div>
 
