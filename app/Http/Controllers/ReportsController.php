@@ -146,10 +146,8 @@ class ReportsController extends Controller
         }
 
         //// Part 2 Scores ////
-        foreach($response[1] as $key => $answer){
-            $sub = explode("-", $key);
-            if($sub[1] == 'a') $sub[1] = 1; else $sub[1] = 2;
-            $scores[$this->partBAnswers($sub[0], $sub[1])] += $answer;
+        for($i = 1; $i <= count($response[1]); $i++){
+            $scores[$this->partBAnswers($i, $response[1][$i])] += 3;
         }
 
         //// part 3 Scores ////
@@ -186,10 +184,8 @@ class ReportsController extends Controller
         }
 
         //// Part 2 Scores ////
-        foreach($response[1] as $key => $answer){
-            $sub = explode("-", $key);
-            if($sub[1] == 'a') $sub[1] = 1; else $sub[1] = 2;
-            $scores[$this->partBAnswers($sub[0], $sub[1])] += $answer;
+        for($i = 1; $i <= count($response[1]); $i++){
+            $scores[$this->partBAnswers($i, $response[1][$i])] += 3;
         }
 
         //// part 3 Scores ////

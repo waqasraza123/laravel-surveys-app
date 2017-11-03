@@ -21,7 +21,7 @@ class CreateReportsTable extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->boolean('completed')->default(false);
-            $table->text('response');
+            $table->text('response')->nullable();
 
             $table->timestamps();
         });

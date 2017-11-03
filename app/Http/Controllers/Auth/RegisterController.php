@@ -63,7 +63,7 @@ class RegisterController extends Controller
                     'company_position' => 'required|string|max:175',
                     'mobile_number' => 'required|string|max:175',
                     'role' => 'required|string|max:175',
-                    'firm_code' => 'exists:users,code|max:5|min:6',
+                    'firm_code' => 'exists:users,code|max:6|min:6',
                 ]);
 
             case "firm":
