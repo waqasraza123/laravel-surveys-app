@@ -17,15 +17,21 @@ class viewAdvisorsController extends Controller
 
     public function new()
     {
+
+
         switch(Auth::user()->role){
             case "admin":
                 redirect("/home");
             case "firm":
                 $advisors = User::where("role", "advisor")
                                 ->where("firm_code", Auth::user()->code)
-                                ->where("firm_approved", false)
+//                                ->where("firm_approved", false)
                                 ->get()
                                 ->toArray();
+
+
+//                dd($advisors);
+
                 return view("firm.advisors_new")->with(["page_title" => "New Advisors", "advisors" => $advisors]);
             case "advisor":
                 redirect("/home");
