@@ -21,49 +21,38 @@
 
             <div class="col-lg-6">
                 <div class="ibox float-e-margins">
-                    <div class="ibox-content">
-                        <div class="row">
-                            <div class="col-xs-4 text-center">
-                                <i class="fa fa-dollar fa-4x"></i>
-                            </div>
-                            <div class="col-xs-8 text-right">
-                                <span> Tokens Used </span>
-                                <h2 class="font-bold"> </h2>
+                    <a href="/reports/view">
+                        <div class="ibox-content">
+                            <div class="row">
+                                <div class="col-xs-4 text-center">
+                                    <i class="fa fa-dollar fa-4x"></i>
+                                </div>
+                                <div class="col-xs-8 text-right">
+                                    <span> Tokens Used </span>
+                                    <h2 class="font-bold"> </h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="ibox float-e-margins">
-                    <div class="ibox-content">
-                        <div class="row">
-                            <div class="col-xs-4 text-center">
-                                <i class="fa fa-file fa-4x"></i>
-                            </div>
-                            <div class="col-xs-8 text-right">
-                                <span> Completed Investor DNA Profiles </span>
-                                <h2 class="font-bold"> </h2>
+                    <a href="/reports/view">
+                        <div class="ibox-content">
+                            <div class="row">
+                                <div class="col-xs-4 text-center">
+                                    <i class="fa fa-file fa-4x"></i>
+                                </div>
+                                <div class="col-xs-8 text-right">
+                                    <span> Completed Investor DNA Profiles </span>
+                                    <h2 class="font-bold"> </h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
-            {{--<div class="col-lg-4">--}}
-                {{--<div class="ibox float-e-margins">--}}
-                    {{--<div class="ibox-content">--}}
-                        {{--<div class="row">--}}
-                            {{--<div class="col-xs-4 text-center">--}}
-                                {{--<i class="fa fa-users fa-4x"></i>--}}
-                            {{--</div>--}}
-                            {{--<div class="col-xs-8 text-right">--}}
-                                {{--<span> Active Advisers </span>--}}
-                                {{--<h2 class="font-bold"> </h2>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
 
         </div>
 

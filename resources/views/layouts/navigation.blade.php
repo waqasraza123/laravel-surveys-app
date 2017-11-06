@@ -76,7 +76,9 @@
         <div class="info">
             <ul class="info">
                 <li><?php if(Auth::user()->role == "advisor")
-                        echo "<b>Firm Name</b>" .'<br/> - '. \App\User::where("code", Auth::user()->firm_code)->get()->first()->name;
+                        echo "<b>Financial Practice Name</b>" .'<br/> - '. \App\User::where("code", Auth::user()->firm_code)->get()->first()->firm_name;
+                          else
+                         echo "<b>Financial Practice Name</b>" .'<br/> - '. Auth::user()->firm_name;
                     ?></li>
                 <li><?php
                     if(Auth::user()->role == "firm")
@@ -88,9 +90,9 @@
                 <li>
                     <?php
                     if(Auth::user()->role == "firm")
-                        echo '<b>Firm Registration Date</b>' .'<br/> - '. date("F j, Y", strtotime(Auth::user()->created_at));
+                        echo '<b>Financial Practice Registration Date</b>' .'<br/> - '. date("F j, Y", strtotime(Auth::user()->created_at));
                     else if(Auth::user()->role == "advisor")
-                        echo '<b>Firm Registration Date</b>' .'<br/> - '. date("F j, Y", strtotime(\App\User::where("code", Auth::user()->firm_code)->get()->first()->created_at));
+                        echo '<b>Financial Practice Registration Date</b>' .'<br/> - '. date("F j, Y", strtotime(\App\User::where("code", Auth::user()->firm_code)->get()->first()->created_at));
                     ?>
                 </li>
                 <li>

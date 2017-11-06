@@ -12,8 +12,8 @@
 
                 </div>
 
-                <h2  style="line-height: 32px">Thank you for your registration. Your firm's administrator has been notified.
-                    You will be able to login, when the account has been approved.
+                <h2  style="line-height: 32px">You have been successfully registered on the Investor DNA system and administration have
+                    been informed. You will be able to login shortly, pending administration approval.
                 </h2>
 
                 <p class="m-t"> <small>Investor DNA &copy; 2017</small> </p>

@@ -53,7 +53,7 @@ class RegisterController extends Controller
                 return Validator::make($data, [
                     'name' => 'required|string|max:175',
                     'email' => 'required|string|email|max:175|unique:users',
-                    'password' => 'required|string|min:6|max:175|confirmed',
+//                    'password' => 'required|string|min:10|max:175|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/|confirmed',
                 ]);
             case "advisor":
                 return Validator::make($data, [
@@ -64,6 +64,8 @@ class RegisterController extends Controller
                     'mobile_number' => 'required|string|max:175',
                     'role' => 'required|string|max:175',
                     'firm_code' => 'exists:users,code|max:6|min:6',
+                    'password' => 'required|string|min:10|max:175|regex:/^(?=.*[A-Z])(?=.*[0-9])(?=.*\d).+$/|confirmed',
+
                 ]);
 
             case "firm":
@@ -81,6 +83,8 @@ class RegisterController extends Controller
                     'postcode' => 'string|max:175',
                     'firm_website' => 'string|max:175',
                     'firm_phone' => 'string|max:175',
+                    'password' => 'required|string|min:10|max:175|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/|confirmed',
+
                 ]);
         }
     }

@@ -139,7 +139,7 @@
                             <tr>
                                 <td>{{ $rate["start"] }}</td>
                                 <td>{{ $rate["end"] }}</td>
-                                <td>${{ $rate["rate"] }} AUD GST Inclusive</td>
+                                <td>{{ number_format($rate["rate"] + ($rate["rate"] * 0.1)), 2, '.' }} AUD GST Inclusive</td>
                             </tr>
                             @endforeach
                         </tbody>

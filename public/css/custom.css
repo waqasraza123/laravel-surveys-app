@@ -34,3 +34,7 @@ ul.info li {
     color: inherit;
     padding: 15px 15px 20px 15px;
 }
+
+.ibox a {
+    color: #676a6c!important;
+}

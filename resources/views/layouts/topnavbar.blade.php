@@ -4,7 +4,7 @@
             {{--<a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>--}}
             <p style="margin: 0px; padding: 0px 25px; line-height: 60px">
                 <?php if(Auth::user()->role == "advisor")
-                    echo "Firm Name - " . \App\User::where("code", Auth::user()->firm_code)->get()->first()->name . "|";
+                    echo "Financial Practice Name - " . \App\User::where("code", Auth::user()->firm_code)->get()->first()->name . "|";
                 ?>
 
                 <?php
@@ -16,9 +16,9 @@
 
                 <?php
                     if(Auth::user()->role == "firm")
-                        echo ' | Firm Registration Date -' . date("F j, Y", strtotime(Auth::user()->created_at));
+                        echo ' | Financial Practice Registration Date -' . date("F j, Y", strtotime(Auth::user()->created_at));
                     else if(Auth::user()->role == "advisor")
-                        echo ' | Firm Registration Date -' . date("F j, Y", strtotime(\App\User::where("code", Auth::user()->firm_code)->get()->first()->created_at));
+                        echo ' | Financial Practice Registration Date -' . date("F j, Y", strtotime(\App\User::where("code", Auth::user()->firm_code)->get()->first()->created_at));
                 ?>
             </p>
         </div>

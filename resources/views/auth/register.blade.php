@@ -9,7 +9,7 @@
         <div>
             <div>
 
-                <img src="images/logoi.png" alt="">
+                <img src="images/logoi.png" alt="" width="220px">
                 <h1 style="margin-top:0px" class="logo-name">Investor DNA</h1>
 
             </div>
@@ -48,7 +48,7 @@
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 
-                        <input id="name" placeholder="Name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                        <input id="name" placeholder="Personal Name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
                         @if ($errors->has('name'))
                             <span class="help-block">
@@ -94,7 +94,7 @@
 
                     <div class="form-group{{ $errors->has('firm_name') && old('role') == 'firm' ? ' has-error' : '' }}">
 
-                            <input id="firm_name" placeholder="Firm Name" type="text" class="form-control" name="firm_name" value="{{ old('firm_name') }}">
+                            <input id="firm_name" placeholder="Financial Practice Name" type="text" class="form-control" name="firm_name" value="{{ old('firm_name') }}">
 
                             @if ($errors->has('firm_name') && old('role') == 'firm')
                                 <span class="help-block">
@@ -160,7 +160,7 @@
 
                     <div class="form-group{{ $errors->has('firm_phone') && old('role') == 'firm' ? ' has-error' : '' }}">
 
-                            <input id="firm_phone" placeholder="Phone Number" type="text" class="form-control" name="firm_phone" value="{{ old('firm_phone') }}">
+                            <input id="firm_phone" placeholder="Phone Number (Including area code)" type="text" class="form-control" name="firm_phone" value="{{ old('firm_phone') }}">
 
                             @if ($errors->has('firm_phone') && old('role') == 'firm')
                                 <span class="help-block">
@@ -175,7 +175,7 @@
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
                         <input id="password" placeholder="Password" type="password" class="form-control" name="password" required>
-
+                        <em style="color: #888">Min 10 characters and must include uppercase letter and a number</em>
                         @if ($errors->has('password'))
                             <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>

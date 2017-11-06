@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('firm_name') && old('role') == 'firm' ? ' has-error' : '' }}">
-                            <label for="firm_name" class="col-md-4 control-label">Firm Name</label>
+                            <label for="firm_name" class="col-md-4 control-label">Financial Practice Name</label>
 
                             <div class="col-md-6">
                                 <input id="firm_name" type="text" class="form-control" name="firm_name" value="{{ $firm_name }}">

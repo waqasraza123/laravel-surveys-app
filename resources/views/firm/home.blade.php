@@ -21,7 +21,8 @@
 
         <div class="col-lg-3">
             <div class="ibox float-e-margins">
-                <div class="ibox-content">
+               <a href="/tokens/purchase">
+                   <div class="ibox-content">
                         <div class="row">
                             <div class="col-xs-2 text-center">
                                 <i class="fa fa-dollar fa-4x"></i>
@@ -31,52 +32,59 @@
                                 <h2 class="font-bold">{{ $tokens_available }}</h2>
                             </div>
                         </div>
-                </div>
+                    </div>
+               </a>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="ibox float-e-margins">
-                <div class="ibox-content">
-                    <div class="row">
-                        <div class="col-xs-2 text-center">
-                            <i class="fa fa-file fa-4x"></i>
-                        </div>
-                        <div class="col-xs-10 text-right">
-                            <span> Completed Investor DNA Profiles </span>
-                            <h2 class="font-bold">{{ $completed_reports }}</h2>
+                <a href="/reports/view">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-xs-2 text-center">
+                                <i class="fa fa-file fa-4x"></i>
+                            </div>
+                            <div class="col-xs-10 text-right">
+                                <span> Completed Investor DNA Profiles </span>
+                                <h2 class="font-bold">{{ $completed_reports }}</h2>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="ibox float-e-margins">
-                <div class="ibox-content">
-                    <div class="row">
-                        <div class="col-xs-2 text-center">
-                            <i class="fa fa-users fa-4x"></i>
-                        </div>
-                        <div class="col-xs-10 text-right">
-                            <span> Advisers - Pending Approval</span>
-                            <h2 class="font-bold">{{ $pending_advisors }}</h2>
+                <a href="/advisors/new">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-xs-2 text-center">
+                                <i class="fa fa-users fa-4x"></i>
+                            </div>
+                            <div class="col-xs-10 text-right">
+                                <span> Advisers - Pending Approval</span>
+                                <h2 class="font-bold">{{ $pending_advisors }}</h2>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="ibox float-e-margins">
-                <div class="ibox-content">
-                    <div class="row">
-                        <div class="col-xs-2 text-center">
-                            <i class="fa fa-users fa-4x"></i>
-                        </div>
-                        <div class="col-xs-10 text-right">
-                            <span> Advisers - Active </span>
-                            <h2 class="font-bold">{{ $active_advisors }}</h2>
+                <a href="/advisors/approved">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-xs-2 text-center">
+                                <i class="fa fa-users fa-4x"></i>
+                            </div>
+                            <div class="col-xs-10 text-right">
+                                <span> Advisers - Active </span>
+                                <h2 class="font-bold">{{ $active_advisors }}</h2>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
 
