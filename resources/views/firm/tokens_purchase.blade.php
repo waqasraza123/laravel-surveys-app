@@ -204,12 +204,12 @@
         var rate = calculate(quantity);
         var price = quantity * rate;
         var gst = parseFloat((price * 0.1).toFixed(2));
-        var final = price + gst;
-        var net = price
-        document.getElementById('gst').value = gst;
-        document.getElementById('rate').value = rate;
-        document.getElementById('price').value = final;
-        document.getElementById('pricex').value = net;
+        var final = (price + gst);
+        var net = price;
+        document.getElementById('gst').value = gst.toFixed(2);
+        document.getElementById('rate').value = rate.toFixed(2);
+        document.getElementById('price').value = final.toFixed(2);
+        document.getElementById('pricex').value = net.toFixed(2);
     }
 
     function calculate(quantity){

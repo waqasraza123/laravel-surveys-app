@@ -41,14 +41,6 @@ class TokensController extends Controller
         }
     }
 
-    protected function getCurrencies(){
-      $json = file_get_contents("https://api.fixer.io/latest?base=AUD&symbols=USD,GBP,EUR");
-      $json_data = json_decode($json, true)["rates"];
-      $json_data["AUD"] = 1;
-      ksort($json_data);
-      return $json_data;
-    }
-
     public function purchase(Request $request){
         if(Auth::user()->role != "firm")
             redirect('/home');
@@ -58,15 +50,24 @@ class TokensController extends Controller
             return back()->withErrors($validator);
 
         $rate  = $this->getRate($request->quantity);
+
+        //Change rate according to currency
+        $currencies = $this->getCurrencies();
+        $selected_currency = 'AUD';
+        if($request->input("currency"))
+            $selected_currency = $request->input("currency");
+        $rate = $rate * $currencies[$selected_currency];
+
         $subtotal = $request->quantity * $rate;
         $gst = $subtotal * 0.1;
         $price = $subtotal + $gst;
+        $price = round($price, 2);
 
         $gateway = Omnipay::create('Stripe');
         $gateway->setApiKey(env('STRIPE_PRIVATE_KEY', ''));
         $response = $gateway->purchase([
             'amount' => $price,
-            'currency' => 'USD',
+            'currency' => $selected_currency,
             'token' => $request->stripeToken,
         ])->send();
 
@@ -144,6 +145,14 @@ class TokensController extends Controller
                 }
             }
         }
+    }
+
+    protected function getCurrencies(){
+        $json = file_get_contents("https://api.fixer.io/latest?base=AUD&symbols=USD,GBP,EUR");
+        $json_data = json_decode($json, true)["rates"];
+        $json_data["AUD"] = 1;
+        ksort($json_data);
+        return $json_data;
     }
 
     protected function validator(array $data)
