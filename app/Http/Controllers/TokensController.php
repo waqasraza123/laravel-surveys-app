@@ -18,7 +18,7 @@ class TokensController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index(Request $request){
         switch(Auth::user()->role){
             case "admin":
                 redirect("/home");
@@ -28,8 +28,25 @@ class TokensController extends Controller
                 $rates = PriceRange::all();
                 if($rates->count() > 0)
                     $rates->last()->end = "∞";
-                return view("firm.tokens_purchase")->with(["page_title" => "Purchase Tokens", "rates" => $rates, "tokens" => Auth::user()->tokens_available]);
+
+                $currencies = $this->getCurrencies();
+                $selected_currency = 'AUD';
+                if($request->input("currency"))
+                    $selected_currency = $request->input("currency");
+
+                foreach($rates as $rate)
+                    $rate["rate"] = $rate["rate"] * $currencies[$selected_currency];
+
+                return view("firm.tokens_purchase")->with(["page_title" => "Purchase Tokens", "rates" => $rates, "selected_currency" => $selected_currency, "currencies" => $currencies, "tokens" => Auth::user()->tokens_available]);
         }
+    }
+
+    protected function getCurrencies(){
+      $json = file_get_contents("https://api.fixer.io/latest?base=AUD&symbols=USD,GBP,EUR");
+      $json_data = json_decode($json, true)["rates"];
+      $json_data["AUD"] = 1;
+      ksort($json_data);
+      return $json_data;
     }
 
     public function purchase(Request $request){

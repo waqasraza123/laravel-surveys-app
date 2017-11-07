@@ -121,6 +121,19 @@
         <div class="col-lg-6">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
+                    <h5>Currencies</h5>
+                </div>
+
+                <div class="ibox-content">
+                    <select class="form-control" onchange="changeCurrency();" id="currency">
+                        @foreach($currencies as $currency => $rate)
+                            <option <?php if($selected_currency == $currency) echo "selected"; ?>>{{ $currency }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
                     <h5>Token Rates</h5>
                 </div>
 
@@ -131,7 +144,7 @@
                             <tr>
                                 <th>Quantity From</th>
                                 <th>Quantity To</th>
-                                <th>Price Per Token ($)</th>
+                                <th>Price Per Token (inc Tax) ({{ $selected_currency }})</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -139,7 +152,7 @@
                             <tr>
                                 <td>{{ $rate["start"] }}</td>
                                 <td>{{ $rate["end"] }}</td>
-                                <td>{{ number_format($rate["rate"] + ($rate["rate"] * 0.1)), 2, '.' }} AUD GST Inclusive</td>
+                                <td>{{ number_format($rate["rate"] + ($rate["rate"] * 0.1), 2, '.', ',') }}</td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -147,7 +160,7 @@
                             <tr>
                                 <th>Quantity From</th>
                                 <th>Quantity To</th>
-                                <th>Price Per Token ($)</th>
+                                <th>Price Per Token ({{ $selected_currency }})</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -169,6 +182,12 @@
 <script src="{{ asset ("/plugins/datatables/jquery.dataTables.min.js") }}"></script>
 <script src="{{ asset ("/plugins/datatables/dataTables.bootstrap.min.js") }}"></script>
 <script>
+
+    function changeCurrency(){
+        var cur = document.getElementById("currency").value;
+        location.href = location.protocol + '//' + location.host + location.pathname + "?currency=" + cur;
+    }
+
     $(function () {
         $('#rates').DataTable({
             "paging": false,
