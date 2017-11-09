@@ -49,12 +49,6 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         switch($data['role']){
-            case "admin":
-                return Validator::make($data, [
-                    'name' => 'required|string|max:175',
-                    'email' => 'required|string|email|max:175|unique:users',
-//                    'password' => 'required|string|min:10|max:175|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/|confirmed',
-                ]);
             case "advisor":
                 return Validator::make($data, [
                     'name' => 'required|string|max:175',
@@ -86,6 +80,18 @@ class RegisterController extends Controller
                     'password' => 'required|string|min:10|max:175|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/|confirmed',
 
                 ]);
+
+            case "iclient":
+                return Validator::make($data, [
+                    'name' => 'required|string|max:175',
+                    'email' => 'required|string|email|max:175|unique:users',
+                    'password' => 'required|string|min:6|max:175|confirmed',
+                    'company_position' => 'required|string|max:175',
+                    'mobile_number' => 'required|string|max:175',
+                    'role' => 'required|string|max:175',
+                    'password' => 'required|string|min:10|max:175|regex:/^(?=.*[A-Z])(?=.*[0-9])(?=.*\d).+$/|confirmed',
+
+                ]);
         }
     }
 
@@ -112,6 +118,7 @@ class RegisterController extends Controller
 
             return $user;
         }
+
         else if($data['role'] == "firm"){
             $user = User::create([
                 'name' => $data['name'],
@@ -133,6 +140,22 @@ class RegisterController extends Controller
 
             $this->sendConfirmationEmail($user);
             $this->sendEmailToAdmins($user);
+
+            return $user;
+        }
+
+        else if($data['role'] == "iclient"){
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+                'company_position' => $data['company_position'],
+                'mobile_number' => $data['mobile_number'],
+                'role' => $data['role'],
+                'confirmation_code' => str_random(30),
+            ]);
+
+            $this->sendConfirmationEmail($user);
 
             return $user;
         }

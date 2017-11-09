@@ -28,6 +28,8 @@
                             @else
                                 <option value="firm">Financial Practice</option>
                             @endif
+
+                            <option value="iclient">Independant Client</option>
                         </select>
                 </div>
 

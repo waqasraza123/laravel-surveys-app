@@ -42,12 +42,15 @@ class HomeController extends Controller
                     return back()->withErrors(['error'=>'You have been registered Successfully & Verification link has been sent to your email id. Kindly verify to login.']);
                 case "advisor":
                     return back()->withErrors(['error'=>'You have been registered Successfully & Admin has been informed. You will be able to login after Admin approval.']);
+                case "iclient":
+                    return back()->withErrors(['error'=>'You have been registered Successfully & Verification link has been sent to your email id. Kindly verify to login.']);
             }
         }
 
         switch(Auth::user()->role){
             case "admin":
                 return view('admin.home');
+
             case "firm":
                 $data = array();
                 $data["tokens_available"] = Auth::user()->tokens_available;
@@ -61,11 +64,13 @@ class HomeController extends Controller
                 foreach($advisors as $advisor){
                     $data["completed_reports"] += Report::where(["advisor" => $advisor->id, "completed" => true])->count();
                 }
-
                 return view('firm.home')->with($data);
-            case "advisor":
 
+            case "advisor":
                 return view('advisor.home');
+
+            case "iclient":
+                return view('iclient.home');
         }
     }
 
@@ -77,6 +82,8 @@ class HomeController extends Controller
                 return view('auth.thankyou_firm');
             case "advisor":
                 return view('auth.thankyou_advisor');
+            case "iclient":
+                return view('auth.thankyou_iclient');
         }
     }
 
