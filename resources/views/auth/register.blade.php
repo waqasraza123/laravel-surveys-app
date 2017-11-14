@@ -1,8 +1,9 @@
 @extends('layouts.auth')
 
 @section('content')
-<div class="container">
+    <img src="images/register.png" alt="" width="100%">
 
+    <div class="container">
 
 
     <div class="middle-box text-center loginscreen   animated fadeInDown">

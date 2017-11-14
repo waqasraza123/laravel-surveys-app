@@ -47,7 +47,7 @@
                         <ul class="nav nav-second-level collapse">
                             <li class="@if (Request::is('tokens/purchase')) active @endif"><a href="/tokens/purchase">Purchase</a></li>
                             <li class="@if (Request::is('tokens/history')) active @endif"><a href="/tokens/history">Purchase History</a></li>
-                            {{--<li class="@if (Request::is('tokens/usage')) active @endif"><a href="/tokens/usage">Usage History</a></li>--}}
+                            <li class="@if (Request::is('tokens/usage')) active @endif"><a href="/tokens/usage">Usage History</a></li>
                         </ul>
                     </li>
 
@@ -57,7 +57,7 @@
             {{--ADVISOR MENU--}}
                 @elseif (Auth::user()->role == "advisor")
                     <li @if (Request::is('home')) class="active" @endif><a href="{{url('/home')}}"><i class="fa fa-tachometer"></i> <span>Adviser Dashboard</span></a></li>
-                    {{--<li><a href="/clients"><i class="fa fa-users"></i> <span>Clients</span></a></li>--}}
+                    <li><a href="/clients"><i class="fa fa-users"></i> <span>Clients</span></a></li>
 
                      <li class="treeview @if (Request::is('reports/*')) active @endif">
                         <a href="/reports/new"><i class="fa fa-file-text"></i> <span>Investor DNA Profile </span> <i class="fa fa-angle-left pull-right"></i></a>

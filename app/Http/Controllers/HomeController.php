@@ -41,7 +41,7 @@ class HomeController extends Controller
                 case "firm":
                     return back()->withErrors(['error'=>'You have been registered Successfully & Verification link has been sent to your email id. Kindly verify to login.']);
                 case "advisor":
-                    return back()->withErrors(['error'=>'You have been registered Successfully & Admin has been informed. You will be able to login after Admin approval.']);
+                    return back()->withErrors(['error'=>'You have been successfully registered on the Investor DNA system and administration have been informed. You will be able to login shortly, pending administration approval.  ']);
                 case "iclient":
                     return back()->withErrors(['error'=>'You have been registered Successfully & Verification link has been sent to your email id. Kindly verify to login.']);
             }
@@ -54,8 +54,8 @@ class HomeController extends Controller
             case "firm":
                 $data = array();
                 $data["tokens_available"] = Auth::user()->tokens_available;
-                $data["active_advisors"] = User::where(["role" => "advisor", "firm_code" => Auth::user()->code, "status" => true])->count();
-                $data["pending_advisors"] = User::where(["role" => "advisor", "firm_code" => Auth::user()->code, "status" => false])->count();
+                $data["active_advisors"] = User::where(["role" => "advisor", "firm_code" => Auth::user()->code, "firm_approved" => true])->count();
+                $data["pending_advisors"] = User::where(["role" => "advisor", "firm_code" => Auth::user()->code, "firm_approved" => false])->count();
                 $data["latest_reports"] = $this->getFirmLatestReports();
                 $data["top_advisors"] = $this->getFirmTopAdvisors();
 

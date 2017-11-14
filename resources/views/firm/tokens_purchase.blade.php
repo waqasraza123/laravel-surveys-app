@@ -43,7 +43,7 @@
                                 <div class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
                                     <label for="quantity" class="col-sm-6 control-label">Token Quantity</label>
                                     <div class="col-sm-6">
-                                        <input type="number" class="form-control" id="quantity" name="quantity" min="1" value="{{ old('quantity') }}" onkeyup="setPrice()" required>
+                                        <input type="number" class="form-control" id="quantity" name="quantity" min="1" value="{{ old('quantity') }}" onkeyup="setPrice()" onclick="setPrice()" required>
                                         @if ($errors->has('quantity'))
                                             <span class="help-block">
                                             <strong>{{ $errors->first('quantity') }}</strong>
@@ -156,13 +156,7 @@
                             </tr>
                             @endforeach
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>Quantity From</th>
-                                <th>Quantity To</th>
-                                <th>Price Per Token ({{ $selected_currency }})</th>
-                            </tr>
-                        </tfoot>
+
                     </table>
                 </div>
             </div>
