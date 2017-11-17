@@ -126,7 +126,7 @@ class QuestionerController extends Controller
         else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3') || !session()->has('part4'))
             return redirect('/questioner/'.$code.'/part/4');
 
-        return view('client.part5')->with(['code'=>$code, 'questions'=>$this->part5_questions(), 'saved_input'=>session('part5')]);
+        return view('client.part5')->with(['code'=>$code, 'saved_input'=>session('part5')]);
     }
 
     public function part5_submit($code, Request $request){
@@ -139,7 +139,7 @@ class QuestionerController extends Controller
             return redirect('/questioner/'.$code.'/part/4');
 
         session(['part5' => $request->all()]);
-        
+
         return redirect('/questioner/'.$code.'/part/6');
     }
 
@@ -372,27 +372,6 @@ class QuestionerController extends Controller
             ["Feelings", "Form"],
             ["Extroverted", "Introverted"],
 
-        ];
-    }
-
-    protected function part5_questions(){
-        return [
-            "I am a saver rather than a spender",
-            "I always strive to live within my means",
-            "I am very careful about how I spend my money",
-            "I have a financial budget that I stick to every month",
-            "Money is a means to an end and not an end in itself",
-            "I am generous with my money and help others out if needed",
-            "I like to spend my money on friends and family",
-            "I like to spend my money on travel and life experiences rather than on material possessions",
-            "I put aside a regular amount each month towards my financial goals",
-            "I know what my bank balance is at any given time",
-            "I keen a tight reign on my spending and don't fritter money away",
-            "It is important to me to be in control of my finances at all times",
-            "I am a spender rather than a saver",
-            "I take a big picture approach to my finances and don't pay much attention to the details",
-            "I think you need to borrow money to make money",
-            "I like to spend my money on big ticket items",
         ];
     }
 

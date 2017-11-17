@@ -161,12 +161,11 @@ class ReportsController extends Controller
         }
 
         //// Part 5 Scores ////
-        for($i = 1; $i <= count($response[4]); $i+=4){
-            $scores['green'] += $response[4][$i];
-            $scores['red'] += $response[4][$i+1];
-            $scores['blue'] += $response[4][$i+2];
-            $scores['yellow'] += $response[4][$i+3];
-        }
+        $part5 = $this->partEAnswers($response[4]);
+        $scores['green'] += $part5["green"];
+        $scores['red'] += $part5["red"];
+        $scores['blue'] += $part5["blue"];
+        $scores['yellow'] += $part5["yellow"];
 
         return "{A" . $scores['blue'] . ", B" . $scores['green'] . ", C" . $scores['red'] . ", D" . $scores['yellow'] . "}";
     }
@@ -199,12 +198,11 @@ class ReportsController extends Controller
         }
 
         //// Part 5 Scores ////
-        for($i = 1; $i <= count($response[4]); $i+=4){
-            $scores['green'] += $response[4][$i];
-            $scores['red'] += $response[4][$i+1];
-            $scores['blue'] += $response[4][$i+2];
-            $scores['yellow'] += $response[4][$i+3];
-        }
+        $part5 = $this->partEAnswers($response[4]);
+        $scores['green'] += $part5["green"];
+        $scores['red'] += $part5["red"];
+        $scores['blue'] += $part5["blue"];
+        $scores['yellow'] += $part5["yellow"];
 
         //// Calculating Percentage ////
         $scores['blue'] = (($scores['blue'] * 100) / 131);
@@ -384,6 +382,44 @@ class ReportsController extends Controller
         ];
 
         return $array[$opt];
+    }
+
+    protected function partEAnswers($opt){
+        $output = ["red" => 0, "yellow" => 0, "green" => 0, "blue" => 0];
+
+        if($opt["1"] == "1"){
+            $output["yellow"] += 3;
+        }
+        else{
+            $output["green"] += 3;
+        }
+
+        if($opt["2"] == "1"){
+            $output["green"] += 3;
+            $output["blue"] += 3;
+        }
+        else{
+            $output["red"] += 3;
+            $output["yellow"] += 3;
+        }
+
+        if($opt["3"] == "1"){
+            $output["blue"] += 3;
+        }
+        else{
+            $output["red"] += 3;
+        }
+
+        if($opt["4"] == "1"){
+            $output["blue"] += 3;
+            $output["yellow"] += 3;
+        }
+        else{
+            $output["red"] += 3;
+            $output["green"] += 3;
+        }
+
+        return $output;
     }
 
     function sendClientEmail($advisor, $code, $email, $name, $firm){
