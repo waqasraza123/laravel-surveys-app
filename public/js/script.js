@@ -38,6 +38,7 @@ function show_advisor(){
 function show_iclient(){
     document.getElementById('div_advisor').style.display = "none";
     document.getElementById('div_firm').style.display = "none";
+    document.getElementById('company_position').style.display = "none";
 
     document.getElementById('firm_code').required = false;
     document.getElementById('firm_name').required = false;
@@ -47,4 +48,6 @@ function show_iclient(){
     document.getElementById('postcode').required = false;
     document.getElementById('firm_website').required = false;
     document.getElementById('firm_phone').required = false;
+    document.getElementById('company_position').required = false;
+
 }

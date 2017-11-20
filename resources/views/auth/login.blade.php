@@ -1,6 +1,7 @@
 @extends('layouts.auth')
 
 @section('content')
+    <img src="images/new_banner.jpg" alt="" width="100%">
 
     <div class="container">
 

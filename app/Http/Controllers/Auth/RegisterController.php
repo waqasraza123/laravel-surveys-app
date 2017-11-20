@@ -58,7 +58,7 @@ class RegisterController extends Controller
                     'mobile_number' => 'required|string|max:175',
                     'role' => 'required|string|max:175',
                     'firm_code' => 'exists:users,code|max:6|min:6',
-                    'password' => 'required|string|min:10|max:175|regex:/^(?=.*[A-Z])(?=.*[0-9])(?=.*\d).+$/|confirmed',
+                    'password' => 'required|string|min:8|max:175|regex:/^(?=.*[A-Z])(?=.*[0-9])(?=.*\d).+$/|confirmed',
 
                 ]);
 
@@ -115,6 +115,7 @@ class RegisterController extends Controller
             ]);
 
             $this->sendEmailToFirm($user, $data['firm_code']);
+            $this->sendAdminNotificationAdvisor($user, $data['firm_code']);
 
             return $user;
         }
@@ -159,6 +160,18 @@ class RegisterController extends Controller
 
             return $user;
         }
+    }
+
+
+
+
+    // Email to Website Admin
+    function sendAdminNotificationAdvisor($user){
+        Mail::send('email.adminNotificationAdvisor', ["name" => $user->name], function($message) use ($user){
+            $message->to('david.peake@me.com')
+                    ->bcc('aaron@learnerlibrary.com')
+                ->subject('New Adviser Registered');
+        });
     }
 
     function sendConfirmationEmail($user){

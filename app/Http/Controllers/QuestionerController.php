@@ -377,18 +377,19 @@ class QuestionerController extends Controller
 
     protected function part7_questions(){
         return [
-            "I prefer an adviser that has a successful track record, as at the end of the day it’s about getting the results",
-            "I prefer to invest in sectors or shares that have a successful track record over time, as the best predictor of future success is past success",
-            "I prefer an adviser who puts my needs ahead of his or her own needs",
-            "I prefer an adviser who is communicative, has genuine empathy, and really listens to my needs and concerns",
-            "I prefer an adviser who is of the highest integrity, one that is reliable, authentic, dedicated and transparent in their dealings",
-            "I prefer an adviser who makes recommendations based on data, facts and rational analysis rather than other factors",
-            "I prefer an adviser who understands the legislative requirements and ensures that all of our investment options are compliant with the law",
-            "I prefer an adviser who is creative and original in their thinking, identifying new and exciting investments that challenge he status quo",
-            "I prefer an adviser who remains calm, objective and in control during times of market volatility",
-            "I prefer an adviser who takes time to get to know me and build a close personal relationship",
-            "I prefer an adviser who understands my core values and philosophy and has a similar outlook on life",
-            "I prefer an adviser who is exceptionally good with the numbers",
+            "I prefer a Financial Adviser that has a successful track record in providing their clients with success over the long haul",
+            "I prefer a Financial Adviser who has strong technical skills in terms of products, cash flow, taxation, retirement and estate planning.",
+            "I prefer a Financial Adviser who recommends sectors or shares that have an established and successful track record.",
+            "I prefer a Financial Adviser who puts me first, is contemporary in their approach, is responsive, and is able to listen and identify my real needs, concerns, goals, values and beliefs.",
+            "I prefer a Financial Adviser who takes the time to understand ‘what makes me tick’, has excellent interpersonal and communication skills and takes the time to build trust.",
+
+            "I prefer a Financial Adviser who is professional and ethical, who is reliable, authentic, dedicated and transparent in all aspects of the advice process.",
+            "I prefer a Financial Adviser who makes recommendations based on a through grasp of the data, facts and has reach their recommendations based on rational analysis.",
+            "I prefer a Financial Adviser who appreciates, understands and complies with all relevant legislation and regulations when providing financial advice.",
+            "I prefer an adviser who is creative and original in their thinking, who is ably to think ‘outside the square’ to identify new and original investment opportunities.",
+            "I prefer an adviser who remains calm, objective and in control during times of market volatility.",
+            "I only put my money into invest that I implicitly trust, those that operate with integrity and uphold the highest ethical standards. ",
+            "I prefer an adviser who understands my core values and philosophy and has a similar outlook on life.",
         ];
     }
 }

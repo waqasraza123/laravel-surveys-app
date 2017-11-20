@@ -19,52 +19,52 @@
                         <div class="radio">
                             <label>
                                 <input type="radio" name="1" value="1" required @if(isset($saved_input['1']) && $saved_input['1'] == "1") checked @endif>
-                                1. I am attracted to investments that are creative, novel and 'out of the box'
+                                I am attracted to investments that are creative, novel and 'out of the box'
                             </label>
                         </div>
                         <div class="radio">
                             <label>
                                 <input type="radio" name="1" value="2" required @if(isset($saved_input['1']) && $saved_input['1'] == "2") checked @endif>
-                                2. I am attracted to investments that are traditional and have a proven track record
+                                I am attracted to investments that are traditional and have a proven track record
                             </label>
                         </div>
                         <hr>
                         <div class="radio">
                             <label>
                                 <input type="radio" name="2" value="1" required @if(isset($saved_input['2']) && $saved_input['2'] == "1") checked @endif>
-                                1. I prefer to plan, organise and manage my investments in a structured and systematic manner
+                                I prefer to plan, organise and manage my investments in a structured and systematic manner
                             </label>
                         </div>
                         <div class="radio">
                             <label>
                                 <input type="radio" name="2" value="2" required @if(isset($saved_input['2']) && $saved_input['2'] == "2") checked @endif>
-                                2. I prefer to remain flexible when investing and keep my options open
+                                I prefer to remain flexible when investing and keep my options open
                             </label>
                         </div>
                         <hr>
                         <div class="radio">
                             <label>
                                 <input type="radio" name="3" value="1" required @if(isset($saved_input['3']) && $saved_input['3'] == "1") checked @endif>
-                                1. I prefer to make my investment decisions based on facts, data and rational analysis
+                                I prefer to make my investment decisions based on facts, data and rational analysis
                             </label>
                         </div>
                         <div class="radio">
                             <label>
                                 <input type="radio" name="3" value="2" required @if(isset($saved_input['3']) && $saved_input['3'] == "2") checked @endif>
-                                2. I prefer to make my investment decisions based on my strongly held principles and beliefs
+                                I prefer to make my investment decisions based on my strongly held principles and beliefs
                             </label>
                         </div>
                         <hr>
                         <div class="radio">
                             <label>
                                 <input type="radio" name="4" value="1" required @if(isset($saved_input['4']) && $saved_input['4'] == "1") checked @endif>
-                                1. I am intellectual in my approach and like to understand all aspects of the investment process
+                                I am intellectual in my approach and like to understand all aspects of the investment process
                             </label>
                         </div>
                         <div class="radio">
                             <label>
                                 <input type="radio" name="4" value="2" required @if(isset($saved_input['4']) && $saved_input['4'] == "2") checked @endif>
-                                2. I an instinctive in my approach, preferring to 'go with my gut' and back my personal intuition
+                                I an instinctive in my approach, preferring to 'go with my gut' and back my personal intuition
                             </label>
                         </div>
                     </div>

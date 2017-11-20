@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('content')
-    <img src="images/register.png" alt="" width="100%">
+    <img src="images/new_banner.jpg" alt="" width="100%">
 
     <div class="container">
 
@@ -30,7 +30,7 @@
                                 <option value="firm">Financial Practice</option>
                             @endif
 
-                            <option value="iclient">Independant Client</option>
+                            <option value="iclient">Independent Investor</option>
                         </select>
                 </div>
 
@@ -178,7 +178,7 @@
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
                         <input id="password" placeholder="Password" type="password" class="form-control" name="password" required>
-                        <em style="color: #888">Min 10 characters and must include uppercase letter and a number</em>
+                        <em style="color: #888">Min 8 characters and must include uppercase letter and a number</em>
                         @if ($errors->has('password'))
                             <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
