@@ -17,8 +17,6 @@ class viewAdvisorsController extends Controller
 
     public function new()
     {
-
-
         switch(Auth::user()->role){
             case "admin":
                 redirect("/home");
@@ -100,5 +98,68 @@ class viewAdvisorsController extends Controller
             $message->to($user->email, $user->name)
                 ->subject('Account Verified');
         });
+    }
+
+    /**
+     * edit adviser details
+     *
+     * @param $id
+     */
+    public function editAdviser($id){
+
+        $adviser = User::find($id);
+
+        return view('advisor.edit-adviser')->with($adviser->toArray());
+    }
+
+
+    /**
+     * update the advisers
+     *
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateAdviser(Request $request, $id){
+        $this->validate($request, [
+            'name' => 'required|string|min:3',
+            'company_position' => 'required|string|max:175',
+            'mobile_number' => 'required|string|max:175'
+        ]);
+
+        $adviser = User::where('id', $id)
+            ->where("role", "advisor")
+            ->where("firm_code", Auth::user()->code)
+            ->first();
+
+        $adviser->name = $request->input('name');
+        $adviser->company_position = $request->input('company_position');
+        $adviser->mobile_number = $request->input('mobile_number');
+        $adviser->save();
+
+        return back()->withErrors(['profileUpdated'=>'Profile Updated Successfully']);
+    }
+
+
+    /**
+     * update the adviser password
+     *
+     * @param Request $request
+     * @param $id
+     * @return $this
+     */
+    public function updateAdviserPassword(Request $request, $id){
+        $this->validate($request, [
+            'password' => 'required|string|min:8|max:175|regex:/^(?=.*[A-Z])(?=.*[0-9])(?=.*\d).+$/|confirmed',
+        ]);
+
+        $adviser = User::where('id', $id)
+            ->where("role", "advisor")
+            ->where("firm_code", Auth::user()->code)
+            ->first();
+        $adviser->password = bcrypt($request->input('password'));
+        $adviser->save();
+
+        return back()->withErrors(['profileUpdated'=>'Password Updated Successfully']);
     }
 }

@@ -47,7 +47,7 @@
 
 </div>
 <!-- End wrapper-->
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="{!! asset('theme/js/app.js') !!}" type="text/javascript"></script>
 
 <!-- Data picker -->
@@ -63,7 +63,7 @@
 
 
 
-
+@yield('footer-scripts')
 
 
 <!-- Scripts -->

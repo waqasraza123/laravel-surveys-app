@@ -31,7 +31,7 @@
                                         <td>{{ $advisor["company_position"] }}</td>
                                         <td><a href="/reports/view?advisor={{ $advisor['id'] }}">{{ $advisor["total_reports"] }}</a></td>
                                         <td>Active</td>
-                                        <td> <a class="btn btn-white btn-bitbucket">
+                                        <td> <a href="{{route('adviser-edit', ['id' => $advisor['id']])}}" class="btn btn-white btn-bitbucket">
                                                 <i class="fa fa-pencil"></i>
                                             </a>
                                             <a class="btn btn-white btn-bitbucket">

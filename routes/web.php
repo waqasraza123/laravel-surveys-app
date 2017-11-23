@@ -42,7 +42,9 @@ Route::get('/advisors/new', 'viewAdvisorsController@new')->name('advisors_new');
 Route::get('/advisors/approved', 'viewAdvisorsController@approved')->name('advisors_approved');
 Route::get('/advisors/delete/{id}', 'viewAdvisorsController@delete');
 Route::get('/advisors/firm-approve/{id}', 'viewAdvisorsController@firmApprove');
-
+Route::get('/advisers/{id}/edit', 'viewAdvisorsController@editAdviser')->name('adviser-edit');
+Route::post('/advisers/{id}/', 'viewAdvisorsController@updateAdviser')->name('adviser-update');
+Route::post('/advisers/{id}/password', 'viewAdvisorsController@updateAdviserPassword')->name('adviser-password-update');
 
 Route::get('/tokens/purchase', 'TokensController@index');
 Route::post('/tokens/purchase', 'TokensController@purchase');

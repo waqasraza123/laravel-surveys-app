@@ -220,3 +220,8 @@
 
 </div>
 @endsection
+@section('footer-scripts')
+    <script>
+        if($())
+    </script>
+@endsection
