@@ -68,16 +68,30 @@
                     </li>
                     <li @if (Request::is('profile')) class="active" @endif><a href="{{url('/profile')}}"><i class="fa fa-user"></i> <span>Adviser Profile</span></a></li>
 
+            {{--ADVISOR MENU--}}
+                @elseif (Auth::user()->role == "iclient")
+                    <li @if (Request::is('home')) class="active" @endif><a href="{{url('/home')}}"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
+
+                     <li class="treeview @if (Request::is('reports/*')) active @endif">
+                        <a href="/reports/new"><i class="fa fa-file-text"></i> <span>Investor DNA Profile </span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li class="@if (Request::is('reports/new')) active @endif"><a href="{{url('/reports/new')}}">Add New</a></li>
+                            <li class="@if (Request::is('reports/view')) active @endif"><a href="{{url('/reports/view')}}">View </a></li>
+                        </ul>
+                    </li>
+                    <li @if (Request::is('profile')) class="active" @endif><a href="{{url('/profile')}}"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+
                 @endif
 
         </ul>
 
 
-        <div class="info">
+        <div class="info" style="<?php if(Auth::user()->role == "iclient") echo "display:none"; ?>">
             <ul class="info">
-                <li><?php if(Auth::user()->role == "advisor")
+                <li><?php
+                    if(Auth::user()->role == "advisor")
                         echo "<b>Financial Practice Name</b>" .'<br/> - '. \App\User::where("code", Auth::user()->firm_code)->get()->first()->firm_name;
-                          else
+                    else if(Auth::user()->role == "firm")
                          echo "<b>Financial Practice Name</b>" .'<br/> - '. Auth::user()->firm_name;
                     ?></li>
                 <li><?php

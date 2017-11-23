@@ -30,7 +30,12 @@
                                 <option value="firm">Financial Practice</option>
                             @endif
 
-                            <option value="iclient">Independent Investor</option>
+                            @if (old('role') == 'iclient')
+                                <option value="iclient" selected>Independent Investor</option>
+                            @else
+                                <option value="iclient">Independent Investor</option>
+                            @endif
+
                         </select>
                 </div>
 
