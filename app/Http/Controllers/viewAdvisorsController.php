@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Illuminate\Support\Facades\DB;
 use Mail;
 use app\User;
 use App\Report;
@@ -12,7 +13,9 @@ class viewAdvisorsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => [
+            'validatePracticeCode'
+        ]]);
     }
 
     public function new()
@@ -161,5 +164,25 @@ class viewAdvisorsController extends Controller
         $adviser->save();
 
         return back()->withErrors(['profileUpdated'=>'Password Updated Successfully']);
+    }
+
+
+    /**
+     * validate practice code while registration
+     *
+     * @param Request $request
+     * @return int|mixed
+     */
+    public function validatePracticeCode(Request $request){
+        $check = DB::table('users')->where('code', $request->input('firm_code'))
+            ->where('role', 'firm')
+            ->first();
+        if($check){
+            return $check->firm_name;
+        }
+        else{
+            return 0;
+        }
+
     }
 }

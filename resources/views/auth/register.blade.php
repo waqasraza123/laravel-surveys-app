@@ -41,7 +41,7 @@
 
                 <div id="div_advisor">
 
-                    <div class="form-group{{ $errors->has('firm_code') && old('role') == 'advisor' ? ' has-error' : '' }}">
+                    <div class="firm_code_outer form-group{{ $errors->has('firm_code') && old('role') == 'advisor' ? ' has-error' : '' }}">
 
                             <input id="firm_code" placeholder="Financial Practice Code" type="text" class="form-control" name="firm_code" value="{{ old('firm_code') }}" required>
 
@@ -227,6 +227,26 @@
 @endsection
 @section('footer-scripts')
     <script>
-        if($())
+        /*validate the practice code*/
+        $("#firm_code").change(function () {
+            var practiceCode = $(this).val()
+            $.ajax({
+                url: '{{route('practice-code')}}',
+                data: {'firm_code': practiceCode, "_token": "{{ csrf_token() }}"},
+                type: 'POST',
+                success: function (data) {
+                    //code did not match
+                    if(data != 0){
+                        $(".firm_code_outer").after("<div class='form-group firm-name-append-dynamic'><input type='text' name='firm_name' id='firm_name' value='" + data + "' class='form-control' placeholder='Firm Name' required></div>")
+                    }
+                    else{
+                        $(".firm-name-append-dynamic").remove()
+                    }
+                },
+                error: function (error) {
+
+                }
+            })
+        })
     </script>
 @endsection
