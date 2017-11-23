@@ -46,6 +46,8 @@ Route::get('/advisers/{id}/edit', 'viewAdvisorsController@editAdviser')->name('a
 Route::post('/advisers/{id}/', 'viewAdvisorsController@updateAdviser')->name('adviser-update');
 Route::post('/advisers/{id}/password', 'viewAdvisorsController@updateAdviserPassword')->name('adviser-password-update');
 Route::post('/firm/code/validate', 'viewAdvisorsController@validatePracticeCode')->name('practice-code');
+Route::post('admin/firms/{id}/password-update', 'FirmController@passwordUpdate')->name('admin.firms.pass-update');
+
 
 Route::get('/tokens/purchase', 'TokensController@index');
 Route::post('/tokens/purchase', 'TokensController@purchase');
@@ -72,7 +74,9 @@ Route::get('/rates', 'TokenRatesController@index');
 Route::post('/rates/new', 'TokenRatesController@new');
 Route::post('/rates/clear', 'TokenRatesController@clear');
 Route::get('/advisors/approve/{id}', 'viewAdvisorsController@approve');
-
+Route::post('/admin/firms/{id}', 'FirmController@update')->name('firm.update');
+Route::resource('/admin/firms', 'FirmController');
+Route::get('admin/firms/delete/{id}', 'FirmController@destroy');
 
 //////////////////////////////////////////////////////////////
 ///////////////////////// For Client /////////////////////////

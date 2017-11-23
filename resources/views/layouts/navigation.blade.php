@@ -7,7 +7,6 @@
                     <img src="{{url('images/adminLogo.png')}}" alt="" width="190px" style=" padding-top: 10px">
                 </div>
             </li>
-
             {{--ADMIN MENU--}}
                 @if (Auth::user()->role == "admin")
                     <li @if (Request::is('home')) class="active" @endif><a href="/home"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
@@ -19,6 +18,8 @@
                             <li class="@if (Request::is('advisors/new')) active @endif"><a href="/advisors/new">Pending Approval</a></li>
                         </ul>
                     </li>
+
+                    <li @if (Request::is('/admin/firms')) class="active" @endif><a href="{{route('firms.index')}}"><i class="fa fa-tachometer"></i> <span>Firms</span></a></li>
 
                     <li @if (Request::is('reports/view')) class="active" @endif><a href="/reports/view"><i class="fa fa-tachometer"></i> <span>Investor DNA Profile</span></a></li>
 

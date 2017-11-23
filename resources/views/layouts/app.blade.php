@@ -79,5 +79,16 @@
 
     <!-- Scripts -->
 {{--    <script src="{{ asset('js/app.js') }}"></script>--}}
+
+@if (session()->has('success'))
+    <script>
+        $('div.alert').delay(4000).slideUp(300);
+    </script>
+@endif
+<script>
+    if(($('.alert')).length > 0){
+        $('.alert').delay(4000).slideUp(300);
+    }
+</script>
 </body>
 </html>

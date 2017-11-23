@@ -30,9 +30,6 @@ class viewAdvisorsController extends Controller
                                 ->get()
                                 ->toArray();
 
-
-//                dd($advisors);
-
                 return view("firm.advisors_new")->with(["page_title" => "New Advisors", "advisors" => $advisors]);
             case "advisor":
                 redirect("/home");
