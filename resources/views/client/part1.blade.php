@@ -40,13 +40,10 @@
                                     <input type="radio" name="{{ $key+1 }}" value="2" required @if(isset($saved_input[$key+1]) && $saved_input[$key+1] == "2") checked @endif> 2. SOMEWHAT like me
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="3" required @if(isset($saved_input[$key+1]) && $saved_input[$key+1] == "3") checked @endif> 3. QUITE like me
+                                    <input type="radio" name="{{ $key+1 }}" value="3" required @if(isset($saved_input[$key+1]) && $saved_input[$key+1] == "3") checked @endif> 3. MOSTLY like me
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="4" required @if(isset($saved_input[$key+1]) && $saved_input[$key+1] == "4") checked @endif> 4. VERY CLOSE  to me
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="5" required @if(isset($saved_input[$key+1]) && $saved_input[$key+1] == "5") checked @endif> 5. SPOT ON - this is  me!
+                                    <input type="radio" name="{{ $key+1 }}" value="4" required @if(isset($saved_input[$key+1]) && $saved_input[$key+1] == "4") checked @endif> 4. SPOT ON - this is  me!
                                 </label>
 
 

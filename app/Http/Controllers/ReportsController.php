@@ -205,16 +205,16 @@ class ReportsController extends Controller
         $scores['yellow'] += $part5["yellow"];
 
         //// Calculating Percentage ////
-        $scores['blue'] = (($scores['blue'] * 100) / 131);
-        $scores['green'] = (($scores['green'] * 100) / 131);
-        $scores['red'] = (($scores['red'] * 100) / 131);
-        $scores['yellow'] = (($scores['yellow'] * 100) / 131);
+        $scores['blue'] = (($scores['blue'] * 100) / 115);
+        $scores['green'] = (($scores['green'] * 100) / 115);
+        $scores['red'] = (($scores['red'] * 100) / 115);
+        $scores['yellow'] = (($scores['yellow'] * 100) / 115);
 
         //// allocate low, med, high ////
         foreach($scores as $key => $score){
-            if($score <= 33)
+            if($score <= 35)
                 $scores[$key] = 3;
-            else if($score > 33 && $score <= 66)
+            else if($score > 35 && $score <= 68)
                 $scores[$key] = 2;
             else
                 $scores[$key] = 1;
