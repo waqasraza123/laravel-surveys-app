@@ -125,12 +125,12 @@ class ReportsController extends Controller
 
     protected function getPart6Answer($response){
         $response = unserialize($response);
-        return $response[5]['part6'];
+        return $response[5];
     }
 
     protected function getPart7Answer($response){
         $response = unserialize($response);
-        return $response[6];
+        return $response[6]['part7'];
     }
 
     protected function getIndividualScore($response){

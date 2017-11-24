@@ -152,7 +152,7 @@ class QuestionerController extends Controller
         else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3') || !session()->has('part4') || !session()->has('part5'))
             return redirect('/questioner/'.$code.'/part/5');
 
-        return view('client.part6')->with(['code'=>$code, 'saved_input'=>session('part6')]);
+        return view('client.part6')->with(['code'=>$code, 'questions'=>$this->part6_questions(), 'saved_input'=>session('part6')]);
     }
 
     public function part6_submit($code, Request $request){
@@ -178,7 +178,7 @@ class QuestionerController extends Controller
         else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3') || !session()->has('part4') || !session()->has('part5') || !session()->has('part6'))
             return redirect('/questioner/'.$code.'/part/6');
 
-        return view('client.part7')->with(['code'=>$code, 'questions'=>$this->part7_questions(), 'saved_input'=>session('part7')]);
+        return view('client.part7')->with(['code'=>$code, 'saved_input'=>session('part7')]);
     }
 
     public function part7_submit($code, Request $request){
@@ -375,7 +375,7 @@ class QuestionerController extends Controller
         ];
     }
 
-    protected function part7_questions(){
+    protected function part6_questions(){
         return [
             "I prefer a Financial Adviser that has a successful track record in providing their clients with success over the long haul",
             "I prefer a Financial Adviser who has strong technical skills in terms of products, cash flow, taxation, retirement and estate planning.",
