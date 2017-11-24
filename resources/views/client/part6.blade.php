@@ -83,9 +83,9 @@
             }
             swal(
               'Alert!',
-              "You have previously selected {" + text + "} four times which is the maximum number of responses permitted.",
-              'Please choose another response.'
+              "You have previously selected {" + text + "} four times which is the maximum number of responses permitted."
             );
+            event.preventDefault();
             return false;
         }
         else if (old[row-1] != opt){
