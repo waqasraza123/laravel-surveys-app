@@ -22,6 +22,8 @@ class profileController extends Controller
                 return view('firm.profile')->with(Auth::user()->toArray());
             case "advisor":
                 return view('advisor.profile')->with(Auth::user()->toArray());
+            case "iclient":
+                return view('iclient.profile')->with(Auth::user()->toArray());
         }
     }
 
@@ -53,6 +55,10 @@ class profileController extends Controller
                 $user->firm_website = $request->firm_website;
                 $user->firm_phone = $request->firm_phone;
                 break;
+            case "iclient":
+                $user->name = $request->name;
+                $user->mobile_number = $request->mobile_number;
+                break;
         }
 
         $user->save();
@@ -80,6 +86,7 @@ class profileController extends Controller
                 return Validator::make($data, [
                     'name' => 'required|string|max:175',
                 ]);
+
             case "advisor":
                 return Validator::make($data, [
                     'name' => 'required|string|max:175',
@@ -101,12 +108,18 @@ class profileController extends Controller
                     'firm_website' => 'string|max:175',
                     'firm_phone' => 'string|max:175',
                 ]);
+
+            case "iclient":
+                return Validator::make($data, [
+                    'name' => 'required|string|max:175',
+                    'mobile_number' => 'required|string|max:175',
+                ]);
         }
     }
 
     protected function passwordValidator(array $data){
         return Validator::make($data, [
-            'password' => 'required|string|min:6|max:175|confirmed',
+            'password' => 'required|string|min:8|max:175|regex:/^(?=.*[A-Z])(?=.*[0-9])(?=.*\d).+$/|confirmed',
         ]);
     }
 }
