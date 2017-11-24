@@ -237,7 +237,7 @@
                 success: function (data) {
                     //code did not match
                     if(data != 0){
-                        $(".firm_code_outer").after("<div class='form-group firm-name-append-dynamic'><input type='text' name='firm_name' id='firm_name' value='" + data + "' class='form-control' placeholder='Firm Name' required></div>")
+                        $(".firm_code_outer").after("<div class='form-group firm-name-append-dynamic'><input type='text' name='firm_name' id='firm_name' value='" + data + "' class='form-control' placeholder='Firm Name' required readonly></div>")
                     }
                     else{
                         $(".firm-name-append-dynamic").remove()
