@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 use app\User;
 use App\Report;
 use Illuminate\Http\Request;
@@ -22,7 +22,12 @@ class viewAdvisorsController extends Controller
     {
         switch(Auth::user()->role){
             case "admin":
-                redirect("/home");
+                $advisors = User::where("role", "advisor")
+                    ->where("firm_approved", false)
+                    ->get()
+                    ->toArray();
+
+                return view("firm.advisors_new")->with(["page_title" => "New Advisors", "advisors" => $advisors]);
             case "firm":
                 $advisors = User::where("role", "advisor")
                                 ->where("firm_code", Auth::user()->code)
@@ -32,7 +37,7 @@ class viewAdvisorsController extends Controller
 
                 return view("firm.advisors_new")->with(["page_title" => "New Advisors", "advisors" => $advisors]);
             case "advisor":
-                redirect("/home");
+                return redirect("/home");
         }
     }
 
@@ -40,7 +45,14 @@ class viewAdvisorsController extends Controller
     {
         switch(Auth::user()->role){
             case "admin":
-                redirect("/home");
+                $advisors = User::where("role", "advisor")
+                    ->where("firm_approved", true)
+                    ->get()
+                    ->toArray();
+                foreach($advisors as $key => $value)
+                    $advisors[$key]["total_reports"] = Report::where("advisor", $value["id"])->count();
+
+                return view("firm.advisors_approved")->with(["page_title" => "Approved Advisors", "advisors" => $advisors]);
             case "firm":
                 $advisors = User::where("role", "advisor")
                                 ->where("firm_code", Auth::user()->code)
@@ -52,7 +64,7 @@ class viewAdvisorsController extends Controller
 
                 return view("firm.advisors_approved")->with(["page_title" => "Approved Advisors", "advisors" => $advisors]);
             case "advisor":
-                redirect("/home");
+                return redirect("/home");
         }
     }
 
@@ -63,7 +75,13 @@ class viewAdvisorsController extends Controller
     //Advisor approved by Firm
     public function firmApprove($id){
         $user = User::find($id);
-        if($user->firm_code == Auth::user()->code){
+
+        if(Auth::user()->role == 'admin'){
+            $user->firm_approved = true;
+            $user->save();
+        }
+
+        elseif($user->firm_code == Auth::user()->code){
             $user->firm_approved = true;
             $user->save();
         }
@@ -127,10 +145,19 @@ class viewAdvisorsController extends Controller
             'mobile_number' => 'required|string|max:175'
         ]);
 
-        $adviser = User::where('id', $id)
-            ->where("role", "advisor")
-            ->where("firm_code", Auth::user()->code)
-            ->first();
+        $userRole = Auth::user()->role;
+
+        if ($userRole == 'admin'){
+            $adviser = User::where('id', $id)
+                ->where("role", "advisor")
+                ->first();
+        }
+        elseif ($userRole == 'firm'){
+            $adviser = User::where('id', $id)
+                ->where("role", "advisor")
+                ->where("firm_code", Auth::user()->code)
+                ->first();
+        }
 
         $adviser->name = $request->input('name');
         $adviser->company_position = $request->input('company_position');
@@ -153,10 +180,20 @@ class viewAdvisorsController extends Controller
             'password' => 'required|string|min:8|max:175|regex:/^(?=.*[A-Z])(?=.*[0-9])(?=.*\d).+$/|confirmed',
         ]);
 
-        $adviser = User::where('id', $id)
-            ->where("role", "advisor")
-            ->where("firm_code", Auth::user()->code)
-            ->first();
+        $userRole = Auth::user()->role;
+
+        if ($userRole == 'admin'){
+            $adviser = User::where('id', $id)
+                ->where("role", "advisor")
+                ->first();
+        }
+        elseif ($userRole == 'firm'){
+            $adviser = User::where('id', $id)
+                ->where("role", "advisor")
+                ->where("firm_code", Auth::user()->code)
+                ->first();
+        }
+
         $adviser->password = bcrypt($request->input('password'));
         $adviser->save();
 
