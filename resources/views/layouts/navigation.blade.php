@@ -76,8 +76,8 @@
                      <li class="treeview @if (Request::is('reports/*')) active @endif">
                         <a href="/reports/new"><i class="fa fa-file-text"></i> <span>Investor DNA Profile </span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="@if (Request::is('reports/new')) active @endif"><a href="{{url('/reports/new')}}">Add New</a></li>
-                            <li class="@if (Request::is('reports/view')) active @endif"><a href="{{url('/reports/view')}}">View </a></li>
+                            <li class="@if (Request::is('reports/new/')) active @endif"><a href="{{url('/reports/new')}}">Add New</a></li>
+                            <li class="@if (Request::is('reports/view/')) active @endif"><a href="{{url('/reports/view')}}">View </a></li>
                         </ul>
                     </li>
                     <li @if (Request::is('profile')) class="active" @endif><a href="{{url('/profile')}}"><i class="fa fa-user"></i> <span>Profile</span></a></li>

@@ -125,7 +125,7 @@ class TokensController extends Controller
         $user->save();
     }
 
-    protected function getRate($quantity){
+    public static function getRate($quantity){
         $rates = PriceRange::all();
         $rates->last()->end = "∞";
 
@@ -147,7 +147,7 @@ class TokensController extends Controller
         }
     }
 
-    protected function getCurrencies(){
+    public static function getCurrencies(){
         $json = file_get_contents("https://api.fixer.io/latest?base=AUD&symbols=USD,GBP,EUR");
         $json_data = json_decode($json, true)["rates"];
         $json_data["AUD"] = 1;
