@@ -7,6 +7,7 @@ use Mail;
 use PDF;
 use app\User;
 use App\Report;
+use App\PriceRange;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
@@ -17,17 +18,44 @@ class ReportsController extends Controller
         $this->middleware('auth');
     }
 
-    public function new(){
-        if(Auth::user()->role != 'advisor')
-            return redirect('/');
+    public function new(Request $request){
+        if(Auth::user()->role == 'advisor')
+            return view('advisor.reports_new')->with('tokens', User::where('code', Auth::user()->firm_code)->get()->first()->tokens_available);
 
-        return view('advisor.reports_new')->with('tokens', User::where('code', Auth::user()->firm_code)->get()->first()->tokens_available);
+        else if(Auth::user()->role == 'iclient'){
+            $rates = PriceRange::all();
+            if($rates->count() > 0)
+                $rates->last()->end = "∞";
+
+            $currencies = $this->getCurrencies();
+            $selected_currency = 'AUD';
+            if($request->input("currency"))
+                $selected_currency = $request->input("currency");
+
+            foreach($rates as $rate)
+                $rate["rate"] = $rate["rate"] * $currencies[$selected_currency];
+
+            return view('iclient.reports_new')->with(["page_title" => "Create New Report", "rates" => $rates, "selected_currency" => $selected_currency, "currencies" => $currencies]);
+        }
+
+        return redirect('/');
     }
 
     public function create(Request $request){
-        if(Auth::user()->role != 'advisor')
-            return redirect('/');
+        if(Auth::user()->role == 'advisor')
+            return $this->createReport_Advisor($request);
 
+        else if(Auth::user()->role == 'iclient')
+            return $this->createReport_iClient($request);
+
+        return redirect('/');
+    }
+
+    private function createReport_iClient(Request $request){
+
+    }
+
+    private function createReport_Advisor(Request $request){
         $firm = User::where('code', Auth::user()->firm_code)->get()->first();
 
         $validator = $this->validator($request->all());
@@ -84,6 +112,13 @@ class ReportsController extends Controller
                     }
                 }
                 return view('firm.reports_view')->with(['reports'=>$reports]);
+
+            case "iclient":
+                $reports = Report::where('advisor',Auth::id())->get()->reverse();
+                foreach($reports as $report)
+                    if($report->completed)
+                        $report->score = $this->getScore($report->response);
+                return view('iclient.reports_view')->with(['reports'=>$reports]);
         }
     }
 
@@ -438,9 +473,12 @@ class ReportsController extends Controller
         ]);
     }
 
-
-    public function viewReport() {
-        return view('reports.1122');
+    protected function getCurrencies(){
+        $json = file_get_contents("https://api.fixer.io/latest?base=AUD&symbols=USD,GBP,EUR");
+        $json_data = json_decode($json, true)["rates"];
+        $json_data["AUD"] = 1;
+        ksort($json_data);
+        return $json_data;
     }
 
 }
