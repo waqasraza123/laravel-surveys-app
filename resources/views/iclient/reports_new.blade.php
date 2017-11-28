@@ -30,7 +30,7 @@
                                 <div class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
                                     <label for="quantity" class="col-sm-6 control-label">Token Quantity</label>
                                     <div class="col-sm-6">
-                                        <input type="number" class="form-control" id="quantity" name="quantity" value="1" disabled>
+                                        <input type="number" class="form-control" id="quantity" name="quantity" value="1" readonly>
                                     </div>
                                 </div>
                             </div>

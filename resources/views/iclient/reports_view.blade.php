@@ -36,7 +36,7 @@
                                             @if($report["completed"])
                                                 <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Investor DNA Profile</a>
                                             @else
-                                                Not Completed
+                                                <a target="_blank" href="/questioner/{{ $report['code'] }}">Open Investor DNA Questionnaire</a>
                                             @endif
                                         </td>
                                         <td>

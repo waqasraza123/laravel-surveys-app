@@ -8,6 +8,8 @@ use PDF;
 use app\User;
 use App\Report;
 use App\PriceRange;
+use App\Transaction;
+use Omnipay\Omnipay;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
@@ -75,8 +77,20 @@ class ReportsController extends Controller
         ])->send();
 
         if($response->isSuccessful()) {
-            $this->successfulTransaction($request->quantity, $rate);
-            return back()->withErrors(["success" => "Tokens Purchased Successfully. $" . $price . " has been deducted from your card."]);
+            $this->successfulTransaction($rate);
+
+            $code = $this->create_report_code();
+            $report = new Report;
+            $report->code = $code;
+            $report->advisor = Auth::id();
+            $report->email = Auth::user()->email;
+            $report->first_name = '';
+            $report->last_name = '';
+            $report->save();
+
+            $this->sendiClientEmail($code, $report->email, Auth::user()->name);
+
+            return redirect('questioner/' . $code);
         }
 
         return back()->withErrors(["error" => $response->getMessage()]);
@@ -486,6 +500,13 @@ class ReportsController extends Controller
 
     function sendClientEmail($advisor, $code, $email, $name, $firm){
         Mail::send('email.newClient', ["advisor" => $advisor, "code" => $code, "client" => $name, "firm" => $firm], function($message) use ($email, $name){
+            $message->to($email, $name)
+                ->subject('Investor DNA Questionnaire');
+        });
+    }
+
+    function sendiClientEmail($code, $email, $name){
+        Mail::send('email.newiClientReport', ["code" => $code, "client" => $name], function($message) use ($email, $name){
             $message->to($email, $name)
                 ->subject('Investor DNA Questionnaire');
         });
