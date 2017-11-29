@@ -33,16 +33,16 @@
                             <div class="form-group">
                                 <label class="control-label" for="{{ $key+1 }}">{{ $key+1 }}. {{ $question }}</label><br/>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="4" onclick="return clicked(4, {{ $key+1 }});" required @if($saved_input[$key+1] == "4") checked @endif> <b>Most Important</b> - This is most important when selecting my Financial Adviser
+                                    <input type="radio" name="{{ $key+1 }}" value="4" onclick="clicked(4, {{ $key+1 }});" required @if($saved_input[$key+1] == "4") checked @endif> <b>Most Important</b> - This is most important when selecting my Financial Adviser
                                 </label><br/>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="3" onclick="return clicked(3, {{ $key+1 }});" required @if($saved_input[$key+1] == "3") checked @endif> <b>Important</b> - This is important when selecting my Financial Adviser
+                                    <input type="radio" name="{{ $key+1 }}" value="3" onclick="clicked(3, {{ $key+1 }});" required @if($saved_input[$key+1] == "3") checked @endif> <b>Important</b> - This is important when selecting my Financial Adviser
                                 </label><br/>
                                 <label class="radio-inline">
-                                    <input type="radio" name="{{ $key+1 }}" value="2" onclick="return clicked(2, {{ $key+1 }});" required @if($saved_input[$key+1] == "2") checked @endif> <b>Less Important</b> - Whilst this is important, it is less important than other statements presented in this section.
+                                    <input type="radio" name="{{ $key+1 }}" value="2" onclick="clicked(2, {{ $key+1 }});" required @if($saved_input[$key+1] == "2") checked @endif> <b>Less Important</b> - Whilst this is important, it is less important than other statements presented in this section.
                                 </label>
                                 {{--<label class="radio-inline">--}}
-                                    {{--<input type="radio" name="{{ $key+1 }}" value="1" onclick="return clicked(1, {{ $key+1 }});" required @if($saved_input[$key+1] == "1") checked @endif> Unimportant--}}
+                                    {{--<input type="radio" name="{{ $key+1 }}" value="1" onclick="clicked(1, {{ $key+1 }});" required @if($saved_input[$key+1] == "1") checked @endif> Unimportant--}}
                                 {{--</label>--}}
                             </div>
                             @if($key < count($questions) - 1)
@@ -69,32 +69,18 @@
     var old = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     function clicked(opt, row){
-        if(arr[opt-1] >= 4){
-            var text;
-            switch(opt){
-                case 4:
-                    text = "Very Important"; break;
-                case 3:
-                    text = "Important"; break;
-                case 2:
-                    text = "Somewhat Important"; break;
-                case 1:
-                    text = "Unimportant"; break;
-            }
-            swal(
-              'Alert!',
-              "You have previously selected {" + text + "} four times which is the maximum number of responses permitted."
-            );
-            event.preventDefault();
-            return false;
-        }
-        else if (old[row-1] != opt){
+        if (old[row-1] != opt){
             if(old[row-1] != 0){
                 arr[old[row-1]-1]--;
+                $("input[type=radio][value=" + old[row-1] + "]").prop("disabled",false);
             }
             old[row-1] = opt;
             arr[opt-1]++;
-            return true;
+        }
+
+
+        if(arr[opt-1] >= 4){
+            $("input[type=radio][value=" + opt + "]:not(:checked)").prop("disabled",true);
         }
     }
 </script>
