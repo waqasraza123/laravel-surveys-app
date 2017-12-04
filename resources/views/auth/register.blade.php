@@ -1,14 +1,23 @@
 @extends('layouts.auth')
 
+<style>
+
+
+    .gray-bg, .bg-muted {
+        background-color: #2f4050!important;
+    }
+
+</style>
+
 @section('content')
-    <img src="images/new_banner.jpg" alt="" width="100%">
+    {{--<img src="images/new_banner.jpg" alt="" width="100%">--}}
 
     <div class="container">
 
 
     <div class="middle-box text-center loginscreen   animated fadeInDown">
         <div>
-            <div>
+            <div  style="margin-bottom: 80px">
 
                 <img src="images/logoi.png" alt="" width="220px">
                 <h1 style="margin-top:0px" class="logo-name">Investor DNA</h1>
