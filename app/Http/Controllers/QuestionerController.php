@@ -370,7 +370,7 @@ class QuestionerController extends Controller
             ["Practical", "Creative"],
             ["Instinctive  ", "Intellectual"],
             ["Feelings", "Form"],
-            ["Extroverted", "Introverted"],
+            ["Spiritual", "Creative"],
 
         ];
     }

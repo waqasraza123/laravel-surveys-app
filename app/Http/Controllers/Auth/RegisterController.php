@@ -168,7 +168,6 @@ class RegisterController extends Controller
     function sendAdminNotificationAdvisor($user){
         Mail::send('email.adminNotificationAdvisor', ["name" => $user->name], function($message) use ($user){
             $message->to('david.peake@me.com')
-                    ->bcc('aaron@learnerlibrary.com')
                 ->subject('New Adviser Registered');
         });
     }
@@ -192,7 +191,8 @@ class RegisterController extends Controller
 
     function sendEmailToFirm($user, $code){
         $firm = User::where("code", $code)->first();
-        Mail::send('email.newAdvisor', ["name" => $user->name, "email" => $user->email], function($message) use ($firm){
+        $firmName = $firm->name;
+        Mail::send('email.newAdvisor', ["name" => $user->name, "email" => $user->email, 'firmName' => $firmName], function($message) use ($firm){
             $message->to($firm->email, $firm->name)
                 ->subject('New Advisor Registered');
         });

@@ -12,7 +12,7 @@
                     <li @if (Request::is('home')) class="active" @endif><a href="/home"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
 
                     <li class="treeview @if (Request::is('advisors/*')) active @endif">
-                        <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Advisers</span><span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Financial Advisers</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li class="@if (Request::is('advisors/approved')) active @endif"><a href="/advisors/approved">Active Advisers</a></li>
                             <li class="@if (Request::is('advisors/new')) active @endif"><a href="/advisors/new">Pending Approval</a></li>
@@ -32,10 +32,10 @@
                     <li @if (Request::is('home')) class="active" @endif><a href="/home"><i class="fa fa-tachometer"></i> <span>Financial Practice Dashboard</span></a></li>
 
                     <li class="treeview @if (Request::is('advisors/*')) active @endif">
-                        <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Advisers</span><span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Financial Advisers</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="@if (Request::is('advisors/approved')) active @endif"><a href="/advisors/approved">Active Advisers</a></li>
-                            <li class="@if (Request::is('advisors/new')) active @endif"><a href="/advisors/new">Pending Approval</a></li>
+                            <li class="@if (Request::is('advisors/approved')) active @endif"><a href="/advisors/approved">Financial Active Advisers</a></li>
+                            <li class="@if (Request::is('advisors/new')) active @endif"><a href="/advisors/new">Financial Pending Approval</a></li>
                         </ul>
                     </li>
 
@@ -57,7 +57,7 @@
 
             {{--ADVISOR MENU--}}
                 @elseif (Auth::user()->role == "advisor")
-                    <li @if (Request::is('home')) class="active" @endif><a href="{{url('/home')}}"><i class="fa fa-tachometer"></i> <span>Adviser Dashboard</span></a></li>
+                    <li @if (Request::is('home')) class="active" @endif><a href="{{url('/home')}}"><i class="fa fa-tachometer"></i> <span>Financial Adviser Dashboard</span></a></li>
                     <li><a href="/clients"><i class="fa fa-users"></i> <span>Clients</span></a></li>
 
                      <li class="treeview @if (Request::is('reports/*')) active @endif">
@@ -67,7 +67,7 @@
                             <li class="@if (Request::is('reports/view')) active @endif"><a href="{{url('/reports/view')}}">View </a></li>
                         </ul>
                     </li>
-                    <li @if (Request::is('profile')) class="active" @endif><a href="{{url('/profile')}}"><i class="fa fa-user"></i> <span>Adviser Profile</span></a></li>
+                    <li @if (Request::is('profile')) class="active" @endif><a href="{{url('/profile')}}"><i class="fa fa-user"></i> <span>Financial Adviser Profile</span></a></li>
 
             {{--ADVISOR MENU--}}
                 @elseif (Auth::user()->role == "iclient")

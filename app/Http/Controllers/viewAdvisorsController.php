@@ -31,7 +31,7 @@ class viewAdvisorsController extends Controller
             case "firm":
                 $advisors = User::where("role", "advisor")
                                 ->where("firm_code", Auth::user()->code)
-                                ->where("firm_approved", false)
+                                ->where("status", false)
                                 ->get()
                                 ->toArray();
 
@@ -46,7 +46,7 @@ class viewAdvisorsController extends Controller
         switch(Auth::user()->role){
             case "admin":
                 $advisors = User::where("role", "advisor")
-                    ->where("firm_approved", true)
+                    ->where("status", true)
                     ->get()
                     ->toArray();
                 foreach($advisors as $key => $value)
@@ -82,10 +82,10 @@ class viewAdvisorsController extends Controller
         }
 
         elseif($user->firm_code == Auth::user()->code){
-            $user->firm_approved = true;
+            $user->status = true;
             $user->save();
         }
-//        $this->sendVerifiedEmail($user);
+        $this->sendVerifiedEmail($user);
         return back();
     }
 

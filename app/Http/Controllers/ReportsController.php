@@ -260,7 +260,7 @@ class ReportsController extends Controller
 
         //// Part 2 Scores ////
         for($i = 1; $i <= count($response[1]); $i++){
-            $scores[$this->partBAnswers($i, $response[1][$i])] += 3;
+            $scores[$this->partBAnswers($i, $response[1][$i])] += 2.5;
         }
 
         //// part 3 Scores ////
@@ -288,9 +288,9 @@ class ReportsController extends Controller
 
         //// allocate low, med, high ////
         foreach($scores as $key => $score){
-            if($score <= 35)
+            if($score <= 29)
                 $scores[$key] = 3;
-            else if($score > 35 && $score <= 68)
+            else if($score > 30 && $score <= 59)
                 $scores[$key] = 2;
             else
                 $scores[$key] = 1;

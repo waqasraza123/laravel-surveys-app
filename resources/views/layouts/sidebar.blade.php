@@ -12,7 +12,7 @@
             @elseif (Auth::user()->role == "firm")
                 <li @if (Request::is('home')) class="active" @endif><a href="/home"><span>Home</span></a></li>
                 <li class="treeview @if (Request::is('advisors/*')) active @endif">
-                    <a href="/advisors/new"><span>Advisers</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <a href="/advisors/new"><span>Financial Advisers</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
                         <li><a href="/advisors/new">New</a></li>
                         <li><a href="/advisors/approved">Approved</a></li>

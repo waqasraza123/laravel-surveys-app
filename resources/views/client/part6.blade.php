@@ -15,16 +15,11 @@
                 <h2>Instructions</h2>
                 The relationship you have with your Financial Adviser is important. Please rate the following statements using the scale below.
                 Whilst all the statements presented are important to some degree, we are seeking to identify those that are most important for you.
-                Please note you can only use each scorig option (i.e. Most Important, Important and Less Important) up to four time only.
+                Please note you can only use each scorig option (i.e. Most important, important and less important up to four (4) times only).
 
 
                 <br/><br/>
-                <ul>
-                    <li>VERY IMPORTANT  - This is very important to me when working with my adviser</li>
-                    <li>IMPORTANT - This is important to me when working with my adviser</li>
-                    <li>SOMEWHAT IMPORTANT - This is somewhat important to me when working with my adviser</li>
-                    <li>UNIMPORTANT – This is not important to me.</li>
-                </ul>
+
 
 
                 <div class="ibox float-e-margins" style="margin-top: 40px">

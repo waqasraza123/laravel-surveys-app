@@ -62,7 +62,7 @@
                                 <i class="fa fa-users fa-4x"></i>
                             </div>
                             <div class="col-xs-10 text-right">
-                                <span> Advisers - Pending Approval</span>
+                                <span> Financial Advisers - Pending Approval</span>
                                 <h2 class="font-bold">{{ $pending_advisors }}</h2>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                 <i class="fa fa-users fa-4x"></i>
                             </div>
                             <div class="col-xs-10 text-right">
-                                <span> Advisers - Active </span>
+                                <span> Financial Advisers - Active </span>
                                 <h2 class="font-bold">{{ $active_advisors }}</h2>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Client </th>
-                                <th>Adviser </th>
+                                <th>Financial Adviser </th>
                                 <th>Investor DNA Profiles</th>
                             </tr>
                             </thead>
@@ -131,24 +131,24 @@
             <div class="col-lg-6">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Top Advisers by Investor DNA Profiles Generated </h5>
+                        <h5>Top Financial Advisers by Investor DNA Profiles Generated </h5>
                     </div>
                     <div class="ibox-content">
 
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>Adviser </th>
+                                <th>Financial Adviser </th>
                                 <th>Investor DNA Profiles</th>
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($top_advisors as $advisor)
                                 <tr>
-                                    @foreach($top_advisors as $advisor)
                                         <td>{{ $advisor->name }}</td>
                                         <td>{{ $advisor->reports }}</td>
-                                    @endforeach
                                 </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -15,7 +15,7 @@
                                 <tr>
                                     <th>Created Date</th>
                                     <th>Client Name</th>
-                                    <th>Adviser Name</th>
+                                    <th>Financial Adviser</th>
                                     <th>Score</th>
                                     <th>Investor DNA Profile</th>
                                     <th>Completion Date</th>
