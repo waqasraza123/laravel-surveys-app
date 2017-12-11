@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="checkbox">
                                   <label>
-                                    <input type="checkbox" name="religion" value="true" @if(isset($saved_input["religion"])) checked @endif> Religion
+                                    <input type="checkbox" name="politics" value="true" @if(isset($saved_input["politics"])) checked @endif> Politics
                                   </label>
                                 </div>
                                 <div class="checkbox">
@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="checkbox">
                                   <label>
-                                    <input type="checkbox" name="politics" value="true" @if(isset($saved_input["politics"])) checked @endif> Politics
+                                    <input type="checkbox" name="english_literature" value="true" @if(isset($saved_input["english_literature"])) checked @endif> English Literature
                                   </label>
                                 </div>
                                 <div class="checkbox">

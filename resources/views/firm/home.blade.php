@@ -62,7 +62,7 @@
                                 <i class="fa fa-users fa-4x"></i>
                             </div>
                             <div class="col-xs-10 text-right">
-                                <span> Financial Advisers - Pending Approval</span>
+                                <span> Financial Advisers Pending Approval </span>
                                 <h2 class="font-bold">{{ $pending_advisors }}</h2>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                 <i class="fa fa-users fa-4x"></i>
                             </div>
                             <div class="col-xs-10 text-right">
-                                <span> Financial Advisers - Active </span>
+                                <span> Approved Financial Advisers </span>
                                 <h2 class="font-bold">{{ $active_advisors }}</h2>
                             </div>
                         </div>

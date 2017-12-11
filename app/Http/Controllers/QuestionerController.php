@@ -28,6 +28,8 @@ class QuestionerController extends Controller
     }
 
     public function part1_submit($code, Request $request){
+
+
         $report = Report::where('code', $code)->get();
         if($report->count() != 1)
             return view('client.error');
@@ -52,6 +54,8 @@ class QuestionerController extends Controller
     }
 
     public function part2_submit($code, Request $request){
+
+
         $report = Report::where('code', $code)->get();
         if($report->count() != 1)
             return view('client.error');
@@ -357,7 +361,7 @@ class QuestionerController extends Controller
             ["Results", "Relationships"],
             ["Safekeeping", "Risk Taker"],
             ["Expressive", "Reflective"],
-            ["Intuitive", "Innovative"],
+            ["Intuitive", "Holistic"],
             ["Emotional", "Controlled"],
             ["Quantitative", "Qualitative"],
             ["Technical", "Imaginative"],
@@ -370,7 +374,7 @@ class QuestionerController extends Controller
             ["Practical", "Creative"],
             ["Instinctive  ", "Intellectual"],
             ["Feelings", "Form"],
-            ["Spiritual", "Creative"],
+            ["Talker", "Synthesiser"],
 
         ];
     }

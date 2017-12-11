@@ -223,7 +223,7 @@ class ReportsController extends Controller
 
         //// Part 2 Scores ////
         for($i = 1; $i <= count($response[1]); $i++){
-            $scores[$this->partBAnswers($i, $response[1][$i])] += 3;
+            $scores[$this->partBAnswers($i, $response[1][$i])] += 2.5;
         }
 
         //// part 3 Scores ////
@@ -285,6 +285,7 @@ class ReportsController extends Controller
         $scores['green'] = (($scores['green'] * 100) / 115);
         $scores['red'] = (($scores['red'] * 100) / 115);
         $scores['yellow'] = (($scores['yellow'] * 100) / 115);
+
 
         //// allocate low, med, high ////
         foreach($scores as $key => $score){
@@ -416,22 +417,25 @@ class ReportsController extends Controller
 
     protected function partCAnswers($opt){
         $array = [
-            "maths" => "blue",
-            "science" => "blue",
-            "physics" => "blue",
-            "chemistry" => "blue",
-            "languages" => "green",
-            "legal_studies" => "green",
-            "geography" => "green",
-            "history" => "green",
-            "social_studies" => "red",
-            "music" => "red",
-            "religion" => "red",
-            "psychology" => "red",
-            "art" => "yellow",
-            "design" => "yellow",
-            "politics" => "yellow",
-            "english" => "yellow",
+            "maths" => "green",
+            "science" => "yellow",
+            "physics" => "yellow",
+            "chemistry" => "yellow",
+
+            "languages" => "blue",
+            "legal_studies" => "blue",
+            "geography" => "blue",
+            "history" => "blue",
+
+            "social_studies" => "green",
+            "music" => "green",
+            "politics" => "green",
+            "psychology" => "yellow",
+
+            "art" => "red",
+            "design" => "green",
+            "english_literature" => "red",
+            "english" => "green",
         ];
 
         return $array[$opt];
@@ -441,19 +445,19 @@ class ReportsController extends Controller
         $array = [
             "information_technology" => "blue",
             "computer_games" => "blue",
-            "fantasy_sports" => "blue",
-            "crosswords" => "blue",
+            "astrology" => "blue",
+            "investing" => "blue",
             "home_improvements" => "green",
             "cooking" => "green",
-            "reading" => "green",
-            "collectables" => "green",
-            "music" => "red",
-            "acting" => "red",
+            "camping" => "green",
+            "gardening" => "green",
+            "musical_instruments" => "red",
+            "movies" => "red",
             "travel" => "red",
             "sport" => "red",
-            "painting_drawing" => "yellow",
-            "movies" => "yellow",
-            "creative_writing" => "yellow",
+            "sailing" => "yellow",
+            "arts_crafts" => "yellow",
+            "english_literature" => "yellow",
             "photography" => "yellow",
         ];
 
