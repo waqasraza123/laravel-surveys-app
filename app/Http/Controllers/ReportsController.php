@@ -127,7 +127,11 @@ class ReportsController extends Controller
     public function view(){
         switch(Auth::user()->role){
             case "admin":
-                return redirect("/home");
+                $reports = Report::get()->reverse();
+                foreach($reports as $report)
+                    if($report->completed)
+                        $report->score = $this->getScore($report->response);
+                return view('admin.reports_view')->with(['reports'=>$reports]);
             case "advisor":
                 $reports = Report::where('advisor',Auth::id())->get()->reverse();
                 foreach($reports as $report)
