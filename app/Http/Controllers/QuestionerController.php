@@ -130,7 +130,7 @@ class QuestionerController extends Controller
         else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3') || !session()->has('part4'))
             return redirect('/questioner/'.$code.'/part/4');
 
-        return view('client.part5')->with(['code'=>$code, 'saved_input'=>session('part5')]);
+        return view('client.part5')->with(['code'=>$code, 'questions' => $this->part5_questions(), 'saved_input'=>session('part5')]);
     }
 
     public function part5_submit($code, Request $request){
@@ -376,6 +376,19 @@ class QuestionerController extends Controller
             ["Feelings", "Form"],
             ["Talker", "Synthesiser"],
 
+        ];
+    }
+
+    protected function part5_questions(){
+        return [
+                "I am attracted to investments that are creative, novel and 'out of the box'",
+                "I am attracted to investments that are traditional and have a proven track record",
+                "I prefer to plan, organise and manage my investments in a structured and systematic manner",
+                "I prefer to remain flexible when investing and keep my options open",
+                "I prefer to make my investment decisions based on facts, data and rational analysis",
+                "I prefer to make my investment decisions based on my strongly held principles and beliefs",
+                "I am intellectual in my approach and like to understand all aspects of the investment process",
+                "I an instinctive in my approach, preferring to 'go with my gut' and back my personal intuition",
         ];
     }
 

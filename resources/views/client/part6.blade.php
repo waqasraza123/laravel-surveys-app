@@ -48,7 +48,7 @@
                     <div class="panel-footer">
                         <a href="/questioner/{{ $code }}/part/5"><button type="button" class="btn btn-primary">Back</button></a>
                         <div style="float:right">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Save & Next</button>
                         </div>
                     </div>
                 </div>

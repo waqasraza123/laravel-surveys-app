@@ -12,60 +12,38 @@
 
                 <h1 class="logo-name" style="font-size: 65px; margin-left: -5px;">Part E</h1>
 
-                <h2>Please read the following statements and decide which statement is MOST LIKE YOU from the two statements presented</h2>
+                <h2>Instructions</h2>
+                    Please rate the following statements using the scale below.
+                    <ul> 
+                        <li>1. A BIT like me</li>
+                        <li>2. SOMEWHAT like me</li>
+                        <li>3. A LOT like me</li>
+                    </ul>
 
                 <div class="ibox float-e-margins" style="margin-top: 40px">
                     <div class="ibox-content">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="1" value="1" required @if(isset($saved_input['1']) && $saved_input['1'] == "1") checked @endif>
-                                I am attracted to investments that are creative, novel and 'out of the box'
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="1" value="2" required @if(isset($saved_input['1']) && $saved_input['1'] == "2") checked @endif>
-                                I am attracted to investments that are traditional and have a proven track record
-                            </label>
-                        </div>
-                        <hr>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="2" value="1" required @if(isset($saved_input['2']) && $saved_input['2'] == "1") checked @endif>
-                                I prefer to plan, organise and manage my investments in a structured and systematic manner
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="2" value="2" required @if(isset($saved_input['2']) && $saved_input['2'] == "2") checked @endif>
-                                I prefer to remain flexible when investing and keep my options open
-                            </label>
-                        </div>
-                        <hr>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="3" value="1" required @if(isset($saved_input['3']) && $saved_input['3'] == "1") checked @endif>
-                                I prefer to make my investment decisions based on facts, data and rational analysis
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="3" value="2" required @if(isset($saved_input['3']) && $saved_input['3'] == "2") checked @endif>
-                                I prefer to make my investment decisions based on my strongly held principles and beliefs
-                            </label>
-                        </div>
-                        <hr>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="4" value="1" required @if(isset($saved_input['4']) && $saved_input['4'] == "1") checked @endif>
-                                I am intellectual in my approach and like to understand all aspects of the investment process
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="4" value="2" required @if(isset($saved_input['4']) && $saved_input['4'] == "2") checked @endif>
-                                I an instinctive in my approach, preferring to 'go with my gut' and back my personal intuition
-                            </label>
+                        @foreach($questions as $key => $question)
+                            <div class="form-group">
+                                <label class="control-label" for="{{ $key+1 }}">{{ $key+1 }}. {{ $question }}</label><br/>
+                                <label class="radio-inline">
+                                    <input type="radio" name="{{ $key+1 }}" value="1" required @if(isset($saved_input[$key+1]) && $saved_input[$key+1] == "1") checked @endif> 1. A BIT like me
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="{{ $key+1 }}" value="2" required @if(isset($saved_input[$key+1]) && $saved_input[$key+1] == "2") checked @endif> 2. SOMEWHAT like me
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="{{ $key+1 }}" value="3" required @if(isset($saved_input[$key+1]) && $saved_input[$key+1] == "3") checked @endif> 3. A LOT like me
+                                </label>
+                            </div>
+                            <hr>
+                        @endforeach
+                        <div class="form-group">
+                            <label for="9">9. Of the statements above, please select the statement that is most like you</label>
+                            <select name="9" class="form-control">
+                                @foreach($questions as $key => $question)
+                                    <option value="{{ $key+1 }}">{{ $question }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="panel-footer">

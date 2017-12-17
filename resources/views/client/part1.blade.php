@@ -44,11 +44,6 @@
                                 <label class="radio-inline">
                                     <input type="radio" name="{{ $key+1 }}" value="4" required @if(isset($saved_input[$key+1]) && $saved_input[$key+1] == "4") checked @endif> 4. SPOT ON - ALWAYS like me
                                 </label>
-
-
-
-
-
                             </div>
                             @if($key < count($questions) - 1)
                                 <hr>

@@ -471,36 +471,60 @@ class ReportsController extends Controller
     protected function partEAnswers($opt){
         $output = ["red" => 0, "yellow" => 0, "green" => 0, "blue" => 0];
 
-        if($opt["1"] == "1"){
-            $output["yellow"] += 3;
-        }
-        else{
-            $output["green"] += 3;
-        }
-
-        if($opt["2"] == "1"){
-            $output["green"] += 3;
-            $output["blue"] += 3;
-        }
-        else{
-            $output["red"] += 3;
-            $output["yellow"] += 3;
+        //For Question 1
+        $output["yellow"] += $opt["1"];
+        if($opt["9"] == "1"){
+            $output["yellow"] += 1;
         }
 
-        if($opt["3"] == "1"){
-            $output["blue"] += 3;
-        }
-        else{
-            $output["red"] += 3;
+        //For Question 2
+        $output["green"] += $opt["2"];
+        if($opt["9"] == "2"){
+            $output["green"] += 1;
         }
 
-        if($opt["4"] == "1"){
-            $output["blue"] += 3;
-            $output["yellow"] += 3;
+        //For Question 3
+        $output["green"] += $opt["3"];
+        $output["blue"] += $opt["3"];
+        if($opt["9"] == "3"){
+            $output["green"] += 1;
+            $output["blue"] += 1;
         }
-        else{
-            $output["red"] += 3;
-            $output["green"] += 3;
+
+        //For Question 4
+        $output["red"] += $opt["4"];
+        $output["yellow"] += $opt["4"];
+        if($opt["9"] == "4"){
+            $output["red"] += 1;
+            $output["yellow"] += 1;
+        }
+
+        //For Question 5
+        $output["blue"] += $opt["5"];
+        if($opt["9"] == "5"){
+            $output["blue"] += 1;
+        }
+
+        //For Question 6
+        $output["red"] += $opt["6"];
+        if($opt["9"] == "6"){
+            $output["red"] += 1;
+        }
+
+        //For Question 7
+        $output["blue"] += $opt["7"];
+        $output["yellow"] += $opt["7"];
+        if($opt["9"] == "7"){
+            $output["blue"] += 1;
+            $output["yellow"] += 1;
+        }
+
+        //For Question 8
+        $output["red"] += $opt["8"];
+        $output["green"] += $opt["8"];
+        if($opt["9"] == "8"){
+            $output["red"] += 1;
+            $output["green"] += 1;
         }
 
         return $output;
