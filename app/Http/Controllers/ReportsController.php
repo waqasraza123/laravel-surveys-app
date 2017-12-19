@@ -203,17 +203,17 @@ class ReportsController extends Controller
         return view('advisor.clients');
     }
 
-    protected function getPart6Answer($response){
+    public static function getPart6Answer($response){
         $response = unserialize($response);
         return $response[5];
     }
 
-    protected function getPart7Answer($response){
+    public static function getPart7Answer($response){
         $response = unserialize($response);
         return $response[6]['part7'];
     }
 
-    protected function getIndividualScore($response){
+    public static function getIndividualScore($response){
         $response = unserialize($response);
         $scores = array('blue' => 0, 'green' => 0, 'red' => 0, 'yellow' => 0);
 
@@ -227,21 +227,21 @@ class ReportsController extends Controller
 
         //// Part 2 Scores ////
         for($i = 1; $i <= count($response[1]); $i++){
-            $scores[$this->partBAnswers($i, $response[1][$i])] += 2.5;
+            $scores[ReportsController::partBAnswers($i, $response[1][$i])] += 2.5;
         }
 
         //// part 3 Scores ////
         foreach($response[2] as $key => $answer){
-            $scores[$this->partCAnswers($key)] += 2;
+            $scores[ReportsController::partCAnswers($key)] += 2;
         }
 
         //// part 4 Scores ////
         foreach($response[3] as $key => $answer){
-            $scores[$this->partDAnswers($key)] += 2;
+            $scores[ReportsController::partDAnswers($key)] += 2;
         }
 
         //// Part 5 Scores ////
-        $part5 = $this->partEAnswers($response[4]);
+        $part5 = ReportsController::partEAnswers($response[4]);
         $scores['green'] += $part5["green"];
         $scores['red'] += $part5["red"];
         $scores['blue'] += $part5["blue"];
@@ -250,7 +250,7 @@ class ReportsController extends Controller
         return "{A" . $scores['blue'] . ", B" . $scores['green'] . ", C" . $scores['red'] . ", D" . $scores['yellow'] . "}";
     }
 
-    protected function getScore($response){
+    public static function getScore($response){
         $response = unserialize($response);
         $scores = array('blue' => 0, 'green' => 0, 'red' => 0, 'yellow' => 0);
 
@@ -264,21 +264,21 @@ class ReportsController extends Controller
 
         //// Part 2 Scores ////
         for($i = 1; $i <= count($response[1]); $i++){
-            $scores[$this->partBAnswers($i, $response[1][$i])] += 2.5;
+            $scores[ReportsController::partBAnswers($i, $response[1][$i])] += 2.5;
         }
 
         //// part 3 Scores ////
         foreach($response[2] as $key => $answer){
-            $scores[$this->partCAnswers($key)] += 2;
+            $scores[ReportsController::partCAnswers($key)] += 2;
         }
 
         //// part 4 Scores ////
         foreach($response[3] as $key => $answer){
-            $scores[$this->partDAnswers($key)] += 2;
+            $scores[ReportsController::partDAnswers($key)] += 2;
         }
 
         //// Part 5 Scores ////
-        $part5 = $this->partEAnswers($response[4]);
+        $part5 = ReportsController::partEAnswers($response[4]);
         $scores['green'] += $part5["green"];
         $scores['red'] += $part5["red"];
         $scores['blue'] += $part5["blue"];
@@ -312,9 +312,9 @@ class ReportsController extends Controller
         }
     }
 
-    protected function partASubCatScores($response){
+    public static function partASubCatScores($response){
         $response = unserialize($response);
-        $answers = $this->partASubCatAnswers();
+        $answers = ReportsController::partASubCatAnswers();
 
         $scores = [
             "analytical" => 0,
@@ -336,7 +336,7 @@ class ReportsController extends Controller
         return $result;
     }
 
-    protected function partASubCatAnswers(){
+    public static function partASubCatAnswers(){
         return [
             1 => "analytical",
             25 => "analytical",
@@ -388,7 +388,7 @@ class ReportsController extends Controller
         ];
     }
 
-    protected function partBAnswers($row, $opt){
+    public static function partBAnswers($row, $opt){
         $answers = [
             ["blue", "red"],
             ["green", "yellow"],
@@ -419,7 +419,7 @@ class ReportsController extends Controller
         return $answers[$row-1][$opt-1];
     }
 
-    protected function partCAnswers($opt){
+    public static function partCAnswers($opt){
         $array = [
             "maths" => "green",
             "science" => "yellow",
@@ -445,7 +445,7 @@ class ReportsController extends Controller
         return $array[$opt];
     }
 
-    protected function partDAnswers($opt){
+    public static function partDAnswers($opt){
         $array = [
             "information_technology" => "blue",
             "computer_games" => "blue",
@@ -468,7 +468,7 @@ class ReportsController extends Controller
         return $array[$opt];
     }
 
-    protected function partEAnswers($opt){
+    public static function partEAnswers($opt){
         $output = ["red" => 0, "yellow" => 0, "green" => 0, "blue" => 0];
 
         //For Question 1

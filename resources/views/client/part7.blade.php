@@ -7,7 +7,7 @@
         <div class="row">
 
         <div class="col-md-10 col-md-offset-1">
-            <form class="form-horizontal" method="post" action="/questioner/{{ $code }}/submit">
+            <form class="form-horizontal" method="post" action="../submit">
                 {{ csrf_field() }}
 
                 <h1 class="logo-name" style="font-size: 65px; margin-left: -5px;">Part G</h1>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="panel-footer">
-                        <a href="/questioner/{{ $code }}/part/6"><button type="button" class="btn btn-primary">Back</button></a>
+                        <a href="../part/6"><button type="button" class="btn btn-primary">Back</button></a>
                         <div style="float:right">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>

@@ -32,7 +32,7 @@
 
                 </div>
                 <div class="panel-footer text-center">
-                    <a href="/questioner/{{ $code }}/part/1"><button type="button" class="btn btn-primary lg">Start Questionnaire</button></a>
+                    <a href="{{ Request::url() }}/part/1"><button type="button" class="btn btn-primary lg">Start Questionnaire</button></a>
                 </div>
             </div>
         </div>

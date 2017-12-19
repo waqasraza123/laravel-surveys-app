@@ -28,8 +28,6 @@ class QuestionerController extends Controller
     }
 
     public function part1_submit($code, Request $request){
-
-
         $report = Report::where('code', $code)->get();
         if($report->count() != 1)
             return view('client.error');
@@ -224,7 +222,7 @@ class QuestionerController extends Controller
         return view('client.thankyou');
     }
 
-    protected function part1_questions(){
+    public static function part1_questions(){
         return [
 //1
             "My investment decisions are based on the facts, figures and the data.",
@@ -349,7 +347,7 @@ class QuestionerController extends Controller
         ];
     }
 
-    protected function part2_questions(){
+    public static function part2_questions(){
         return [
             ["Analytical", "Beliefs"],
             ["Introvert", "Extrovert"],
@@ -379,7 +377,7 @@ class QuestionerController extends Controller
         ];
     }
 
-    protected function part5_questions(){
+    public static function part5_questions(){
         return [
                 "I am attracted to investments that are creative, novel and 'out of the box'",
                 "I am attracted to investments that are traditional and have a proven track record",
@@ -392,7 +390,7 @@ class QuestionerController extends Controller
         ];
     }
 
-    protected function part6_questions(){
+    public static function part6_questions(){
         return [
             "I prefer a Financial Adviser that has a successful track record in providing their clients with success over the long haul",
             "I prefer a Financial Adviser who has strong technical skills in terms of products, cash flow, taxation, retirement and estate planning.",

@@ -98,7 +98,28 @@ Route::post('/questioner/{code}/part/6', 'QuestionerController@part6_submit');
 Route::get('/questioner/{code}/part/7', 'QuestionerController@part7');
 Route::post('/questioner/{code}/submit', 'QuestionerController@part7_submit');
 
+//////////////////////////////////////////////////////////////
+///////////////////////// For Client /////////////////////////
+//////////////////////////////////////////////////////////////
+Route::get('/iclient', 'iClientController@index');
+Route::post('/iclient', 'iClientController@create');
+Route::get('iclient/report/{code}', 'iClientController@show');
+
+Route::get('/iclient/questioner/{code}', 'iclientQuestionerController@index');
+Route::get('/iclient/questioner/{code}/part/1', 'iclientQuestionerController@part1');
+Route::post('/iclient/questioner/{code}/part/1', 'iclientQuestionerController@part1_submit');
+Route::get('/iclient/questioner/{code}/part/2', 'iclientQuestionerController@part2');
+Route::post('/iclient/questioner/{code}/part/2', 'iclientQuestionerController@part2_submit');
+Route::get('/iclient/questioner/{code}/part/3', 'iclientQuestionerController@part3');
+Route::post('/iclient/questioner/{code}/part/3', 'iclientQuestionerController@part3_submit');
+Route::get('/iclient/questioner/{code}/part/4', 'iclientQuestionerController@part4');
+Route::post('/iclient/questioner/{code}/part/4', 'iclientQuestionerController@part4_submit');
+Route::get('/iclient/questioner/{code}/part/5', 'iclientQuestionerController@part5');
+Route::post('/iclient/questioner/{code}/part/5', 'iclientQuestionerController@part5_submit');
+Route::get('/iclient/questioner/{code}/part/6', 'iclientQuestionerController@part6');
+Route::post('/iclient/questioner/{code}/part/6', 'iclientQuestionerController@part6_submit');
+Route::get('/iclient/questioner/{code}/part/7', 'iclientQuestionerController@part7');
+Route::post('/iclient/questioner/{code}/submit', 'iclientQuestionerController@part7_submit');
+
 Route::get('/test', function () {
 });
-
-

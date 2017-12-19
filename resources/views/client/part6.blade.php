@@ -5,7 +5,7 @@
         <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <form class="form" id="part4Form" method="post" action="/questioner/{{ $code }}/part/6">
+            <form class="form" id="part4Form" method="post">
                 {{ csrf_field() }}
 
 
@@ -46,7 +46,7 @@
                         @endforeach
                     </div>
                     <div class="panel-footer">
-                        <a href="/questioner/{{ $code }}/part/5"><button type="button" class="btn btn-primary">Back</button></a>
+                        <a href="../part/5"><button type="button" class="btn btn-primary">Back</button></a>
                         <div style="float:right">
                             <button type="submit" class="btn btn-primary">Save & Next</button>
                         </div>

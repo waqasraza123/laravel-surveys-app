@@ -18,9 +18,9 @@
 
 <p>Dear {{ $client }},</p>
 
-<p>You have successfully purchased Investor DNA questionnaire.</p>
+<p>You have successfully completed Investor DNA questionnaire.</p>
 
-<p><a href="{{ URL::to('iclient/questioner/' . $code) }}">Click Here</a> to complete your questionnaire.</p>
+<p><a href="{{ URL::to('iclient/report/' . $code) }}">Click Here</a> to view your report.</p>
 
 
 <p>Kind Regards,<br/>
