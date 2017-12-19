@@ -24,22 +24,6 @@ class ReportsController extends Controller
         if(Auth::user()->role == 'advisor')
             return view('advisor.reports_new')->with('tokens', User::where('code', Auth::user()->firm_code)->get()->first()->tokens_available);
 
-        else if(Auth::user()->role == 'iclient'){
-            $rates = PriceRange::all();
-            if($rates->count() > 0)
-                $rates->last()->end = "∞";
-
-            $currencies = TokensController::getCurrencies();
-            $selected_currency = 'AUD';
-            if($request->input("currency"))
-                $selected_currency = $request->input("currency");
-
-            foreach($rates as $rate)
-                $rate["rate"] = $rate["rate"] * $currencies[$selected_currency];
-
-            return view('iclient.reports_new')->with(["page_title" => "Create New Report", "rates" => $rates, "selected_currency" => $selected_currency, "currencies" => $currencies]);
-        }
-
         return redirect('/');
     }
 
@@ -47,53 +31,7 @@ class ReportsController extends Controller
         if(Auth::user()->role == 'advisor')
             return $this->createReport_Advisor($request);
 
-        else if(Auth::user()->role == 'iclient')
-            return $this->createReport_iClient($request);
-
         return redirect('/');
-    }
-
-    private function createReport_iClient(Request $request){
-        $rate  = TokensController::getRate($request->quantity);
-
-        //Change rate according to currency
-        $currencies = TokensController::getCurrencies();
-        $selected_currency = 'AUD';
-        if($request->input("currency"))
-            $selected_currency = $request->input("currency");
-        $rate = $rate * $currencies[$selected_currency];
-
-        $subtotal = $request->quantity * $rate;
-        $gst = $subtotal * 0.1;
-        $price = $subtotal + $gst;
-        $price = round($price, 2);
-
-        $gateway = Omnipay::create('Stripe');
-        $gateway->setApiKey(env('STRIPE_PRIVATE_KEY', ''));
-        $response = $gateway->purchase([
-            'amount' => $price,
-            'currency' => $selected_currency,
-            'token' => $request->stripeToken,
-        ])->send();
-
-        if($response->isSuccessful()) {
-            $this->successfulTransaction($rate);
-
-            $code = $this->create_report_code();
-            $report = new Report;
-            $report->code = $code;
-            $report->advisor = Auth::id();
-            $report->email = Auth::user()->email;
-            $report->first_name = '';
-            $report->last_name = '';
-            $report->save();
-
-            $this->sendiClientEmail($code, $report->email, Auth::user()->name);
-
-            return redirect('questioner/' . $code);
-        }
-
-        return back()->withErrors(["error" => $response->getMessage()]);
     }
 
     private function createReport_Advisor(Request $request){
@@ -157,13 +95,6 @@ class ReportsController extends Controller
                     }
                 }
                 return view('firm.reports_view')->with(['reports'=>$reports]);
-
-            case "iclient":
-                $reports = Report::where('advisor',Auth::id())->get()->reverse();
-                foreach($reports as $report)
-                    if($report->completed)
-                        $report->score = $this->getScore($report->response);
-                return view('iclient.reports_view')->with(['reports'=>$reports]);
         }
     }
 
@@ -537,13 +468,6 @@ class ReportsController extends Controller
         });
     }
 
-    function sendiClientEmail($code, $email, $name){
-        Mail::send('email.newiClientReport', ["code" => $code, "client" => $name], function($message) use ($email, $name){
-            $message->to($email, $name)
-                ->subject('Investor DNA Questionnaire');
-        });
-    }
-
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -551,13 +475,5 @@ class ReportsController extends Controller
             'last_name' => 'required|string|max:175',
             'email' => 'required|string|email|max:175',
         ]);
-    }
-
-    private function successfulTransaction($rate){
-        $transaction = new Transaction;
-        $transaction->user = Auth::user()->id;
-        $transaction->tokens = 1;
-        $transaction->rate = $rate;
-        $transaction->save();
     }
 }
