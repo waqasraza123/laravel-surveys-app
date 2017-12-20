@@ -3,8 +3,32 @@
 <style>
 
 
+    /*.gray-bg, .bg-muted {*/
+        /*background-color: #2f4050!important;*/
+    /*}*/
+
     .gray-bg, .bg-muted {
-        background-color: #2f4050!important;
+        background: url(images/bg.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .inside {
+        background: #18a689;
+        padding: 0px 50px 50px;
+    }
+
+    h2 {
+        color: #fff!important;
+        padding: 30px 0px;
+    }
+
+    .btn-primary {
+        background-color: #1ab394;
+        border-color: #fff!important;
+        color: #FFFFFF;
     }
 
 </style>
@@ -17,14 +41,17 @@
 
     <div class="middle-box text-center loginscreen   animated fadeInDown">
         <div>
-            <div  style="margin-bottom: 80px">
+            <div  style="margin-bottom: 40px">
 
                 <img src="images/logoi.png" alt="" width="220px">
                 <h1 style="margin-top:0px" class="logo-name">Investor DNA</h1>
 
             </div>
-            <h3>Create an account</h3>
-            <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+
+            <div class="inside">
+
+            <h2>Create an account</h2>
+                <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}
 
 
@@ -192,7 +219,7 @@
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
                         <input id="password" placeholder="Password" type="password" class="form-control" name="password" required>
-                        <em style="color: #888">Min 8 characters and must include uppercase letter and a number</em>
+                        <em style="color: #fff">Min 8 characters and must include uppercase letter and a number</em>
                         @if ($errors->has('password'))
                             <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -209,21 +236,30 @@
 
 
                 <div class="form-group">
-                    <div class="checkbox i-checks"><label> <input type="checkbox"><i></i>I Agree to the Terms & Conditions </label></div>
+                    <div class="checkbox i-checks"><label> <input type="checkbox"><i></i><span style="color: #fff">I Agree to the Terms & Conditions</span> </label></div>
                 </div>
 
 
 
 
+                    <div class="form-group">
 
                 <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
+                    </div>
 
-                <p class="text-muted text-center"><small>Already have an account?</small></p>
-                <a class="btn btn-sm btn-white btn-block" href="{{ url('/login') }}">Login</a>
 
+                <p class="text-muted text-center" style="color:#fff"><small>Already have an account?</small></p>
+
+                    <div class="form-group">
+
+                    <a class="btn btn-sm btn-white btn-block" href="{{ url('/login') }}">Login</a>
+                    </div>
 
             </form>
-            <script>
+
+            </div>
+
+                <script>
                 @if (old('role') == 'firm')
                     show_firm();
                 @endif
