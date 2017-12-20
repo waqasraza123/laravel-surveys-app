@@ -154,7 +154,7 @@ class iClientQuestionerController extends Controller
         else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3') || !session()->has('part4') || !session()->has('part5'))
             return redirect('/iclient/questioner/'.$code.'/part/5');
 
-        return view('client.part6')->with(['code'=>$code, 'questions'=>QuestionerController::part6_questions(), 'saved_input'=>session('part6')]);
+        return view('client.part6')->with(['code'=>$code, 'saved_input'=>session('part6')]);
     }
 
     public function part6_submit($code, Request $request){
@@ -180,7 +180,7 @@ class iClientQuestionerController extends Controller
         else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3') || !session()->has('part4') || !session()->has('part5') || !session()->has('part6'))
             return redirect('/iclient/questioner/'.$code.'/part/6');
 
-        return view('client.part7')->with(['code'=>$code, 'saved_input'=>session('part7')]);
+        return view('client.part7')->with(['code'=>$code,, 'questions'=>QuestionerController::part7_questions() 'saved_input'=>session('part7')]);
     }
 
     public function part7_submit($code, Request $request){

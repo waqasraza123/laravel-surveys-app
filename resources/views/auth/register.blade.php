@@ -66,12 +66,6 @@
                                 <option value="firm">Financial Practice</option>
                             @endif
 
-                            @if (old('role') == 'iclient')
-                                <option value="iclient" selected>Independent Investor</option>
-                            @else
-                                <option value="iclient">Independent Investor</option>
-                            @endif
-
                         </select>
                 </div>
 

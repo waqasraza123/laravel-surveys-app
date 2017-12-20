@@ -164,11 +164,13 @@ class ReportsController extends Controller
         //// part 3 Scores ////
         foreach($response[2] as $key => $answer){
             $scores[ReportsController::partCAnswers($key)] += 2;
+            $scores[ReportsController::partCAnswers_secondary($key)] += 1;
         }
 
         //// part 4 Scores ////
         foreach($response[3] as $key => $answer){
             $scores[ReportsController::partDAnswers($key)] += 2;
+            $scores[ReportsController::partDAnswers_secondary($key)] += 1;
         }
 
         //// Part 5 Scores ////
@@ -201,11 +203,13 @@ class ReportsController extends Controller
         //// part 3 Scores ////
         foreach($response[2] as $key => $answer){
             $scores[ReportsController::partCAnswers($key)] += 2;
+            $scores[ReportsController::partCAnswers_secondary($key)] += 1;
         }
 
         //// part 4 Scores ////
         foreach($response[3] as $key => $answer){
             $scores[ReportsController::partDAnswers($key)] += 2;
+            $scores[ReportsController::partDAnswers_secondary($key)] += 1;
         }
 
         //// Part 5 Scores ////
@@ -216,17 +220,17 @@ class ReportsController extends Controller
         $scores['yellow'] += $part5["yellow"];
 
         //// Calculating Percentage ////
-        $scores['blue'] = (($scores['blue'] * 100) / 115);
-        $scores['green'] = (($scores['green'] * 100) / 115);
-        $scores['red'] = (($scores['red'] * 100) / 115);
-        $scores['yellow'] = (($scores['yellow'] * 100) / 115);
+        $scores['blue'] = (($scores['blue'] * 100) / 120);
+        $scores['green'] = (($scores['green'] * 100) / 120);
+        $scores['red'] = (($scores['red'] * 100) / 120);
+        $scores['yellow'] = (($scores['yellow'] * 100) / 120);
 
 
         //// allocate low, med, high ////
         foreach($scores as $key => $score){
-            if($score <= 29)
+            if($score <= 33)
                 $scores[$key] = 3;
-            else if($score > 30 && $score <= 59)
+            else if($score > 33 && $score <= 66)
                 $scores[$key] = 2;
             else
                 $scores[$key] = 1;
@@ -373,24 +377,70 @@ class ReportsController extends Controller
         return $array[$opt];
     }
 
+    public static function partCAnswers_secondary($opt){
+        $array = [
+            "maths" => "green",
+            "science" => "yellow",
+            "physics" => "yellow",
+            "chemistry" => "yellow",
+            "languages" => "blue",
+            "legal_studies" => "blue",
+            "geography" => "blue",
+            "history" => "blue",
+            "social_studies" => "green",
+            "music" => "green",
+            "religion" => "green",
+            "psychology" => "yellow",
+            "art" => "red",
+            "design" => "green",
+            "politics" => "red",
+            "english" => "green",
+        ];
+
+        return $array[$opt];
+    }
+
     public static function partDAnswers($opt){
         $array = [
             "information_technology" => "blue",
             "computer_games" => "blue",
-            "fantasy_sports" => "blue",
-            "crosswords" => "blue",
+            "astrology" => "blue",
+            "investing" => "blue",
             "home_improvements" => "green",
             "cooking" => "green",
-            "reading" => "green",
-            "collectables" => "green",
-            "music" => "red",
-            "acting" => "red",
+            "camping" => "green",
+            "gardening" => "green",
+            "musical_instruments" => "red",
+            "movies" => "red",
             "travel" => "red",
             "sport" => "red",
-            "painting_drawing" => "yellow",
-            "movies" => "yellow",
+            "sailing" => "yellow",
+            "arts_crafts" => "yellow",
             "creative_writing" => "yellow",
             "photography" => "yellow",
+        ];
+
+        return $array[$opt];
+    }
+
+    public static function partDAnswers_secondary($opt){
+        $array = [
+            "information_technology" => "green",
+            "computer_games" => "green",
+            "astrology" => "yellow",
+            "investing" => "yellow",
+            "home_improvements" => "yellow",
+            "cooking" => "blue",
+            "camping" => "blue",
+            "gardening" => "yellow",
+            "musical_instruments" => "green",
+            "movies" => "yellow",
+            "travel" => "green",
+            "sport" => "green",
+            "sailing" => "green",
+            "arts_crafts" => "green",
+            "creative_writing" => "red",
+            "photography" => "green",
         ];
 
         return $array[$opt];
