@@ -180,7 +180,7 @@ class QuestionerController extends Controller
         else if(!session()->has('part1') || !session()->has('part2') || !session()->has('part3') || !session()->has('part4') || !session()->has('part5') || !session()->has('part6'))
             return redirect('/questioner/'.$code.'/part/6');
 
-        return view('client.part7')->with(['code'=>$code,, 'questions'=>$this->part7_questions() 'saved_input'=>session('part7')]);
+        return view('client.part7')->with(['code'=>$code, 'questions'=>$this->part7_questions(), 'saved_input'=>session('part7')]);
     }
 
     public function part7_submit($code, Request $request){

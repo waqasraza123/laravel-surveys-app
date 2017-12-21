@@ -329,22 +329,27 @@ class ReportsController extends Controller
             ["green", "yellow"],
             ["red", "blue"],
             ["yellow", "green"],
+
             ["blue", "red"],
             ["yellow", "green"],
             ["green", "yellow"],
             ["red", "blue"],
+
             ["yellow", "green"],
             ["blue", "red"],
             ["yellow", "green"],
             ["red", "blue"],
+
             ["green", "red"],
             ["yellow", "green"],
             ["yellow", "green"],
             ["blue", "red"],
+
             ["red", "blue"],
             ["green", "yellow"],
             ["green", "yellow"],
             ["red", "blue"],
+
             ["blue", "red"],
             ["green", "yellow"],
             ["red", "blue"],

@@ -34,12 +34,12 @@
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="fantasy_sports" value="true" @if(isset($saved_input["astrology"])) checked @endif> Astrology
+                                                <input type="checkbox" name="astrology" value="true" @if(isset($saved_input["astrology"])) checked @endif> Astrology
                                             </label>
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="crosswords" value="true" @if(isset($saved_input["investing"])) checked @endif> Investing
+                                                <input type="checkbox" name="investing" value="true" @if(isset($saved_input["investing"])) checked @endif> Investing
                                             </label>
                                         </div>
                                         <div class="checkbox">
@@ -54,24 +54,24 @@
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="reading" value="true" @if(isset($saved_input["camping"])) checked @endif> Camping
+                                                <input type="checkbox" name="camping" value="true" @if(isset($saved_input["camping"])) checked @endif> Camping
                                             </label>
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="collectables" value="true" @if(isset($saved_input["gardening"])) checked @endif> Gardening
+                                                <input type="checkbox" name="gardening" value="true" @if(isset($saved_input["gardening"])) checked @endif> Gardening
                                             </label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="music" value="true" @if(isset($saved_input["musical_instruments"])) checked @endif> Musical Instruments
+                                                <input type="checkbox" name="musical_instruments" value="true" @if(isset($saved_input["musical_instruments"])) checked @endif> Musical Instruments
                                             </label>
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="acting" value="true" @if(isset($saved_input["movies"])) checked @endif> Movies
+                                                <input type="checkbox" name="movies" value="true" @if(isset($saved_input["movies"])) checked @endif> Movies
                                             </label>
                                         </div>
                                         <div class="checkbox">
@@ -86,12 +86,12 @@
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="painting_drawing" value="true" @if(isset($saved_input["sailing"])) checked @endif> Sailing
+                                                <input type="checkbox" name="sailing" value="true" @if(isset($saved_input["sailing"])) checked @endif> Sailing
                                             </label>
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="movies" value="true" @if(isset($saved_input["arts_crafts"])) checked @endif> Arts/Crafts
+                                                <input type="checkbox" name="arts_crafts" value="true" @if(isset($saved_input["arts_crafts"])) checked @endif> Arts/Crafts
                                             </label>
                                         </div>
                                         <div class="checkbox">
