@@ -136,12 +136,12 @@ class ReportsController extends Controller
 
     public static function getPart6Answer($response){
         $response = unserialize($response);
-        return $response[5];
+        return $response[5]['part6'];
     }
 
     public static function getPart7Answer($response){
         $response = unserialize($response);
-        return $response[6]['part7'];
+        return $response[6];
     }
 
     public static function getIndividualScore($response){

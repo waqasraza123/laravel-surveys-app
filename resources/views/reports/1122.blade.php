@@ -674,9 +674,9 @@
                 <tr>
                     <td><h4>1. Adviser Track Record: </h4></td>
                     <td class="img">
-                        @if($data["part6"][1] == "4")
+                        @if($data["part7"][1] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part6"][1] == "3")
+                        @elseif($data["part7"][1] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -688,9 +688,9 @@
                 <tr>
                     <td><h4>2. Industry/Asset Track Record:  </h4></td>
                     <td class="img">
-                        @if($data["part6"][2] == "4")
+                        @if($data["part7"][2] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part6"][2] == "3")
+                        @elseif($data["part7"][2] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -702,9 +702,9 @@
                 <tr>
                     <td><h4>3. Client Centricity: </h4></td>
                     <td class="img">
-                        @if($data["part6"][3] == "4")
+                        @if($data["part7"][3] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part6"][3] == "3")
+                        @elseif($data["part7"][3] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -716,9 +716,9 @@
                 <tr>
                     <td><h4>4. Communication and listening skills: </h4></td>
                     <td class="img">
-                        @if($data["part6"][4] == "4")
+                        @if($data["part7"][4] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part6"][4] == "3")
+                        @elseif($data["part7"][4] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -730,9 +730,9 @@
                 <tr>
                     <td><h4>5. Character and Integrity:  </h4></td>
                     <td class="img">
-                        @if($data["part6"][5] == "4")
+                        @if($data["part7"][5] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part6"][5] == "3")
+                        @elseif($data["part7"][5] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -744,9 +744,9 @@
                 <tr>
                     <td><h4>6. Analytical and Rational:</h4></td>
                     <td class="img">
-                        @if($data["part6"][6] == "4")
+                        @if($data["part7"][6] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part6"][6] == "3")
+                        @elseif($data["part7"][6] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -758,9 +758,9 @@
                 <tr>
                     <td><h4>7. Regulatory Compliance:  </h4></td>
                     <td class="img">
-                        @if($data["part6"][7] == "4")
+                        @if($data["part7"][7] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part6"][7] == "3")
+                        @elseif($data["part7"][7] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -772,9 +772,9 @@
                 <tr>
                     <td><h4>8. Creativity and innovation:  </h4></td>
                     <td class="img">
-                        @if($data["part6"][8] == "4")
+                        @if($data["part7"][8] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part6"][8] == "3")
+                        @elseif($data["part7"][8] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -786,9 +786,9 @@
                 <tr>
                     <td><h4>9. Emotional control:  </h4></td>
                     <td class="img">
-                        @if($data["part6"][9] == "4")
+                        @if($data["part7"][9] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part6"][9] == "3")
+                        @elseif($data["part7"][9] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -800,9 +800,9 @@
                 <tr>
                     <td><h4>10. Focus on Results: </h4></td>
                     <td class="img">
-                        @if($data["part6"][10] == "4")
+                        @if($data["part7"][10] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part6"][10] == "3")
+                        @elseif($data["part7"][10] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -814,9 +814,9 @@
                 <tr>
                     <td><h4>11. Alignment on Values </h4></td>
                     <td class="img">
-                        @if($data["part6"][11] == "4")
+                        @if($data["part7"][11] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part6"][11] == "3")
+                        @elseif($data["part7"][11] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
@@ -828,9 +828,9 @@
                 <tr>
                     <td><h4>12. Numerical / Technical ability </h4></td>
                     <td class="img">
-                        @if($data["part6"][12] == "4")
+                        @if($data["part7"][12] == "4")
                             <img src="/images/reports/high.png" alt="">
-                        @elseif($data["part6"][12] == "3")
+                        @elseif($data["part7"][12] == "3")
                             <img src="/images/reports/medium.png" alt="">
                         @else
                             <img src="/images/reports/low.png" alt="">
