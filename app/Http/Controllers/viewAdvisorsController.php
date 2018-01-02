@@ -56,7 +56,7 @@ class viewAdvisorsController extends Controller
             case "firm":
                 $advisors = User::where("role", "advisor")
                                 ->where("firm_code", Auth::user()->code)
-                                ->where("firm_approved", true)
+                                ->where("status", true)
                                 ->get()
                                 ->toArray();
                 foreach($advisors as $key => $value)
