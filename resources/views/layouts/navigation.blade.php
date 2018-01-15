@@ -34,8 +34,9 @@
                     <li class="treeview @if (Request::is('advisors/*')) active @endif">
                         <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Financial Advisers</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="@if (Request::is('advisors/approved')) active @endif"><a href="/advisors/approved">Financial Active Advisers</a></li>
-                            <li class="@if (Request::is('advisors/new')) active @endif"><a href="/advisors/new">Financial Pending Approval</a></li>
+                            <li class="@if (Request::is('advisors/approved')) active @endif"><a href="/advisors/approved">Approved Financial Advisers</a></li>
+                            <li class="@if (Request::is('advisors/new')) active @endif"><a href="/advisors/new">Financial Advisers - Approval Pending</a></li>
+                            <li class="@if (Request::is('adviser/add')) active @endif"><a href="/adviser/add">Add new Financial Adviser</a></li>
                         </ul>
                     </li>
 

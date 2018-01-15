@@ -379,14 +379,14 @@ class QuestionerController extends Controller
 
     public static function part5_questions(){
         return [
-                "I am attracted to investments that are creative, novel and 'out of the box'",
-                "I am attracted to investments that are traditional and have a proven track record",
-                "I prefer to plan, organise and manage my investments in a structured and systematic manner",
-                "I prefer to remain flexible when investing and keep my options open",
-                "I prefer to make my investment decisions based on facts, data and rational analysis",
-                "I prefer to make my investment decisions based on my strongly held principles and beliefs",
-                "I am intellectual in my approach and like to understand all aspects of the investment process",
-                "I an instinctive in my approach, preferring to 'go with my gut' and back my personal intuition",
+                "I am attracted to investments that are creative and 'outside the box', often challenging conventional thinking.",
+                "I am attracted to investments that are traditional, reliable, stable and have a proven track record over time.",
+                "I manage my investments in an organised, structured, detailed and step-by-step fashion.",
+                "I prefer to remain flexible, agile and open to new investment ideas that capture my imagination.",
+                "I make my investment decisions based on the facts, hard data and thorough rational analysis.",
+                "I prefer to make my investment decisions based on my strongly held principles, values and beliefs.",
+                "I am intellectual in my approach to investing and I like to understand technically how and why things work.",
+                "I am instinctive and intuitive in my approach to investing, preferring to 'go with my gut' and back my personal intuition.",
         ];
     }
 

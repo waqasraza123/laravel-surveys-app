@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Mail;
 use app\User;
 use App\Report;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 
 class viewAdvisorsController extends Controller
 {
@@ -16,6 +18,41 @@ class viewAdvisorsController extends Controller
         $this->middleware('auth', ['except' => [
             'validatePracticeCode'
         ]]);
+    }
+
+    public function add(){
+        return view('firm.add_adviser');
+    }
+
+    public function firmAdd(Request $data){
+
+
+        $this->validate($data, [
+            'name' => 'required|string|max:175',
+            'email' => 'required|string|email|max:175|unique:users',
+            'company_position' => 'required|string|max:175',
+            'mobile_number' => 'required|string|max:175',
+            'password' => 'required|string|min:8|max:175|regex:/^(?=.*[A-Z])(?=.*[0-9])(?=.*\d).+$/|confirmed',
+
+        ]);
+
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+            'company_position' => $data['company_position'],
+            'mobile_number' => $data['mobile_number'],
+            'role' => 'advisor',
+            'firm_code' => Auth::user()->code,
+            'status' => true
+        ]);
+
+//        $this->sendEmailToFirm($user, $data['firm_code']);
+//        $this->sendAdminNotificationAdvisor($user, $data['firm_code']);
+
+//        return $user;
+
+        return redirect('adviser/add')->with('status', 'Financial Adviser Account Created');
     }
 
     public function new()

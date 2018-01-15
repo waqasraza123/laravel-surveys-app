@@ -43,6 +43,8 @@ Route::get('/advisors/approved', 'viewAdvisorsController@approved')->name('advis
 Route::get('/advisors/delete/{id}', 'viewAdvisorsController@delete');
 Route::get('/advisors/firm-approve/{id}', 'viewAdvisorsController@firmApprove');
 Route::get('/advisers/{id}/edit', 'viewAdvisorsController@editAdviser')->name('adviser-edit');
+Route::get('/adviser/add', 'viewAdvisorsController@add')->name('adviser_add');
+Route::post('/adviser/add', 'viewAdvisorsController@firmAdd')->name('firm_add');
 Route::post('/advisers/{id}/', 'viewAdvisorsController@updateAdviser')->name('adviser-update');
 Route::post('/advisers/{id}/password', 'viewAdvisorsController@updateAdviserPassword')->name('adviser-password-update');
 Route::post('/firm/code/validate', 'viewAdvisorsController@validatePracticeCode')->name('practice-code');

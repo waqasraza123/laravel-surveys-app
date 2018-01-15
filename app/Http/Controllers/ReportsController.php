@@ -371,11 +371,11 @@ class ReportsController extends Controller
             "history" => "green",
             "social_studies" => "red",
             "music" => "red",
-            "religion" => "red",
+            "politics" => "red",
             "psychology" => "red",
             "art" => "yellow",
             "design" => "yellow",
-            "politics" => "yellow",
+            "english_literature" => "yellow",
             "english" => "yellow",
         ];
 
@@ -394,11 +394,11 @@ class ReportsController extends Controller
             "history" => "blue",
             "social_studies" => "green",
             "music" => "green",
-            "religion" => "green",
+            "politics" => "green",
             "psychology" => "yellow",
             "art" => "red",
             "design" => "green",
-            "politics" => "red",
+            "english_literature" => "red",
             "english" => "green",
         ];
 
@@ -411,18 +411,34 @@ class ReportsController extends Controller
             "computer_games" => "blue",
             "astrology" => "blue",
             "investing" => "blue",
+
+            "fantasy_sports " => "blue",
+            "crosswords " => "blue",
+
             "home_improvements" => "green",
             "cooking" => "green",
             "camping" => "green",
             "gardening" => "green",
+
+            "collecting" => "green",
+            "fitness_exercise" => "green",
+
             "musical_instruments" => "red",
             "movies" => "red",
             "travel" => "red",
             "sport" => "red",
+
+            "entertaining " => "red",
+            "musical_composing " => "red",
+
             "sailing" => "yellow",
             "arts_crafts" => "yellow",
             "creative_writing" => "yellow",
             "photography" => "yellow",
+
+            "drawing" => "yellow",
+            "painting" => "yellow",
+
         ];
 
         return $array[$opt];
@@ -430,22 +446,27 @@ class ReportsController extends Controller
 
     public static function partDAnswers_secondary($opt){
         $array = [
-            "information_technology" => "green",
-            "computer_games" => "green",
-            "astrology" => "yellow",
-            "investing" => "yellow",
-            "home_improvements" => "yellow",
+            "information_technology" => "yellow",
+            "astronomy" => "yellow",
+            "fantasy_sports" => "yellow",
+            "crosswords" => "green",
+
+            "home_improvements" => "blue",
             "cooking" => "blue",
-            "camping" => "blue",
-            "gardening" => "yellow",
-            "musical_instruments" => "green",
+            "gardening" => "blue",
+            "fitness_exercise" => "blue",
+
+
             "movies" => "yellow",
-            "travel" => "green",
-            "sport" => "green",
+            "musical_composing" => "green",
+
+
             "sailing" => "green",
-            "arts_crafts" => "green",
+            "arts_crafts" => "red",
             "creative_writing" => "red",
             "photography" => "green",
+            "drawing" => "red",
+            "painting" => "red",
         ];
 
         return $array[$opt];

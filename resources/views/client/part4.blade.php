@@ -34,7 +34,7 @@
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="astrology" value="true" @if(isset($saved_input["astrology"])) checked @endif> Astrology
+                                                <input type="checkbox" name="astrology" value="true" @if(isset($saved_input["astronomy"])) checked @endif> Astronomy
                                             </label>
                                         </div>
                                         <div class="checkbox">
@@ -42,6 +42,18 @@
                                                 <input type="checkbox" name="investing" value="true" @if(isset($saved_input["investing"])) checked @endif> Investing
                                             </label>
                                         </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="investing" value="true" @if(isset($saved_input["fantasy_sports"])) checked @endif> Fantasy Sports
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="investing" value="true" @if(isset($saved_input["crosswords"])) checked @endif> Crosswords
+                                            </label>
+                                        </div>
+
+
                                         <div class="checkbox">
                                             <label>
                                                 <input type="checkbox" name="home_improvements" value="true" @if(isset($saved_input["home_improvements"])) checked @endif> Home Improvements
@@ -62,7 +74,18 @@
                                                 <input type="checkbox" name="gardening" value="true" @if(isset($saved_input["gardening"])) checked @endif> Gardening
                                             </label>
                                         </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="gardening" value="true" @if(isset($saved_input["collecting"])) checked @endif> Collecting
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="gardening" value="true" @if(isset($saved_input["fitness_exercise"])) checked @endif> Fitness and Exercise
+                                            </label>
+                                        </div>
                                     </div>
+
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
@@ -86,6 +109,18 @@
                                         </div>
                                         <div class="checkbox">
                                             <label>
+                                                <input type="checkbox" name="sport" value="true" @if(isset($saved_input["entertaining"])) checked @endif> Entertaining
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="sport" value="true" @if(isset($saved_input["musical_composing"])) checked @endif> Musical Composing
+                                            </label>
+                                        </div>
+
+
+                                        <div class="checkbox">
+                                            <label>
                                                 <input type="checkbox" name="sailing" value="true" @if(isset($saved_input["sailing"])) checked @endif> Sailing
                                             </label>
                                         </div>
@@ -102,6 +137,16 @@
                                         <div class="checkbox">
                                             <label>
                                                 <input type="checkbox" name="photography" value="true" @if(isset($saved_input["photography"])) checked @endif> Photography
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="photography" value="true" @if(isset($saved_input["drawing"])) checked @endif> Drawing
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="photography" value="true" @if(isset($saved_input["painting"])) checked @endif> Painting
                                             </label>
                                         </div>
                                     </div>
@@ -127,11 +172,11 @@
         var theCheckboxes = $("input[type='checkbox']");
         theCheckboxes.click(function()
         {
-            if (theCheckboxes.filter(":checked").length > 4){
+            if (theCheckboxes.filter(":checked").length > 6){
                 this.checked = false;
                 swal(
                     'Alert!',
-                    "You cannot select more than 4 options."
+                    "You cannot select more than 6 options."
                 );
             }
         });
