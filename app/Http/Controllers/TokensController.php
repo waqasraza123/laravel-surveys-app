@@ -45,6 +45,8 @@ class TokensController extends Controller
         if(Auth::user()->role != "firm")
             redirect('/home');
 
+
+
         $validator = $this->validator($request->all());
         if($validator->fails())
             return back()->withErrors($validator);
@@ -71,8 +73,10 @@ class TokensController extends Controller
             'token' => $request->stripeToken,
         ])->send();
 
+
         if($response->isSuccessful()) {
             $this->successfulTransaction($request->quantity, $rate);
+
             return back()->withErrors(["success" => "Tokens Purchased Successfully. $" . $price . " has been deducted from your card."]);
         }
 
@@ -123,6 +127,13 @@ class TokensController extends Controller
         $user = Auth::user();
         $user->tokens_available = $user->tokens_available + $quantity;
         $user->save();
+
+        $user = Auth::user();
+
+        \PDF::loadView('layouts.invoice',
+            ['user'=>$user, 'qty'=>$quantity, 'rate'=>$rate, 'transaction'=>$transaction])
+            ->save('pdf/Receipt_'.$transaction->id.'.pdf');
+
     }
 
     public static function getRate($quantity){

@@ -179,6 +179,7 @@ return [
 
         Ignited\LaravelOmnipay\LaravelOmnipayServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
+
     ],
 
     /*

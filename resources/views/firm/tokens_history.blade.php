@@ -34,9 +34,10 @@
                                         <td>{{ $transactions["tokens"] * $transactions["rate"] }}</td>
                                         <td>{{ ($transactions["tokens"] * $transactions["rate"]) * 0.1  }}</td>
                                         <td>{{ $transactions["tokens"] * $transactions["rate"] + ($transactions["tokens"] * $transactions["rate"]) * 0.1}}</td>
-                                        <th><a class="btn btn-white btn-bitbucket">
+                                        <th><a class="btn btn-white btn-bitbucket" href="{{url('pdf/Receipt_'.$transactions['id'].'.pdf')}}">
                                                 <i class="fa fa-download"></i>
-                                            </a></th>
+                                            </a>
+                                        </th>
                                     </tr>
                                 @endforeach
                                 </tbody>
