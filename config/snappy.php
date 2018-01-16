@@ -5,7 +5,8 @@ return array(
 
     'pdf' => array(
         'enabled' => true,
-        'binary'  => '/usr/bin/wkhtmltopdf',
+        'binary' => base_path('vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64'),
+        //'binary'  => '/usr/bin/wkhtmltopdf',
          //       'binary'  => '"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf"',
         'timeout' => false,
         'options' => array(),
