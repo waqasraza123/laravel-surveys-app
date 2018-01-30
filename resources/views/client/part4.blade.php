@@ -171,14 +171,13 @@
         var theCheckboxes = $("input[type='checkbox']");
         theCheckboxes.click(function()
         {
-            if (theCheckboxes.filter(":checked").length > 6){
+            if (theCheckboxes.filter(":checked").length > 4){
                 this.checked = false;
                 swal(
                     'Alert!',
-                    "You cannot select more than 6 options."
+                    "You cannot select more than 4 options."
                 );
             }
         });
     </script>
-
 @endsection
