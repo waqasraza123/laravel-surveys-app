@@ -15,7 +15,6 @@
                         <h2>Instructions</h2>
                         Please select up to 6 hobbies and interests. You can choose less than 6 if you wish
 
-
                         <div class="ibox float-e-margins" style="margin-top: 40px">
                             <div class="ibox-content">
 
@@ -171,11 +170,11 @@
         var theCheckboxes = $("input[type='checkbox']");
         theCheckboxes.click(function()
         {
-            if (theCheckboxes.filter(":checked").length > 4){
+            if (theCheckboxes.filter(":checked").length > 6){
                 this.checked = false;
                 swal(
                     'Alert!',
-                    "You cannot select more than 4 options."
+                    "You cannot select more than 6 options."
                 );
             }
         });

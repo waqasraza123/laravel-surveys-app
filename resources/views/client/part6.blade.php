@@ -18,7 +18,6 @@
                 <div class="ibox float-e-margins" style="margin-top: 40px">
                     <div class="ibox-content">
 
-
                         <div class="form-group">
                             <label>
                                 <input type="radio" name="part6" value="5" required @if(isset($saved_input['part6']) && $saved_input['part6'] == "5") checked @endif>

@@ -390,6 +390,7 @@ class QuestionerController extends Controller
         ];
     }
 
+
     public static function part7_questions(){
         return [
             "I prefer a Financial Adviser that has a successful track record in providing their clients with success over the long haul.",

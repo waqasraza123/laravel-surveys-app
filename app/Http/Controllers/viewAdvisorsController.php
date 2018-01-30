@@ -47,12 +47,8 @@ class viewAdvisorsController extends Controller
             'status' => true
         ]);
 
-//        $this->sendEmailToFirm($user, $data['firm_code']);
         $this->sendConfirmationEmail($user);
-
         $this->sendAdminNotificationAdvisor($user, $data['firm_code']);
-
-//        return $user;
 
         return redirect('adviser/add')->with('status', 'Financial Adviser Account Created');
     }

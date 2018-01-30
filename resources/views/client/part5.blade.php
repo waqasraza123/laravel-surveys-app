@@ -46,6 +46,7 @@
                             </select>
                         </div>
                     </div>
+
                     <div class="panel-footer">
                         <a href="../part/4"><button type="button" class="btn btn-primary">Back</button></a>
                         <div style="float:right">

@@ -21,7 +21,6 @@
                 <br/><br/>
 
 
-
                 <div class="ibox float-e-margins" style="margin-top: 40px">
                     <div class="ibox-content">
                         @foreach($questions as $key => $question)

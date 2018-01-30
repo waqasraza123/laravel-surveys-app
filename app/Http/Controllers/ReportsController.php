@@ -534,6 +534,7 @@ class ReportsController extends Controller
         return $output;
     }
 
+
     function sendClientEmail($advisor, $code, $email, $name, $firm){
         Mail::send('email.newClient', ["advisor" => $advisor, "code" => $code, "client" => $name, "firm" => $firm], function($message) use ($email, $name){
             $message->to($email, $name)
