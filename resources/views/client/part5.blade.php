@@ -38,7 +38,7 @@
                             <hr>
                         @endforeach
                         <div class="form-group">
-                            <label for="9">9. Of the statements above, please select the statement that is most like you</label>
+                            <label for="9" style="font-weight: bold"><b>9. Of the statements above, please select the statement that is MOST like you:</b></label>
                             <select name="9" class="form-control">
                                 @foreach($questions as $key => $question)
                                     <option value="{{ $key+1 }}">{{ $question }}</option>

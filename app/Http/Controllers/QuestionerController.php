@@ -392,7 +392,7 @@ class QuestionerController extends Controller
 
     public static function part7_questions(){
         return [
-            "I prefer a Financial Adviser that has a successful track record in providing their clients with success over the long haul",
+            "I prefer a Financial Adviser that has a successful track record in providing their clients with success over the long haul.",
             "I prefer a Financial Adviser who has strong technical skills in terms of products, cash flow, taxation, retirement and estate planning.",
             "I prefer a Financial Adviser who recommends sectors or shares that have an established and successful track record.",
             "I prefer a Financial Adviser who puts me first, is contemporary in their approach, is responsive, and is able to listen and identify my real needs, concerns, goals, values and beliefs.",

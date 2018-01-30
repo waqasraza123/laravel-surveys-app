@@ -13,9 +13,8 @@
                         <h1 class="logo-name" style="font-size: 65px; margin-left: -5px;">Part D</h1>
 
                         <h2>Instructions</h2>
-                        Please select up to 4 favourite hobbies/interests
-                        </br>
-                        Note: You can select less than 4 if you wish
+                        Please select up to 6 hobbies and interests. You can choose less than 6 if you wish
+
 
                         <div class="ibox float-e-margins" style="margin-top: 40px">
                             <div class="ibox-content">

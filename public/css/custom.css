@@ -38,3 +38,12 @@ ul.info li {
 .ibox a {
     color: #676a6c!important;
 }
+
+.middle-box {
+    max-width: 330px;
+
+}
+
+.middle-box h1 {
+    font-size: 58px;
+}

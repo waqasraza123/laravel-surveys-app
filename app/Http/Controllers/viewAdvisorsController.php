@@ -48,7 +48,9 @@ class viewAdvisorsController extends Controller
         ]);
 
 //        $this->sendEmailToFirm($user, $data['firm_code']);
-//        $this->sendAdminNotificationAdvisor($user, $data['firm_code']);
+        $this->sendConfirmationEmail($user);
+
+        $this->sendAdminNotificationAdvisor($user, $data['firm_code']);
 
 //        return $user;
 
@@ -256,4 +258,22 @@ class viewAdvisorsController extends Controller
         }
 
     }
+
+
+
+    // Email to Website Admin
+    function sendAdminNotificationAdvisor($user){
+        Mail::send('email.adminNotificationAdvisor', ["name" => $user->name], function($message) use ($user){
+            $message->to('aaron@LEARNERLIBRARY.COM')
+                ->subject('New Adviser Registered');
+        });
+    }
+
+    function sendConfirmationEmail($user){
+        Mail::send('email.verify', ["name" => $user->name, "confirmation_code" => $user->confirmation_code], function($message) use ($user){
+            $message->to($user->email, $user->name)
+                ->subject('Please verify your email address');
+        });
+    }
+
 }
