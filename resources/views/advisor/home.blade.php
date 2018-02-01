@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="col-xs-8 text-right">
                                     <span> Tokens Used </span>
-                                    <h2 class="font-bold"> </h2>
+                                    <h2 class="font-bold"> {{ $tokens_used }} </h2>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="col-xs-8 text-right">
                                     <span> Completed Investor DNA Profiles </span>
-                                    <h2 class="font-bold"> </h2>
+                                    <h2 class="font-bold"> {{ $completed_reports }} </h2>
                                 </div>
                             </div>
                         </div>
@@ -74,15 +74,17 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($clients as $client)
                                 <tr>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{ $client->first_name }}</td>
+                                    <td>{{ $client->last_name }}</td>
                                     <td>
-                                        <a class="btn btn-white btn-bitbucket" target="_blank" href="/reports/view/">
+                                        <a class="btn btn-white btn-bitbucket" target="_blank" href="/reports/view/{{ $client->code }}">
                                             <i class="fa fa-download"></i>
                                         </a>
                                     </td>
                                 </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

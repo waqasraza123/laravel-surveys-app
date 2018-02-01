@@ -67,7 +67,15 @@ class HomeController extends Controller
                 return view('firm.home')->with($data);
 
             case "advisor":
-                return view('advisor.home');
+
+                $advisor = Auth::user();
+                $data["completed_reports"] = 0;
+                $data["tokens_used"] = 0;
+                $data["completed_reports"] = Report::where(["advisor" => $advisor->id, "completed" => true])->count();
+                $data["tokens_used"] = Report::where(["advisor" => $advisor->id])->count();
+                $clients = Report::where(["advisor" => $advisor->id, "completed" => true])->get();
+
+                return view('advisor.home', compact('clients'))->with($data);
 
             case "iclient":
                 return view('iclient.home');
