@@ -68,8 +68,7 @@
                 buttons: [
                     {extend: 'copy'},
                     {extend: 'csv'},
-                    {extend: 'excel', title: 'ExampleFile'},
-                    {extend: 'pdf', title: 'ExampleFile'},
+                    {extend: 'excel', title: 'Tokens'},
 
                     {extend: 'print',
                         customize: function (win){

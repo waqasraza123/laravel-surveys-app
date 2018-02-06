@@ -16,7 +16,7 @@
                 Please click on the link within the email to activate and login to your account.
                 </h2>
 
-                <p class="m-t"> <small>Investor DNA &copy; 2017</small> </p>
+                <p class="m-t"> <small>Investor DNA &copy; 2018</small> </p>
             </div>
         </div>
 

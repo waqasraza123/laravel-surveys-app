@@ -1,19 +1,53 @@
 @extends('layouts.auth')
 
-@section('content')
-    <img src="../images/new_banner.jpg" alt="" width="100%">
+<style>
 
+
+    /*.gray-bg, .bg-muted {*/
+    /*background-color: #2f4050!important;*/
+    /*}*/
+
+    .gray-bg, .bg-muted {
+        background: url(../images/bg.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .inside {
+        background: #18a689;
+        padding: 0px 50px 50px;
+    }
+
+    h2 {
+        color: #fff!important;
+        padding: 30px 0px;
+    }
+
+    .btn-primary {
+        background-color: #1ab394;
+        border-color: #fff!important;
+        color: #FFFFFF;
+    }
+
+</style>
+
+@section('content')
 
     <div class="container">
 
 
         <div class="middle-box text-center loginscreen   animated fadeInDown">
             <div>
-                <div>
+                <div  style="margin-bottom: 40px">
                     <img src="../images/logoi.png" alt="">
                     <h1 style="margin-top:0px"  class="logo-name">Investor DNA</h1>
 
                 </div>
+
+                <div class="inside">
+
                 <h2>Reset Password</h2>
 
                 @if (session('status'))
@@ -43,7 +77,10 @@
                     </div>
                 </form>
 
-                <p class="m-t"> <small>Investor DNA &copy; 2017</small> </p>
+                </div>
+
+
+                <p class="m-t"> <small>Investor DNA &copy; 2018</small> </p>
             </div>
         </div>
 

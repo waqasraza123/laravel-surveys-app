@@ -131,7 +131,7 @@
             <div class="col-lg-6">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Top Financial Advisers by Investor DNA Profiles Generated </h5>
+                        <h5>Top Financial Advisers by Completed Investor DNA Profiles </h5>
                     </div>
                     <div class="ibox-content">
 

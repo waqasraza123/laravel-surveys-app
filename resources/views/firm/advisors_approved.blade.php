@@ -16,7 +16,7 @@
                                     <th>Email</th>
                                     <th>Mobile</th>
                                     <th>Position</th>
-                                    <th>Investor DNA Profiles</th>
+                                    <th>Tokens Used</th>
                                     <th>Status</th>
                                     <th>Options</th>
                                 </tr>
@@ -34,9 +34,9 @@
                                         <td> <a href="{{route('adviser-edit', ['id' => $advisor['id']])}}" class="btn btn-white btn-bitbucket">
                                                 <i class="fa fa-pencil"></i>
                                             </a>
-                                            <a class="btn btn-white btn-bitbucket">
-                                                <i class="fa fa-ban"></i>
-                                            </a>
+                                            {{--<a class="btn btn-white btn-bitbucket">--}}
+                                                {{--<i class="fa fa-ban"></i>--}}
+                                            {{--</a>--}}
                                             <a class="btn btn-white btn-bitbucket" onclick="deleteAdvisor({{ $advisor["id"] }}, '{{ $advisor["name"] }}')">
                                                 <i class="fa fa-trash"></i>
                                             </a>
@@ -89,8 +89,7 @@
                 buttons: [
                     {extend: 'copy'},
                     {extend: 'csv'},
-                    {extend: 'excel', title: 'ExampleFile'},
-                    {extend: 'pdf', title: 'ExampleFile'},
+                    {extend: 'excel', title: 'Approved Financial Advisers'},
 
                     {extend: 'print',
                         customize: function (win){

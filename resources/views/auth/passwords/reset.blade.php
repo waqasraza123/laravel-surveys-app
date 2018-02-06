@@ -65,7 +65,7 @@
                     </div>
                 </form>
 
-                <p class="m-t"> <small>Investor DNA &copy; 2017</small> </p>
+                <p class="m-t"> <small>Investor DNA &copy; 2018</small> </p>
             </div>
         </div>
 

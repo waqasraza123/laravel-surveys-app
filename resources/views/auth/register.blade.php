@@ -34,7 +34,6 @@
 </style>
 
 @section('content')
-    {{--<img src="images/new_banner.jpg" alt="" width="100%">--}}
 
     <div class="container">
 
@@ -230,7 +229,7 @@
 
 
                 <div class="form-group">
-                    <div class="checkbox i-checks"><label> <input type="checkbox"><i></i><span style="color: #fff">I Agree to the Terms & Conditions</span> </label></div>
+                    <div class="checkbox i-checks"><label> <input type="checkbox" required><i></i><span style="color: #fff">I Agree to the Terms & Conditions</span> </label></div>
                 </div>
 
 
@@ -258,7 +257,7 @@
                     show_firm();
                 @endif
             </script>
-            <p class="m-t"> <small>Investor DNA &copy; 2017</small> </p>
+            <p class="m-t"> <small>Investor DNA &copy; 2018</small> </p>
         </div>
     </div>
 

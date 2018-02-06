@@ -54,8 +54,8 @@ class HomeController extends Controller
             case "firm":
                 $data = array();
                 $data["tokens_available"] = Auth::user()->tokens_available;
-                $data["active_advisors"] = User::where(["role" => "advisor", "firm_code" => Auth::user()->code, "firm_approved" => true])->count();
-                $data["pending_advisors"] = User::where(["role" => "advisor", "firm_code" => Auth::user()->code, "firm_approved" => false])->count();
+                $data["active_advisors"] = User::where(["role" => "advisor", "firm_code" => Auth::user()->code, "status" => true])->count();
+                $data["pending_advisors"] = User::where(["role" => "advisor", "firm_code" => Auth::user()->code, "status" => false])->count();
                 $data["latest_reports"] = $this->getFirmLatestReports();
                 $data["top_advisors"] = $this->getFirmTopAdvisors();
 
@@ -114,7 +114,7 @@ class HomeController extends Controller
     private function getFirmTopAdvisors(){
         $advisors = User::where('firm_code', Auth::user()->code)->get();
         foreach($advisors as $advisor){
-            $advisor["reports"] = Report::where(['advisor' => $advisor->id])->count();
+            $advisor["reports"] = Report::where(['advisor' => $advisor->id, 'completed' => true])->count();
         }
         $advisors = $advisors->sortBy('reports');
         return $advisors->slice(0, 6);;

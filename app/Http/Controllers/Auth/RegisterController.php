@@ -77,7 +77,7 @@ class RegisterController extends Controller
                     'postcode' => 'string|max:175',
                     'firm_website' => 'string|max:175',
                     'firm_phone' => 'string|max:175',
-                    'password' => 'required|string|min:10|max:175|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/|confirmed',
+                    'password' => 'required|string|min:8|max:175|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/|confirmed',
 
                 ]);
 
@@ -88,7 +88,7 @@ class RegisterController extends Controller
                     'password' => 'required|string|min:6|max:175|confirmed',
                     'mobile_number' => 'required|string|max:175',
                     'role' => 'required|string|max:175',
-                    'password' => 'required|string|min:10|max:175|regex:/^(?=.*[A-Z])(?=.*[0-9])(?=.*\d).+$/|confirmed',
+                    'password' => 'required|string|min:8|max:175|regex:/^(?=.*[A-Z])(?=.*[0-9])(?=.*\d).+$/|confirmed',
 
                 ]);
         }
@@ -167,7 +167,7 @@ class RegisterController extends Controller
     // Email to Website Admin
     function sendAdminNotificationAdvisor($user){
         Mail::send('email.adminNotificationAdvisor', ["name" => $user->name], function($message) use ($user){
-            $message->to('aaron@learnerlibrary.com')
+            $message->to('david.peake@iadapt.com.au')
                 ->subject('New Adviser Registered');
         });
     }
