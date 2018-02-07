@@ -32,7 +32,7 @@
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="astrology" value="true" @if(isset($saved_input["astronomy"])) checked @endif> Astronomy
+                                                <input type="checkbox" name="astronomy" value="true" @if(isset($saved_input["astronomy"])) checked @endif> Astronomy
                                             </label>
                                         </div>
                                         <div class="checkbox">
