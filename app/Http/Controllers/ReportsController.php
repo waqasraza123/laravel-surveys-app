@@ -447,27 +447,18 @@ class ReportsController extends Controller
     public static function partDAnswers_secondary($opt){
         $array = [
             "information_technology" => "yellow",
-            "computer_games" => "",
             "astronomy" => "yellow",
-            "investing" => "",
 
             "fantasy_sports" => "yellow",
             "crosswords" => "green",
 
             "home_improvements" => "blue",
             "cooking" => "blue",
-            "camping" => "",
             "gardening" => "blue",
 
-            "collecting" => "",
             "fitness_exercise" => "blue",
-
-            "musical_instruments" => "",
             "movies" => "yellow",
-            "travel" => "",
-            "sport" => "",
 
-            "entertaining " => "",
             "musical_composing" => "green",
 
 
