@@ -170,7 +170,8 @@ class ReportsController extends Controller
         //// part 4 Scores ////
         foreach($response[3] as $key => $answer){
             $scores[ReportsController::partDAnswers($key)] += 2;
-            $scores[ReportsController::partDAnswers_secondary($key)] += 1;
+            if(ReportsController::partDAnswers_secondary($key) != null)
+                $scores[ReportsController::partDAnswers_secondary($key)] += 1;
         }
 
         //// Part 5 Scores ////
@@ -209,7 +210,8 @@ class ReportsController extends Controller
         //// part 4 Scores ////
         foreach($response[3] as $key => $answer){
             $scores[ReportsController::partDAnswers($key)] += 2;
-            $scores[ReportsController::partDAnswers_secondary($key)] += 1;
+            if(ReportsController::partDAnswers_secondary($key) != null)
+                $scores[ReportsController::partDAnswers_secondary($key)] += 1;
         }
 
         //// Part 5 Scores ////
@@ -470,7 +472,10 @@ class ReportsController extends Controller
             "painting" => "red",
         ];
 
-        return $array[$opt];
+        if(array_key_exists($opt, $array))
+            return $array[$opt];
+
+        return null;
     }
 
     public static function partEAnswers($opt){
