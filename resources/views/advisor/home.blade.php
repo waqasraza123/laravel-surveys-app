@@ -76,8 +76,8 @@
                             <tbody>
                             @foreach($clients as $client)
                                 <tr>
-                                    <td>{{ $client->first_name }}</td>
-                                    <td>{{ $client->last_name }}</td>
+                                    <td>{{ $client->created_at }}</td>
+                                    <td>{{ $client->first_name }} {{ $client->last_name }}</td>
                                     <td>
                                         <a class="btn btn-white btn-bitbucket" target="_blank" href="/reports/view/{{ $client->code }}">
                                             <i class="fa fa-download"></i>
