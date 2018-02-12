@@ -398,13 +398,12 @@ class QuestionerController extends Controller
             "I prefer a Financial Adviser who recommends sectors or shares that have an established and successful track record.",
             "I prefer a Financial Adviser who puts me first, is contemporary in their approach, is responsive, and is able to listen and identify my real needs, concerns, goals, values and beliefs.",
             "I prefer a Financial Adviser who takes the time to understand ‘what makes me tick’, has excellent interpersonal and communication skills and takes the time to build trust.",
-
             "I prefer a Financial Adviser who is professional and ethical, who is reliable, authentic, dedicated and transparent in all aspects of the advice process.",
-            "I prefer a Financial Adviser who makes recommendations based on a through grasp of the data, facts and has reach their recommendations based on rational analysis.",
+            "I prefer a Financial Adviser who makes their recommendations based on a thorough grasp of the data, facts and rational analysis.",
             "I prefer a Financial Adviser who appreciates, understands and complies with all relevant legislation and regulations when providing financial advice.",
             "I prefer an adviser who is creative and original in their thinking, who is ably to think ‘outside the square’ to identify new and original investment opportunities.",
             "I prefer an adviser who remains calm, objective and in control during times of market volatility.",
-            "I only put my money into invest that I implicitly trust, those that operate with integrity and uphold the highest ethical standards. ",
+            "I only invest in companies that I implicitly trust, those that operate with integrity and uphold the highest ethical standards.",
             "I prefer an adviser who understands my core values and philosophy and has a similar outlook on life.",
         ];
     }
