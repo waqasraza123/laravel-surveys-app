@@ -131,7 +131,11 @@ class ReportsController extends Controller
 
     public function clients(){
 
-        return view('advisor.clients');
+        $reports = Report::where('advisor',Auth::id())->get()->reverse();
+        foreach($reports as $report)
+            if($report->completed)
+                $report->score = $this->getScore($report->response);
+        return view('advisor.clients')->with(['reports'=>$reports]);
     }
 
     public static function getPart6Answer($response){

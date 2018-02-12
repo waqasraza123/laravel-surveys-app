@@ -13,29 +13,36 @@
                             <table class="table table-striped table-bordered table-hover dataTables-example" >
                                 <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
                                     <th>Email</th>
-                                    <th>Mobile</th>
                                     <th>Investor DNA Profile Status</th>
                                     <th>Investor DNA Profile</th>
                                 </tr>
                                 </thead>
                                 <tbody>
 
-                                {{--@foreach($advisors as $advisor)--}}
-                                    {{--<tr>--}}
-                                        {{--<td>{{ $advisor["name"] }}</td>--}}
-                                        {{--<td>{{ $advisor["email"] }}</td>--}}
-                                        {{--<td>{{ $advisor["mobile_number"] }}</td>--}}
-                                        {{--<td>{{ $advisor["company_position"] }}</td>--}}
-                                        {{--<td>65</td>--}}
-                                        {{--<td>Active</td>--}}
-                                        {{--<td><a class="btn btn-white btn-bitbucket" onclick="approveAdvisor({{ $advisor["id"] }}, '{{ $advisor["name"] }}')">--}}
-                                                {{--<i class="fa fa-check-square-o"></i>--}}
-                                            {{--</a>--}}
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
-                                {{--@endforeach--}}
+                                @foreach($reports as $report)
+                                    <tr>
+                                        <td>{{ $report["first_name"] }}</td>
+                                        <td>{{ $report["last_name"] }}</td>
+                                        <td>{{ $report["email"] }}</td>
+                                        <td>
+                                            @if($report["completed"])
+                                                Completed
+                                            @else
+                                                Pending
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($report["completed"])
+                                                <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Investor DNA Profile</a>
+                                            @else
+                                                Pending
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
 
 
                                 </tbody>

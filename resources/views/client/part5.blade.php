@@ -21,7 +21,7 @@
                     </ul>
 
                 <div class="ibox float-e-margins" style="margin-top: 40px">
-                    <div class="ibox-content">
+                    <div class="ibox-content" style="padding-left: 30px">
                         @foreach($questions as $key => $question)
                             <div class="form-group">
                                 <label class="control-label" for="{{ $key+1 }}">{{ $key+1 }}. {{ $question }}</label><br/>

@@ -35,21 +35,21 @@
                                             @if($report["completed"])
                                                 {{ $report["score"] }}
                                             @else
-                                                Not Completed
+                                                Pending
                                             @endif
                                         </td>
                                         <td>
                                             @if($report["completed"])
                                                 <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Investor DNA Profile</a>
                                             @else
-                                                Not Completed
+                                                Pending
                                             @endif
                                         </td>
                                         <td>
                                             @if($report["completed"])
                                                 {{ $report["updated_at"] }}
                                             @else
-                                                Not Completed
+                                                Pending
                                             @endif
                                         </td>
                                     </tr>
