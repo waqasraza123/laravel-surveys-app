@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<p>A new Financial Adviser registered.</p>
+<p>A new Financial Adviser has been Approved.</p>
 
 
 </body>

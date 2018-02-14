@@ -139,7 +139,7 @@ class RegisterController extends Controller
             ]);
 
             $this->sendConfirmationEmail($user);
-            $this->sendEmailToAdmins($user);
+            $this->sendAdminNotificationFirm($user);
 
             return $user;
         }
@@ -169,6 +169,13 @@ class RegisterController extends Controller
         Mail::send('email.adminNotificationAdvisor', ["name" => $user->name], function($message) use ($user){
             $message->to('david.peake@iadapt.com.au')
                 ->subject('New Adviser Registered');
+        });
+    }
+
+    function sendAdminNotificationFirm($user){
+        Mail::send('email.adminNotificationFirm', ["name" => $user->name], function($message) use ($user){
+            $message->to('david.peake@iadapt.com.au')
+                ->subject('New Financial Practice Registered');
         });
     }
 

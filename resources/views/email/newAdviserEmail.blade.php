@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<p>A new Financial Adviser registered.</p>
+<p>email body to go here...</p>
 
 
 </body>

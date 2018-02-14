@@ -47,7 +47,7 @@ class viewAdvisorsController extends Controller
             'status' => true
         ]);
 
-        $this->sendConfirmationEmail($user);
+        $this->sendNewAdviserEmail($user);
         $this->sendAdminNotificationAdvisor($user, $data['firm_code']);
 
         return redirect('adviser/add')->with('status', 'Financial Adviser Account Created');
@@ -121,6 +121,8 @@ class viewAdvisorsController extends Controller
             $user->save();
         }
         $this->sendVerifiedEmail($user);
+        $this->sendAdminNotificationVerified($user);
+
         return back();
     }
 
@@ -260,15 +262,24 @@ class viewAdvisorsController extends Controller
     // Email to Website Admin
     function sendAdminNotificationAdvisor($user){
         Mail::send('email.adminNotificationAdvisor', ["name" => $user->name], function($message) use ($user){
-            $message->to('aaron@LEARNERLIBRARY.COM')
+            $message->to('david.peake@iadapt.com.au')
                 ->subject('New Adviser Registered');
         });
     }
 
-    function sendConfirmationEmail($user){
-        Mail::send('email.verify', ["name" => $user->name, "confirmation_code" => $user->confirmation_code], function($message) use ($user){
+    function sendAdminNotificationVerified($user){
+        Mail::send('email.adminNotificationVerified', ["name" => $user->name], function($message) use ($user){
+            $message->to('david.peake@iadapt.com.au')
+                ->subject('New Adviser Approved');
+        });
+    }
+
+
+
+    function sendNewAdviserEmail($user){
+        Mail::send('email.newAdviserEmail', ["name" => $user->name, "confirmation_code" => $user->confirmation_code], function($message) use ($user){
             $message->to($user->email, $user->name)
-                ->subject('Please verify your email address');
+                ->subject('Account Created at investorDNA');
         });
     }
 
