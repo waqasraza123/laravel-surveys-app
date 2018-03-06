@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use Carbon;
+use Carbon\Carbon;
 use app\User;
 use App\Report;
 use Illuminate\Http\Request;
@@ -53,6 +53,7 @@ class HomeController extends Controller
 
             case "firm":
                 $data = array();
+                $data["reportsByMonth"] = $this->getReportsByMonthFirm();
                 $data["tokens_available"] = Auth::user()->tokens_available;
                 $data["active_advisors"] = User::where(["role" => "advisor", "firm_code" => Auth::user()->code, "status" => true])->count();
                 $data["pending_advisors"] = User::where(["role" => "advisor", "firm_code" => Auth::user()->code, "status" => false])->count();
@@ -69,6 +70,7 @@ class HomeController extends Controller
             case "advisor":
 
                 $advisor = Auth::user();
+                $data["reportsByMonth"] = $this->getReportsByMonthAdvisor();
                 $data["completed_reports"] = 0;
                 $data["tokens_used"] = 0;
                 $data["completed_reports"] = Report::where(["advisor" => $advisor->id, "completed" => true])->count();
@@ -120,6 +122,30 @@ class HomeController extends Controller
         return $advisors->slice(0, 6);;
     }
 
+    private function getReportsByMonthFirm(){
+        $advisors = User::where('firm_code', Auth::user()->code)->pluck('id')->toArray();
 
+        $reportsByMonth = Report::whereIn('advisor', $advisors)->where('created_at', '>', Carbon::now()->addYear(-1))->get()->groupBy(function($date) {
+                return Carbon::parse($date->created_at)->format('M');
+            });
+
+        foreach($reportsByMonth as $key => $reports){
+            $reportsByMonth[$key] = sizeof($reports);
+        }
+
+        return $reportsByMonth;
+    }
+
+    private function getReportsByMonthAdvisor(){
+        $reportsByMonth = Report::where('advisor', Auth::user()->id)->where('created_at', '>', Carbon::now()->addYear(-1))->get()->groupBy(function($date) {
+                return Carbon::parse($date->created_at)->format('M');
+            });
+
+        foreach($reportsByMonth as $key => $reports){
+            $reportsByMonth[$key] = sizeof($reports);
+        }
+
+        return $reportsByMonth;
+    }
 
 }

@@ -168,10 +168,18 @@
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                labels: [
+                    @foreach($reportsByMonth as $key => $month)
+                        "{{ $key }}",
+                    @endforeach
+                ],
                 datasets: [{
                     label: '# of Investor DNA Profiles',
-                    data: [12, 19, 3, 5, 2, 3, 13, 14, 17, 20, 20, 12],
+                    data: [
+                        @foreach($reportsByMonth as $key => $month)
+                            {{ $month }},
+                        @endforeach
+                    ],
                     backgroundColor: 'rgba(26,179,148,0.5)',
 
                     borderColor: [
