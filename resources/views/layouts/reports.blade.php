@@ -8,16 +8,14 @@
     <title>Investor DNA Profile</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/reports.css') }}" rel="stylesheet">
+    <link href="{{ base_path('public\css\reports.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
-
-
     @yield('content')
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+<!-- <script src="{{ base_path('public\js\app.js') }}"></script> -->
 </body>
 </html>

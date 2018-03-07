@@ -21,7 +21,7 @@ body {
 
 
 table {
-    width: 794px;
+    width: 90%;
     margin: auto;
     margin-bottom: 50px;
     font-family: 'Avenir LT Std'!important;
@@ -37,7 +37,7 @@ table.one {
 }
 
 table.internal {
-    width: 694px;
+    width: 90%;
     margin: auto;
     margin-bottom: 50px;
 
@@ -287,4 +287,8 @@ table.key img {
     width: 32px;
 }
 
-
+div.page
+{
+    page-break-after: always;
+    page-break-inside: avoid;
+}

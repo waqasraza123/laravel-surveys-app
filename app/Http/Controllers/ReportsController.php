@@ -99,6 +99,7 @@ class ReportsController extends Controller
     }
 
     public function show($code){
+
         if(Auth::user()->role == 'admin')
             return redirect("/home");
 
@@ -121,11 +122,11 @@ class ReportsController extends Controller
 
         $data->subCatScores = $this->partASubCatScores($data->response);
 
+        $pdf = PDF::loadView('reports.1122', ['data' => $data]);
         // $pdf = PDF::loadView('reports.'.$score, ['data' => $data]);
-        // return $pdf->inline();
+        return $pdf->inline();
 
-        return view('reports.1122')->with(['data' => $data]);
-        //return view('reports.'.$score)->with(['data' => $data]);
+        //return view('reports.1122')->with(['data' => $data]);
     }
 
 

@@ -2,31 +2,32 @@
 
 @section('content')
 <!-- Page 1 -->
-
-<table class="one">
-    <tr>
-        <td><img src="/images/reports/intro.png" width="100%">
-            <h1>Confidential Report – {{ $data["first_name"] }} {{ $data["last_name"] }}</h1><!--TODO (client name)-->
-            <h3 class="page1">
-                1122<br/>
-                Double Dominant Profile<br/>
-                The Analyst - Implementer
-            </h3>
-        </td>
-    </tr>
-</table>
+<div class="page">
+    <table class="one">
+        <tr>
+            <td><img src="{{ base_path('public\images\reports\intro.png') }}" width="100%">
+                <h1>Confidential Report – {{ $data["first_name"] }} {{ $data["last_name"] }}</h1><!--TODO (client name)-->
+                <h3 class="page1">
+                    1122<br/>
+                    Double Dominant Profile<br/>
+                    The Analyst - Implementer
+                </h3>
+            </td>
+        </tr>
+    </table>
 
 
 <!-- Section Page 1 -->
 
-<table class="internal">
-    <tr>
-        <td><img src="/images/reports/section1.png" alt="" width="100%"></td>
-    </tr>
-</table>
+    <table class="internal">
+        <tr>
+            <td><img src="{{ base_path('public/images/reports/section1.png') }}" alt="" width="100%"></td>
+        </tr>
+    </table>
+</div>
 
 <!-- Page 2 -->
-
+<div class="page">
 <table class="internal">
     <tr>
         <td>
@@ -38,17 +39,17 @@
 
             <p>Your Investor DNA profile provides you with self-insight into your own Investment Psychology. This includes your decision-making style, risk appetite and preferred asset classes, innate biases and preferred communication style.  It also identifies key factors that influence the level of trust between you and your adviser. Investor DNA helps your adviser provide a tailored investment solution, whilst helping you make better investment decisions over time. It is worth considering that your financial net worth today is the sum of all of your financial decisions made up until this point in time. It makes intuitive sense then, that by improving your investment decision-making you will increase your net wealth over time, safeguarding your lifestyle today and in the future.</p>
 
-            <img src="/images/reports/p1.jpg" width="100%" alt="">
+            <img src="{{ base_path('public/images/reports/p1.jpg') }}" width="100%" alt="">
         </td>
     </tr>
 </table>
-
+</div>
 <!-- Page 3 -->
-
+<div class="page">
 <table class="internal">
     <tr>
         <td>
-            <img src="/images/reports/chart.png" width="100%" alt="">
+            <img src="{{ base_path('public/images/reports/chart.png') }}" width="100%" alt="">
         </td>
     </tr>
     <tr>
@@ -67,9 +68,9 @@
         </td>
     </tr>
 </table>
-
+</div>
 <!-- Page 4 -->
-
+<div class="page">
 <table class="internal" style="border: 7px solid #666666; padding: 10px; margin-bottom: 30px">
     <tr>
         <td colspan="3" class="page4">
@@ -80,7 +81,7 @@
         <td>Name:</td>
         <td>{{ $data["first_name"] }} {{ $data["last_name"] }}</td><!--TODO (client name)-->
         <td rowspan="5" style="vertical-align: bottom; text-align: right;">
-            <img src="/images/reports/logow.jpg" width="100px" alt="">
+            <img src="{{ base_path('public/images/reports/logow.jpg') }}" width="100px" alt="">
         </td>
     </tr>
     <tr>
@@ -465,9 +466,9 @@
     </tr>
 
 </table>
-
+</div>
 <!-- Page 5 -->
-
+<div class="page">
 <table class="internal">
     <tr>
         <td colspan="2" class="page5">
@@ -488,7 +489,7 @@
 
     <tr>
         <td colspan="2" style="vertical-align: middle"><p class="italic" style="margin-top: 30px">
-                <img src="/images/reports/p12.jpg" alt="" width="180px"
+                <img src="{{ base_path('public/images/reports/p12.jpg') }}" alt="" width="180px"
                      style="float: left;
                             margin-right: 30px;
                             margin-bottom: 30px">
@@ -511,9 +512,9 @@
     </tr>
 
 </table>
-
+</div>
 <!-- Page 6 -->
-
+<div class="page">
 <table class="internal">
     <tr>
         <td>
@@ -527,7 +528,7 @@
 
             <h4>The Investor Psychology Cycle – ‘The roller coaster of investor emotion’:</h4>
 
-            <img src="/images/reports/p6.jpg" alt="" width="100%">
+            <img src="{{ base_path('public/images/reports/p6.jpg') }}" alt="" width="100%">
 
         </td>
     </tr>
@@ -538,13 +539,13 @@
 <table class="internal">
     <tr>
         <td>
-            <img src="/images/reports/section2.png" alt="" width="100%">
+            <img src="{{ base_path('public/images/reports/section2.png') }}" alt="" width="100%">
         </td>
     </tr>
 </table>
-
+</div>
 <!-- Page 7 -->
-
+<div class="page">
 <table class="internal" style="margin-bottom: -40px">
     <tr>
         <td>
@@ -563,73 +564,73 @@
                 </tr>
                 <tr>
                     <td><h4>1. Confirmation Bias:</h4></td>
-                    <td class="img"><img src="/images/reports/red.png" alt=""></td>
+                    <td class="img"><img src="{{ base_path('public/images/reports/red.png') }}" alt=""></td>
                     <td>May select (cherry pick) data that fits a preconceived point whilst rejecting alternatives. May distort information to confirm with own views.</td>
                     <td class="last">Suspend initial judgment. Remain objective and open to different data.  </td>
                 </tr>
                 <tr>
                     <td><h4>2. Optimism Bias: </h4></td>
-                    <td class="img"><img src="/images/reports/ok.png" alt=""></td>
+                    <td class="img"><img src="{{ base_path('public/images/reports/ok.png') }}" alt=""></td>
                     <td>Is overly optimistic, over estimating the potential gains whilst underestimating risks. The higher the perceived potential gains the stronger the bias.</td>
                     <td class="last">Take time to conduct thorough due diligence based on facts and data. </td>
                 </tr>
                 <tr>
                     <td><h4>3. Loss Aversion: </h4></td>
-                    <td class="img"><img src="/images/reports/ok.png" alt=""></td>
+                    <td class="img"><img src="{{ base_path('public/images/reports/ok.png') }}" alt=""></td>
                     <td>Fear of making a loss. May fail to take corrective action, holding onto negative positions for too long and failing to ‘cut their losses’ and sell out.</td>
                     <td class="last">Be prepared to exit from poor performing assets & stocks. Remain rational.  </td>
                 </tr>
                 <tr>
                     <td><h4>4. Success Bias: </h4></td>
-                    <td class="img"><img src="/images/reports/caution.png" alt=""></td>
+                    <td class="img"><img src="{{ base_path('public/images/reports/caution.png') }}" alt=""></td>
                     <td>Assumes past success predicts future success. May see future as an extension of the past, only relying on historical data & ignoring other factors.</td>
                     <td class="last">Remain open to exploring investments that lack historical data or success. </td>
                 </tr>
                 <tr>
                     <td><h4>5. Self-Serving Bias: </h4></td>
-                    <td class="img"><img src="/images/reports/ok.png" alt=""></td>
+                    <td class="img"><img src="{{ base_path('public/images/reports/ok.png') }}" alt=""></td>
                     <td>Believes those things that are in their best interests to believe. May believe falling stocks will rebound or successful stocks will continue to rise.</td>
                     <td class="last">Remain objective & base all decisions on available data. Look at pros & cons.   </td>
                 </tr>
                 <tr>
                     <td><h4>6. Analysis Bias:</h4></td>
-                    <td class="img"><img src="/images/reports/red.png" alt=""></td>
+                    <td class="img"><img src="{{ base_path('public/images/reports/red.png') }}" alt=""></td>
                     <td>Collects & processes excessive amounts of data.  May over analyze the data leading to ‘analysis paralysis’, procrastination and delayed decisions.</td>
                     <td class="last">Collect & analyse only enough data to allow you to make timely decisions. </td>
                 </tr>
                 <tr>
                     <td><h4>7. Over Confidence: </h4></td>
-                    <td class="img"><img src="/images/reports/red.png" alt=""></td>
+                    <td class="img"><img src="{{ base_path('public/images/reports/red.png') }}" alt=""></td>
                     <td>Over estimates one’s own investment abilities leading to an under-estimation of risks. Successes are attributed to self whilst losses to other factors. </td>
                     <td class="last">Listen to the advice of others whilst owning your successes & your failures.</td>
                 </tr>
                 <tr>
                     <td><h4>8. Herding Bias: </h4></td>
-                    <td class="img"><img src="/images/reports/ok.png" alt=""></td>
+                    <td class="img"><img src="{{ base_path('public/images/reports/ok.png') }}" alt=""></td>
                     <td>Follows others on mass (the ‘herd’) irrespective of contrary advice or data. May make emotional or irrational decisions when markets are volatile.</td>
                     <td class="last">Remain objective. Sell when others are buying & vise versa to run counter.  </td>
                 </tr>
                 <tr>
                     <td><h4>9. Bureaucratic Bias: </h4></td>
-                    <td class="img"><img src="/images/reports/red.png" alt=""></td>
+                    <td class="img"><img src="{{ base_path('public/images/reports/red.png') }}" alt=""></td>
                     <td>Places an over emphasis on rules, regulations, order or structure, in an attempt to maintain control. May lead to a lack of investment agility. </td>
                     <td class="last">Remain open to changing investment strategies and remain open and flexible.  </td>
                 </tr>
                 <tr>
                     <td><h4>10. Anecdotal Bias: </h4></td>
-                    <td class="img"><img src="/images/reports/ok.png" alt=""></td>
+                    <td class="img"><img src="{{ base_path('public/images/reports/ok.png') }}" alt=""></td>
                     <td>Believes stories, anecdotes and gossip over facts & evidence. May believe family, friends or stock tips from strangers, e.g. cabbies, hair dressers etc.</td>
                     <td class="last">Listen to informed experts & avoid reacting to general opinions. </td>
                 </tr>
                 <tr>
                     <td><h4>11. Recency Bias: </h4></td>
-                    <td class="img"><img src="/images/reports/caution.png" alt=""></td>
+                    <td class="img"><img src="{{ base_path('public/images/reports/caution.png') }}" alt=""></td>
                     <td>Makes decisions based on recent successes rather than historical trends. May be caught up in the euphoria of bull markets/panic of falling markets.</td>
                     <td class="last">Take a longer-term rational approach based on the facts and evidence. </td>
                 </tr>
                 <tr>
                     <td><h4>12. Predisposition Bias:</h4></td>
-                    <td class="img"><img src="/images/reports/ok.png" alt=""></td>
+                    <td class="img"><img src="{{ base_path('public/images/reports/ok.png') }}" alt=""></td>
                     <td>Forms an emotional attachment (relationship) to investments classes, stocks, markets or industries, irrespective of data. May lead to biased portfolio construction and/or reluctance to sell if required.</td>
                     <td class="last">Avoid forming personal attachments to your investments. Use data not sentiment to guide you.  </td>
                 </tr>
@@ -641,20 +642,20 @@
 <table class="internal biasl key">
     <tr>
         <td>K</td>
-        <td><img src="/images/reports/red.png" alt=""> Red Alert! ! - You have a <u>high probability</u> of being susceptible to this form of bias. </td>
+        <td><img src="{{ base_path('public/images/reports/red.png') }}" alt=""> Red Alert! ! - You have a <u>high probability</u> of being susceptible to this form of bias. </td>
     </tr>
     <tr>
         <td>E</td>
-        <td><img src="/images/reports/caution.png" alt=""> Caution! -  You may be susceptible to this bias if you are not mindful to avoid it.</td>
+        <td><img src="{{ base_path('public/images/reports/caution.png') }}" alt=""> Caution! -  You may be susceptible to this bias if you are not mindful to avoid it.</td>
     </tr>
     <tr>
         <td>Y</td>
-        <td><img src="/images/reports/ok.png" alt=""> OK - You are unlikely to be susceptible to this particular bias based on your profile. </td>
+        <td><img src="{{ base_path('public/images/reports/ok.png') }}" alt=""> OK - You are unlikely to be susceptible to this particular bias based on your profile. </td>
     </tr>
 </table>
-
+</div>
 <!-- Page 8 -->
-
+<div class="page">
 <table class="internal" style="margin-bottom: -40px">
     <tr>
         <td>
@@ -675,11 +676,11 @@
                     <td><h4>1. Adviser Track Record: </h4></td>
                     <td class="img">
                         @if($data["part7"][1] == "4")
-                            <img src="/images/reports/high.png" alt="">
+                            <img src="{{ base_path('public/images/reports/high.png') }}" alt="">
                         @elseif($data["part7"][1] == "3")
-                            <img src="/images/reports/medium.png" alt="">
+                            <img src="{{ base_path('public/images/reports/medium.png') }}" alt="">
                         @else
-                            <img src="/images/reports/low.png" alt="">
+                            <img src="{{ base_path('public/images/reports/low.png') }}" alt="">
                         @endif
                     </td>
                     <td>Trust is based on the successful track record of the adviser, including depth, breadth and years of experience, and results attained.  </td>
@@ -689,11 +690,11 @@
                     <td><h4>2. Industry/Asset Track Record:  </h4></td>
                     <td class="img">
                         @if($data["part7"][2] == "4")
-                            <img src="/images/reports/high.png" alt="">
+                            <img src="{{ base_path('public/images/reports/high.png') }}" alt="">
                         @elseif($data["part7"][2] == "3")
-                            <img src="/images/reports/medium.png" alt="">
+                            <img src="{{ base_path('public/images/reports/medium.png') }}" alt="">
                         @else
-                            <img src="/images/reports/low.png" alt="">
+                            <img src="{{ base_path('public/images/reports/low.png') }}" alt="">
                         @endif
                     </td>
                     <td>Trust is based on the specific track record of a particular industry, asset class or sub class. Trust is likely to be based on results attained.  </td>
@@ -703,11 +704,11 @@
                     <td><h4>3. Client Centricity: </h4></td>
                     <td class="img">
                         @if($data["part7"][3] == "4")
-                            <img src="/images/reports/high.png" alt="">
+                            <img src="{{ base_path('public/images/reports/high.png') }}" alt="">
                         @elseif($data["part7"][3] == "3")
-                            <img src="/images/reports/medium.png" alt="">
+                            <img src="{{ base_path('public/images/reports/medium.png') }}" alt="">
                         @else
-                            <img src="/images/reports/low.png" alt="">
+                            <img src="{{ base_path('public/images/reports/low.png') }}" alt="">
                         @endif
                     </td>
                     <td>Trust is based on the degree to which the adviser is proactive and responsive, placing their client’s needs above their own needs. </td>
@@ -717,11 +718,11 @@
                     <td><h4>4. Communication and listening skills: </h4></td>
                     <td class="img">
                         @if($data["part7"][4] == "4")
-                            <img src="/images/reports/high.png" alt="">
+                            <img src="{{ base_path('public/images/reports/high.png') }}" alt="">
                         @elseif($data["part7"][4] == "3")
-                            <img src="/images/reports/medium.png" alt="">
+                            <img src="{{ base_path('public/images/reports/medium.png') }}" alt="">
                         @else
-                            <img src="/images/reports/low.png" alt="">
+                            <img src="{{ base_path('public/images/reports/low.png') }}" alt="">
                         @endif
                     </td>
                     <td>Trust is based on two-way communication. Has client empathy, actively listens, and acknowledges both words and feelings. </td>
@@ -731,11 +732,11 @@
                     <td><h4>5. Character and Integrity:  </h4></td>
                     <td class="img">
                         @if($data["part7"][5] == "4")
-                            <img src="/images/reports/high.png" alt="">
+                            <img src="{{ base_path('public/images/reports/high.png') }}" alt="">
                         @elseif($data["part7"][5] == "3")
-                            <img src="/images/reports/medium.png" alt="">
+                            <img src="{{ base_path('public/images/reports/medium.png') }}" alt="">
                         @else
-                            <img src="/images/reports/low.png" alt="">
+                            <img src="{{ base_path('public/images/reports/low.png') }}" alt="">
                         @endif
                     </td>
                     <td>Trust is based on character of the adviser, including honesty, integrity, reliability, authenticity, transparency and dedication.</td>
@@ -745,11 +746,11 @@
                     <td><h4>6. Analytical and Rational:</h4></td>
                     <td class="img">
                         @if($data["part7"][6] == "4")
-                            <img src="/images/reports/high.png" alt="">
+                            <img src="{{ base_path('public/images/reports/high.png') }}" alt="">
                         @elseif($data["part7"][6] == "3")
-                            <img src="/images/reports/medium.png" alt="">
+                            <img src="{{ base_path('public/images/reports/medium.png') }}" alt="">
                         @else
-                            <img src="/images/reports/low.png" alt="">
+                            <img src="{{ base_path('public/images/reports/low.png') }}" alt="">
                         @endif
                     </td>
                     <td>Trust is based on the degree to which the adviser analyses all available information and takes a rational approach. </td>
@@ -759,11 +760,11 @@
                     <td><h4>7. Regulatory Compliance:  </h4></td>
                     <td class="img">
                         @if($data["part7"][7] == "4")
-                            <img src="/images/reports/high.png" alt="">
+                            <img src="{{ base_path('public/images/reports/high.png') }}" alt="">
                         @elseif($data["part7"][7] == "3")
-                            <img src="/images/reports/medium.png" alt="">
+                            <img src="{{ base_path('public/images/reports/medium.png') }}" alt="">
                         @else
-                            <img src="/images/reports/low.png" alt="">
+                            <img src="{{ base_path('public/images/reports/low.png') }}" alt="">
                         @endif
                     </td>
                     <td>Trust is based on Advisers knowledge of the regulatory requirements, ensuring that an investor has minimal exposure. </td>
@@ -773,11 +774,11 @@
                     <td><h4>8. Creativity and innovation:  </h4></td>
                     <td class="img">
                         @if($data["part7"][8] == "4")
-                            <img src="/images/reports/high.png" alt="">
+                            <img src="{{ base_path('public/images/reports/high.png') }}" alt="">
                         @elseif($data["part7"][8] == "3")
-                            <img src="/images/reports/medium.png" alt="">
+                            <img src="{{ base_path('public/images/reports/medium.png') }}" alt="">
                         @else
-                            <img src="/images/reports/low.png" alt="">
+                            <img src="{{ base_path('public/images/reports/low.png') }}" alt="">
                         @endif
                     </td>
                     <td>Trust is based on the Adviser’s ability to seek out and identify creative and new investment opportunities that exist in new ventures. </td>
@@ -787,11 +788,11 @@
                     <td><h4>9. Emotional control:  </h4></td>
                     <td class="img">
                         @if($data["part7"][9] == "4")
-                            <img src="/images/reports/high.png" alt="">
+                            <img src="{{ base_path('public/images/reports/high.png') }}" alt="">
                         @elseif($data["part7"][9] == "3")
-                            <img src="/images/reports/medium.png" alt="">
+                            <img src="{{ base_path('public/images/reports/medium.png') }}" alt="">
                         @else
-                            <img src="/images/reports/low.png" alt="">
+                            <img src="{{ base_path('public/images/reports/low.png') }}" alt="">
                         @endif
                     </td>
                     <td>Trust is based on maintaining emotional control, both in terms of general interaction but also in the face of market volatility. </td>
@@ -801,11 +802,11 @@
                     <td><h4>10. Focus on Results: </h4></td>
                     <td class="img">
                         @if($data["part7"][10] == "4")
-                            <img src="/images/reports/high.png" alt="">
+                            <img src="{{ base_path('public/images/reports/high.png') }}" alt="">
                         @elseif($data["part7"][10] == "3")
-                            <img src="/images/reports/medium.png" alt="">
+                            <img src="{{ base_path('public/images/reports/medium.png') }}" alt="">
                         @else
-                            <img src="/images/reports/low.png" alt="">
+                            <img src="{{ base_path('public/images/reports/low.png') }}" alt="">
                         @endif
                     </td>
                     <td>Trust is based on the extent to which the adviser meets their commitments and focuses on results irrespective of intention or activity.</td>
@@ -815,11 +816,11 @@
                     <td><h4>11. Alignment on Values </h4></td>
                     <td class="img">
                         @if($data["part7"][11] == "4")
-                            <img src="/images/reports/high.png" alt="">
+                            <img src="{{ base_path('public/images/reports/high.png') }}" alt="">
                         @elseif($data["part7"][11] == "3")
-                            <img src="/images/reports/medium.png" alt="">
+                            <img src="{{ base_path('public/images/reports/medium.png') }}" alt="">
                         @else
-                            <img src="/images/reports/low.png" alt="">
+                            <img src="{{ base_path('public/images/reports/low.png') }}" alt="">
                         @endif
                     </td>
                     <td>Trust is based on the degree to which the adviser and investor share common values, and philosophy, such as family, freedom etc.</td>
@@ -829,11 +830,11 @@
                     <td><h4>12. Numerical / Technical ability </h4></td>
                     <td class="img">
                         @if($data["part7"][12] == "4")
-                            <img src="/images/reports/high.png" alt="">
+                            <img src="{{ base_path('public/images/reports/high.png') }}" alt="">
                         @elseif($data["part7"][12] == "3")
-                            <img src="/images/reports/medium.png" alt="">
+                            <img src="{{ base_path('public/images/reports/medium.png') }}" alt="">
                         @else
-                            <img src="/images/reports/low.png" alt="">
+                            <img src="{{ base_path('public/images/reports/low.png') }}" alt="">
                         @endif
                     </td>
                     <td>Trust is based on financial, numerical, technical or mathematical ability. Trust is increased through demonstrating your investment capabilities as a subject matter expert.</td>
@@ -847,21 +848,21 @@
 <table class="internal trustl key">
     <tr>
         <td>K</td>
-        <td><img src="/images/reports/high.png" width="32px" alt=""> HIGH - This is very important for you and has a high impact on developing trust. </td>
+        <td><img src="{{ base_path('public/images/reports/high.png') }}" width="32px" alt=""> HIGH - This is very important for you and has a high impact on developing trust. </td>
     </tr>
     <tr>
         <td>E</td>
-        <td><img src="/images/reports/medium.png" width="32px"  alt=""> MEDIUM - This is somewhat important for you and has a medium impact on developing trust.</td>
+        <td><img src="{{ base_path('public/images/reports/medium.png') }}" width="32px"  alt=""> MEDIUM - This is somewhat important for you and has a medium impact on developing trust.</td>
     </tr>
     <tr>
         <td>Y</td>
-        <td><img src="/images/reports/low.png" width="32px"  alt=""> LESS IMPORTANT - This is less important for you when compared to other factors for developing trust. </td>
+        <td><img src="{{ base_path('public/images/reports/low.png') }}" width="32px"  alt=""> LESS IMPORTANT - This is less important for you when compared to other factors for developing trust. </td>
     </tr>
 </table>
-
+</div>
 
 <!-- Page 9 -->
-
+<div class="page">
 <table class="internal">
     <tr>
         <td>
@@ -888,7 +889,7 @@
                 (See scores on page 6) The higher the quadrant score, the greater the level of influence on your investment decisions.
                 Optimal decision-making involves both rigorous factual analysis (left-brain) and your intuition. (right-brain)</p>
         </td></tr>
-    <tr><td><img src="/images/reports/p9.jpg" width="100%" alt=""></td></tr>
+    <tr><td><img src="{{ base_path('public/images/reports/p9.jpg') }}" width="100%" alt=""></td></tr>
 </table>
 
 
@@ -896,12 +897,12 @@
 
 <table class="internal">
     <tr>
-        <td><img src="/images/reports/section3.png" alt="" width="100%"></td>
+        <td><img src="{{ base_path('public/images/reports/section3.png') }}" alt="" width="100%"></td>
     </tr>
 </table>
-
+</div>
 <!-- Page 10 -->
-
+<div class="page">
 <td class="internal">
     <tr>
         <td>
@@ -911,15 +912,15 @@
     <tr>
         <td>
             @if($data["part7"] == "5")
-                <img src="/images/reports/highp.png" width="100%" alt="">
+                <img src="{{ base_path('public/images/reports/highp.png') }}" width="100%" alt="">
             @elseif($data["part7"] == "4")
-                <img src="/images/reports/moderate_to_high.png" width="100%" alt="">
+                <img src="{{ base_path('public/images/reports/moderate_to_high.png') }}" width="100%" alt="">
             @elseif($data["part7"] == "3")
-                <img src="/images/reports/moderate.png" width="100%" alt="">
+                <img src="{{ base_path('public/images/reports/moderate.png') }}" width="100%" alt="">
             @elseif($data["part7"] == "2")
-                <img src="/images/reports/low_to_moderate.png" width="100%" alt="">
+                <img src="{{ base_path('public/images/reports/low_to_moderate.png') }}" width="100%" alt="">
             @elseif($data["part7"] == "1")
-                <img src="/images/reports/lowp.png" width="100%" alt="">
+                <img src="{{ base_path('public/images/reports/lowp.png') }}" width="100%" alt="">
             @endif
         </td>
     </tr>
@@ -990,9 +991,9 @@
 </tr>
 
 </table>
-
+</div>
 <!-- Page 11 -->
-
+<div class="page">
 <table class="internal">
     <tr>
         <td>
@@ -1022,18 +1023,18 @@
     <tr>
         <td class="page11">
             <p>Investment Strategy x Risk x Asset Class:</p>
-            <img src="/images/reports/p11.jpg" alt="" width="100%">
+            <img src="{{ base_path('public/images/reports/p11.jpg') }}" alt="" width="100%">
         </td>
     </tr>
 
 </table>
-
+</div>
 
 <!-- Page 12 -->
-
+<div class="page">
 <table class="internal">
     <tr>
-        <td><img src="/images/reports/p12.jpg" alt="" width="120px"></td>
+        <td><img src="{{ base_path('public/images/reports/p12.jpg') }}" alt="" width="120px"></td>
         <td style="vertical-align: middle"><h4>7. THE ANALYST - IMPLEMENTER - 1122 PROFILE - SUMMARY:</h4></td>
     </tr>
     <tr>
@@ -1077,15 +1078,15 @@
 
 
 </table>
-
+</div>
 
 <!-- Page 13 -->
-
+<div class="page">
 <table class="internal">
     <tr>
         <td>
             <h4>8. THE ANALYST - IMPLEMENTER - 1122 PROFILE - KEY RECOMMENDATIONS:</h4>
-            <img src="/images/reports/p13.jpg" alt="" width="100%">
+            <img src="{{ base_path('public/images/reports/p13.jpg') }}" alt="" width="100%">
         </td>
     </tr>
     <tr>
@@ -1114,15 +1115,15 @@
         </td>
     </tr>
 </table>
-
+</div>
 
 <!-- Page 14 -->
-
+<div class="page">
 <table class="internal">
     <tr>
         <td>
             <h4> 9. THE ANALYST - IMPLEMENTER - 1122 PROFILE - ADVISER COMMUNICATION TIPS:</h4>
-            <img src="/images/reports/p14.jpg" alt="" width="100%">
+            <img src="{{ base_path('public/images/reports/p14.jpg') }}" alt="" width="100%">
         </td>
     </tr>
     <tr>
@@ -1155,13 +1156,13 @@
         </td>
     </tr>
 </table>
-
+</div>
 
 <!-- Page 15 -->
-
+<div class="page">
 <table class="internal">
     <tr>
-        <td><img src="/images/reports/p12.jpg" alt="" width="120px"></td>
+        <td><img src="{{ base_path('public/images/reports/p12.jpg') }}" alt="" width="120px"></td>
         <td style="vertical-align: middle"><h4>10. THE ANALYST - IMPLEMENTER - 1122 PROFILE COMMUNICATION STYLE:</h4></td>
     </tr>
     <tr>
@@ -1178,15 +1179,15 @@
                     four boxes below. Next, draw an arrow connecting the 4 colored boxes in the order of their preference scores, from 1 to 2, to 3, to 4. This represents the ideal sequence of
                     communication for maximum impact, showing your starting point (1) and the recommended order of communication.</p>
 
-            <img src="/images/reports/p15.jpg" alt="" width="100%">
+            <img src="{{ base_path('public/images/reports/p15.jpg') }}" alt="" width="100%">
         </td>
     </tr>
 </table>
-
+</div>
 
 
 <!-- Page 16 -->
-
+<div class="page">
     <table class="internal">
         <tr>
             <td>
@@ -1201,7 +1202,7 @@
             </td>
         </tr>
     </table>
-
+</div>
 
 
 @endsection
