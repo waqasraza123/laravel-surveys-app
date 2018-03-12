@@ -17,13 +17,13 @@
 
 <img src="{{ asset('images/email-header2.jpg') }}" alt="" width="100%">
 
-<p><b>NOTIFICATION TO NEW FINANCIAL ADVISOR – APPROVAL STATUS</b></p>
+{{--<p><b>NOTIFICATION TO NEW FINANCIAL ADVISOR – APPROVAL STATUS</b></p>--}}
 
 
 <p>Hello {{ $user->name }}, </p>
 
-<p>Welcome aboard! Your firm’s Investor DNA Administrator {{ $firm->name }} has just approved your registration for the Investor
-    DNA system.</p>
+<p>Good news! Your firm’s Investor DNA Administrator {{ $firm->name }} has just approved your registration for the Investor DNA system and you are ready to go.
+</p>
 
 <p>You now have full access to the power of the Investor DNA system to help you unlock your client’s investment style, their
     appetite for risk, preferred asset classes and communication style. Importantly, you will learn about your client’s trust

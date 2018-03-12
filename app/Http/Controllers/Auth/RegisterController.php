@@ -113,6 +113,7 @@ class RegisterController extends Controller
                 'firm_code' => $data['firm_code'],
             ]);
 
+            $this->sendWelcomeEmailAdviser($user, $data['firm_code']);
             $this->sendEmailToFirm($user, $data['firm_code']);
             $this->sendAdminNotificationAdvisor($user, $data['firm_code']);
 
@@ -203,6 +204,14 @@ class RegisterController extends Controller
         Mail::send('email.newAdvisor', ["name" => $user->name, "email" => $user->email, 'firmName' => $firmName], function($message) use ($firm){
             $message->to($firm->email, $firm->name)
                 ->subject('New Advisor Registered');
+        });
+    }
+
+    function sendWelcomeEmailAdviser($user, $code){
+        $firm = User::where("code", $code)->first();
+        Mail::send('email.welcomeAdviser', ["user" => $user, 'firm' => $firm], function($message) use ($user){
+            $message->to($user->email, $user->name)
+                ->subject('Welcome aboard');
         });
     }
 

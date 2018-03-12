@@ -17,44 +17,39 @@
 
 <img src="{{ asset('images/email-header2.jpg') }}" alt="" width="100%">
 
-{{--<p><b>NOTIFICATION TO NEW FINANCIAL ADVISOR – WELCOME LETTER
-ADMINISTRATOR REGISTERED AND APPROVED  (ONE STEP)
-</b></p>--}}
+{{--<p><b>NOTIFICATION TO NEW FINANCIAL ADVISOR  - WELCOME LETTER –--}}
+        {{--SELF REGISTERING – PENDING APPROVAL FROM ADMINISTRATOR--}}
+    {{--</b></p>--}}
 
 
 <p>Hello {{ $user->name }}, </p>
 
-<p>Welcome to Investor DNA!</p>
+<p>Welcome aboard!</p>
 
-<p>Your firm’s Investor DNA Administrator {{ $firm->name }} has just approved your registration for the Investor DNA system and you are ready to go.
+<p>Your firm’s Investor DNA Administrator {{ $firm->name }} will now be notified of your registration and your membership is pending approval.
 </p>
 
 <p>Investor DNA is an exciting client profiling tool based on leading Neuroscience and Psychology and is designed to help you unlock your client’s unique investment style, appetite for risk, preferred asset classes and communication style. Importantly, you will learn about your client’s trust enables; those essential factors that build the level of trust between you and your client.
 </p>
 
+<p>Once approved you will be granted full access to the power of the Investor DNA system.</p>
 
-<p><b><u>System Access</u></b></p>
-
-<p><a href="http://128.199.88.244/login">Click here</a> to login to your account or go to Investordna.com.au and login directly from
-    our site.</p>
-
-<p>Once logged in you will be able to send your clients an email link to complete the Investor DNA survey and afterwards, view online,
-    print or save their Investor DNA profile.</p>
-
-<p>Please ensure that you hold a current designation from either the AFA or the FPA. Approved designations for using the Investor DNA
-    system include the ‘Fellow Chartered Financial Practitioner delegation’ <b>(FChFP) <u>or</u></b> Chartered Life Financial Practitioner
-    <b>(ChLP)</b> designation issued by the AFA, or alternatively, Certified Financial Planner <b>(CFP)</b> designation issued by Financial
-    Planning Association of Australia. (FPA)
+<p>To use the Investor DNA system you require a current approved designation from either the AFA or the FPA.
+    Approved designations for using the Investor DNA system include the ‘Fellow Chartered Financial Practitioner delegation’
+    <b>(FChFP) <u>or</u></b> Chartered Life Financial Practitioner <b>(ChLP)</b> designation issued by the AFA, or alternatively,
+    Certified Financial Planner <b>(CFP)</b> designation issued by Financial Planning Association of Australia. (FPA)
 </p>
 
 <p><b><u>Induction Program</u></b></p>
 
-<p>Now that you are onboard, learn more about how Investor DNA will help you build stronger client relationships.
-    Please register for our 2-hour induction program that explains the investor DNA system from top to bottom. The induction
-    program is delivered online at a time suitable for you. Your participation in the induction program will help you
-    understand the features and client benefits of Investor DNA and is required within 6 months from date of initial
-    registration to maintain your system accreditation status.
+<p>Once your registration is approved we will invite you to attend our Investor DNA induction program. This will show you how
+    to use Investor DNA to provide a tailored financial solution and to build stronger client relationships.
 </p>
+
+<p>The induction program is delivered online at a time suitable for you. Your participation in the induction program
+    will help you understand the features and client benefits of Investor DNA and is required within 6 months from date of initial registration to maintain your system accreditation status.
+</p>
+
 
 <p>Please email us on <a href="mailto:info@investordna.com.au">info@investordna.com.au</a> to arrange your induction program.
     If you have any questions please don't

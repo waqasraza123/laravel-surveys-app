@@ -17,9 +17,9 @@
 
 <img src="{{ asset('images/email-header2.jpg') }}" alt="" width="100%">
 
-<p><b>NOTIFICATION<br/>
-      TO FINANCIAL ADVISORY ADMINISTRATOR<br/>
-      NEW FINANCIAL ADVISOR REGISTRATION</b></p>
+{{--<p><b>NOTIFICATION<br/>--}}
+      {{--TO FINANCIAL ADVISORY ADMINISTRATOR<br/>--}}
+      {{--NEW FINANCIAL ADVISOR REGISTRATION</b></p>--}}
 
 
 <p>Hello {{ $firmName }}, </p>

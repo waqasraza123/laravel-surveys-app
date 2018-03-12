@@ -17,7 +17,7 @@
 
 <img src="{{ asset('images/email-header2.jpg') }}" alt="" width="100%">
 
-<p><b>CLIENT INVITATION</b></p>
+{{--<p><b>CLIENT INVITATION</b></p>--}}
 
 <p>Hello {{ $client }},</p>
 

@@ -274,7 +274,7 @@ class viewAdvisorsController extends Controller
     // Email to Adviser when account is created by firm
     function sendNewAdviserEmail($user){
         $firm = User::where("code", $user->firm_code)->get()->first();
-        Mail::send('email.verified', ["user" => $user, "firm" => $firm], function($message) use ($user){
+        Mail::send('email.newAdviserEmail', ["user" => $user, "firm" => $firm], function($message) use ($user){
             $message->to($user->email, $user->name)
                 ->subject('Account Created at investorDNA');
         });
@@ -286,7 +286,7 @@ class viewAdvisorsController extends Controller
         $firm = User::where("code", $user->firm_code)->get()->first();
         Mail::send('email.verified', ["user" => $user, "firm" => $firm], function($message) use ($user){
             $message->to($user->email, $user->name)
-                ->subject('Account Verified');
+                ->subject('Account Approved');
         });
     }
 

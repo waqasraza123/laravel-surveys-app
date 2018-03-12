@@ -5,7 +5,7 @@
 <div class="page">
     <table class="one">
         <tr>
-            <td><img src="{{ base_path('public\images\reports\intro.png') }}" width="100%">
+            <td><img src="{{ asset('images/reports/intro.png') }}" width="100%">
                 <h1>Confidential Report – {{ $data["first_name"] }} {{ $data["last_name"] }}</h1><!--TODO (client name)-->
                 <h3 class="page1">
                     1122<br/>

@@ -19,8 +19,9 @@
 
 <img src="{{ asset('images/email-header.jpg') }}" alt="" width="100%">
 
-<p><b>NOTIFICATION: TO INVESTOR DNA</b></p>
-<p><b>NEW ADVISER APPROVAL BY FIRM ADMINISTRATOR</b></p>
+{{--<p><b>NOTIFICATION: TO INVESTOR DNA</b></p>--}}
+{{--<p><b>NEW ADVISER APPROVAL BY FIRM ADMINISTRATOR</b></p>--}}
+
 <p>Name of Financial Advisory Firm: {{ $firm->firm_name }}</p>
 <p>Financial Advisory ID: {{ $firm->code }}</p>
 <p>Name of Financial Advisory Administrator: {{ $firm->name }}</p>
