@@ -166,7 +166,8 @@ class RegisterController extends Controller
 
     // Email to Website Admin
     function sendAdminNotificationAdvisor($user){
-        Mail::send('email.adminNotificationAdvisor', ["name" => $user->name], function($message) use ($user){
+        $firm = User::where("code", $user->firm_code)->get()->first();
+        Mail::send('email.adminNotificationAdvisor', ["user" => $user, "firm" => $firm], function($message) use ($user){
             $message->to('david.peake@iadapt.com.au')
                 ->subject('New Adviser Registered');
         });

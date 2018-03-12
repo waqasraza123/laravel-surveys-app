@@ -122,6 +122,38 @@ class ReportsController extends Controller
 
         $data->subCatScores = $this->partASubCatScores($data->response);
 
+        //$pdf = PDF::loadView('reports.1122', ['data' => $data]);
+        // $pdf = PDF::loadView('reports.'.$score, ['data' => $data]);
+        //return $pdf->inline();
+
+        return view('reports.1122')->with(['data' => $data]);
+    }
+
+
+    public function showPdf($code){
+
+        if(Auth::user()->role == 'admin')
+            return redirect("/home");
+
+        $data = Report::where('code', $code)->get()->first();
+        if($data == null)
+            return "Error!";
+
+        $score = $this->getScore($data->response);
+
+        $advisor = User::where('id', $data->advisor)->get()->first();
+        $data->advisor_name = $advisor->name;
+
+        $firm = User::where('code', $advisor->firm_code)->get()->first();
+        $data->firm_name = $firm->firm_name;
+
+        $data->individual_score = $this->getIndividualScore($data->response);
+
+        $data->part6 = $this->getPart6Answer($data->response);
+        $data->part7 = $this->getPart7Answer($data->response);
+
+        $data->subCatScores = $this->partASubCatScores($data->response);
+
         $pdf = PDF::loadView('reports.1122', ['data' => $data]);
         // $pdf = PDF::loadView('reports.'.$score, ['data' => $data]);
         return $pdf->inline();

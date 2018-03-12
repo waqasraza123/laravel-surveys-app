@@ -105,8 +105,6 @@ class viewAdvisorsController extends Controller
 
 
 
-
-
     //Advisor approved by Firm
     public function firmApprove($id){
         $user = User::find($id);
@@ -140,6 +138,8 @@ class viewAdvisorsController extends Controller
         return back();
     }
 
+
+
     public function delete($id){
         User::where("id", $id)
             ->where("firm_code", Auth::user()->code)
@@ -148,12 +148,7 @@ class viewAdvisorsController extends Controller
         return back();
     }
 
-    function sendVerifiedEmail($user){
-        Mail::send('email.verified', [], function($message) use ($user){
-            $message->to($user->email, $user->name)
-                ->subject('Account Verified');
-        });
-    }
+
 
     /**
      * edit adviser details
@@ -261,25 +256,37 @@ class viewAdvisorsController extends Controller
 
     // Email to Website Admin
     function sendAdminNotificationAdvisor($user){
-        Mail::send('email.adminNotificationAdvisor', ["name" => $user->name], function($message) use ($user){
+        $firm = User::where("code", $user->firm_code)->get()->first();
+        Mail::send('email.adminNotificationAdvisor', ["user" => $user, 'firm' => $firm], function($message) use ($user){
             $message->to('david.peake@iadapt.com.au')
                 ->subject('New Adviser Registered');
         });
     }
 
     function sendAdminNotificationVerified($user){
-        Mail::send('email.adminNotificationVerified', ["name" => $user->name], function($message) use ($user){
+        $firm = User::where("code", $user->firm_code)->get()->first();
+        Mail::send('email.adminNotificationVerified', ["user" => $user, 'firm' => $firm], function($message) use ($user){
             $message->to('david.peake@iadapt.com.au')
                 ->subject('New Adviser Approved');
         });
     }
 
-
-
+    // Email to Adviser when account is created by firm
     function sendNewAdviserEmail($user){
-        Mail::send('email.newAdviserEmail', ["name" => $user->name, "confirmation_code" => $user->confirmation_code], function($message) use ($user){
+        $firm = User::where("code", $user->firm_code)->get()->first();
+        Mail::send('email.verified', ["user" => $user, "firm" => $firm], function($message) use ($user){
             $message->to($user->email, $user->name)
                 ->subject('Account Created at investorDNA');
+        });
+    }
+
+
+    // Email to Adviser when account is approved
+    function sendVerifiedEmail($user){
+        $firm = User::where("code", $user->firm_code)->get()->first();
+        Mail::send('email.verified', ["user" => $user, "firm" => $firm], function($message) use ($user){
+            $message->to($user->email, $user->name)
+                ->subject('Account Verified');
         });
     }
 

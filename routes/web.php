@@ -63,7 +63,9 @@ Route::get('/tokens/usage', 'TokensController@usage');
 Route::get('/reports/new', 'ReportsController@new');
 Route::post('/reports/new', 'ReportsController@create');
 Route::get('/reports/view', 'ReportsController@view');
+Route::get('/reports/view', 'ReportsController@view');
 Route::get('/reports/view/{code}', 'ReportsController@show');
+Route::get('/reports/pdf/{code}', 'ReportsController@showPdf');
 Route::get('/clients', 'ReportsController@clients');
 Route::get('/1122', 'ReportsController@viewReport');
 

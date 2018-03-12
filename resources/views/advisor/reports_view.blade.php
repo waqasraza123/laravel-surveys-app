@@ -40,7 +40,7 @@
                                         </td>
                                         <td>
                                             @if($report["completed"])
-                                                <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Investor DNA Profile</a>
+                                                <a target="_blank" href="/reports/view/{{ $report['code'] }}">View Investor DNA Profile - {{ $report["score"] }}</a>
                                             @else
                                                 Pending
                                             @endif
