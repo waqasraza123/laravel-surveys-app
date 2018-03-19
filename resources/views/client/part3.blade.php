@@ -13,7 +13,7 @@
                         <h1 class="logo-name" style="font-size: 65px; margin-left: -5px;">Part C</h1>
 
                         <h2>Instructions</h2>
-                        Please select up to 4 faviourite subjects whilst you were at school
+                        Please select up to 4 favourite subjects whilst you were at school
                         </br>
                         Note: You can select less than 4 if you wish
 

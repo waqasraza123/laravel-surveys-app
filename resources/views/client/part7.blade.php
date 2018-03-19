@@ -15,8 +15,11 @@
                 <h2>Instructions</h2>
                 The relationship you have with your Financial Adviser is important. Please rate the following statements using the scale below.
                 Whilst all the statements presented are important to some degree, we are seeking to identify those that are most important for you.
-                Please note you can only use each scorig option (i.e. Most important, important and less important up to four (4) times only).
-
+                Please note you can only use each scorig option (i.e. Most important, important and less important up to four (4) times only).<br/><br/>
+                Please review all statements PRIOR to making your selections.<br/>
+                Then, please select the 4 statements that you feel are 'most important' for developing trust between you and your financial adviser.<br/>
+                Next, please select the 4 statements that you feel are 'important' for developing trust between you and your financial adviser.<br/>
+                Finally, please select the 4 statements that you feel are the 'least important' for developing trust between you and your financial adviser.<br/>
 
                 <br/><br/>
 

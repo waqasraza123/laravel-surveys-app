@@ -258,6 +258,7 @@ class ReportsController extends Controller
         $scores['blue'] += $part5["blue"];
         $scores['yellow'] += $part5["yellow"];
 
+
         //// Calculating Percentage ////
         $scores['blue'] = (($scores['blue'] * 100) / 120);
         $scores['green'] = (($scores['green'] * 100) / 120);
