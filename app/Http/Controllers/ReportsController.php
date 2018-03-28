@@ -154,7 +154,7 @@ class ReportsController extends Controller
 
         $data->subCatScores = $this->partASubCatScores($data->response);
 
-        $pdf = PDF::loadView('reports.1122', ['data' => $data]);
+        $pdf = PDF::loadView('reports.1122', ['data' => $data])->setPaper('a4');
         // $pdf = PDF::loadView('reports.'.$score, ['data' => $data]);
         return $pdf->inline();
 
@@ -218,7 +218,7 @@ class ReportsController extends Controller
         $scores['blue'] += $part5["blue"];
         $scores['yellow'] += $part5["yellow"];
 
-        return "{A" . $scores['blue'] . ", B" . $scores['green'] . ", C" . $scores['red'] . ", D" . $scores['yellow'] . "}";
+        return "A" . $scores['blue'] . ", B" . $scores['green'] . ", C" . $scores['red'] . ", D" . $scores['yellow'];
     }
 
     public static function getScore($response){
@@ -258,19 +258,18 @@ class ReportsController extends Controller
         $scores['blue'] += $part5["blue"];
         $scores['yellow'] += $part5["yellow"];
 
-
         //// Calculating Percentage ////
-        $scores['blue'] = (($scores['blue'] * 100) / 120);
-        $scores['green'] = (($scores['green'] * 100) / 120);
-        $scores['red'] = (($scores['red'] * 100) / 120);
-        $scores['yellow'] = (($scores['yellow'] * 100) / 120);
+//        $scores['blue'] = (($scores['blue'] * 100) / 120);
+//        $scores['green'] = (($scores['green'] * 100) / 120);
+//        $scores['red'] = (($scores['red'] * 100) / 120);
+//        $scores['yellow'] = (($scores['yellow'] * 100) / 120);
 
 
         //// allocate low, med, high ////
         foreach($scores as $key => $score){
             if($score <= 33)
                 $scores[$key] = 3;
-            else if($score > 33 && $score <= 66)
+            else if($score > 33 && $score <= 65)
                 $scores[$key] = 2;
             else
                 $scores[$key] = 1;
@@ -306,7 +305,7 @@ class ReportsController extends Controller
             $scores[$cat] += $response[0][$key];
         }
 
-        $result = "{C" . $scores["creative"] . ",P" . $scores["practical"] . ",A" . $scores["analytical"] . ",B" . $scores["beliefs"] . ",S" . $scores["structured"] . ",F" . $scores["flexible"] . ",iN" . $scores["intellectual"] . ",iS" . $scores["instinctive"] . "}";
+        $result = "C:" . $scores["creative"] . " P:" . $scores["practical"] . " | A:" . $scores["analytical"] . " B:" . $scores["beliefs"] . " | S:" . $scores["structured"] . " F:" . $scores["flexible"] . " | iN:" . $scores["intellectual"] . " iS:" . $scores["instinctive"];
 
         return $result;
     }

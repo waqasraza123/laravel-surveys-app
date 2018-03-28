@@ -21,11 +21,16 @@ body {
 
 
 table {
-    width: 90%;
+    width: 100%;
     margin: auto;
     margin-bottom: 50px;
     font-family: 'Avenir LT Std'!important;
 
+}
+
+.page {
+    page-break-after: always;
+    page-break-inside: avoid;
 }
 
 td {
@@ -37,27 +42,18 @@ table.one {
 }
 
 table.internal {
-    width: 90%;
+    width: 100%;
     margin: auto;
     margin-bottom: 50px;
-
+    height: 1280px;
 }
 
-table.inside {
-    margin: 10px 0px;
+table.section-internal {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 50px;
 }
 
-table.inside td {
-    border: 1px solid #000;
-    padding: 3px;
-}
-
-table.inside th {
-    background: #32404f;
-    color: #fff;
-    padding: 3px;
-    font-weight: 100;
-}
 
 td.sha {
     background: #f2f2f2;
@@ -68,13 +64,12 @@ h1, h2, h3 {
     text-align: center;
 }
 
-h1 {
-    padding: 10px 0px;
-    font-family: 'Avenir LT Std', "Open Sans" !important;
-    font-weight: 100;
-    border: 1px solid #897f4a;
-    width: 80%;
-    margin: 80px auto;
+h2.code {
+    text-align: left;
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #897f4a;
 }
 
 h3 {
@@ -86,13 +81,213 @@ h3 {
 h4 {
     font-family: 'Avenir LT Std';
     color: #897f4a;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 300;
+    text-transform: uppercase;
 
 }
 
+p.primary {
+    color: #897f4a;
+    font-weight: 600;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+   list-style: none;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+li:before {
+    content: "• ";
+    color: #897f4a;
+    padding-right: 10px;
+}
+
+
+
+
+/*Sections*/
+.footer {
+    text-align: center;
+    font-family: "Times New Roman";
+}
+
+
+
+
+/*Page One ########################################*/
+
+p.logo  {
+    color: #897f4a;
+    font-size: 18px;
+    margin-top: 70px;
+}
+
+h1 {
+    padding: 10px 0px;
+    font-family: 'Avenir LT Std', "Open Sans" !important;
+    font-weight: 100;
+    border: 1px solid #897f4a;
+    width: 70%;
+    margin: 100px auto;
+    color: #413c25;
+    font-size: 30px;
+}
+
+h3.page1 {
+
+    line-height: 36px;
+    font-size: 30px;
+    font-weight: 400;
+    color: #897f4a;
+
+}
+
+
+/*Page Two ########################################*/
+p {
+    line-height: 28px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+
+/*Page Three #####################################*/
+
+.page3-title {
+    text-align: center;
+    margin-bottom: -100px;
+}
+
+.page3-title h4 {
+    margin-bottom: 0px;
+}
+
+td.page3 {
+    background: #32404f;
+    color: #fff;
+    padding: 7px;
+}
+td.page3 p {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+td.page3 p span{
+    color: #897f4a
+}
+
+/*Page Four #####################################*/
+
+table.page4-internal {
+    width: 1000px;
+    margin: auto;
+    border: 7px solid #666666;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+table.page4-internal-second {
+    width: 100%;
+    margin: auto;
+    border: none;
+    padding: 0px;
+    margin-bottom: 30px;
+    margin-top: 0px;
+}
+
+table.page4-internal h4{
+    text-align: center; margin: 10px 0px 20px;
+}
+
+table.inside {
+    margin: 10px 0px;
+}
+
+table.inside td {
+    border: 1px solid #000;
+    padding: 0px 3px;
+    font-size: 13px;
+}
+
+table.inside th {
+    background: #32404f;
+    color: #fff;
+    padding: 3px;
+    font-weight: 100;
+}
+
+
+/*Page Five #####################################*/
+
+h4.page5 {
+    background: #1d2638;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0px 5px;
+}
+
+table.page5-internal {
+    color: #5c5f60;
+    font-family: Arial!important;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+table.page5-internal-second {
+
+}
+
+
+/*Page Six #####################################*/
+
+h4.key {
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-top: 70px;
+}
+
+.key-investment {
+    border: 6px solid #897f4a;
+    padding: 10px 20px;
+}
+
+.key-investment > p {
+    line-height: 35px;
+}
+
+.key-investment > p > span {
+    color: #897f4a;
+    padding-right: 12px;
+}
+
+
+/*Page Seven #####################################*/
+
 table.bias {
-    width: 694px;
+    width: 100%;
+    line-height: 20px;
+}
+
+table.bias td {
+    height: 20px;
+}
+
+table.bias h4 {
+    line-height: 16px;
+    text-transform: none!important;
+    font-size: 20px;
 }
 
 table.biasl {
@@ -127,22 +322,70 @@ table.bias td{
     padding: 4px;
 }
 
-table.bias td.img{
-    vertical-align: middle;
-    text-align: center;
-    background: #0f4035;
-    font-size: 13px;
-}
+
 
 table.bias td.last, table.bias th.last {
-    background: #18aa89;
+    background: #293846;
     color: #fff;
+    border-left: 0px solid #ffffff;
+}
+
+table.bias td.img {
+
+    text-align: center;
+    padding: 3px 3px 0px
+
 }
 
 
-/*Trust table*/
+/*Page Nine #####################################*/
+
+ul.nine {
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+ul.nine li {
+    list-style: none;
+    font-size: 18px;
+    line-height: 35px;
+}
+
+
+/*Page Eleven #####################################*/
+.page10 {
+    margin-top:30px;
+}
+
+.page10 > p {
+    line-height: 35px;
+}
+
+.page10 > p > span {
+    color: #897f4a;
+    padding-right: 12px;
+}
+
+.page10-second {
+    border: 6px solid #897f4a;
+    padding: 10px 20px
+}
+
+
+
+/*Page Twelve #####################################*/
+
+
+
+
+table.trust h4 {
+    line-height: 16px;
+    text-transform: none!important;
+    font-size: 20px;
+}
+
 table.trust {
-    width: 694px;
+    width: 100%;
 }
 
 table.trustl {
@@ -178,9 +421,13 @@ table.trust td{
 }
 
 table.trust td.img{
-    vertical-align: middle;
     text-align: center;
-    background: #00343d;
+    padding: 3px 3px 0px
+}
+
+table.trust td.img img{
+    width: 100%;
+    height: 65px;
 }
 
 table.trust td.last, table.trust th.last {
@@ -188,23 +435,54 @@ table.trust td.last, table.trust th.last {
     color: #fff;
 }
 
-td.page2 {
-    background: #32404f;
-    color: #fff;
-    padding: 7px;
-}
-td.page2 p {
 
-    font-size: 13px;
-    line-height: 20px;
-    padding: 0px;
-    margin: 0px;
-}
+/*Page Fourteen #####################################*/
 
 
-td.page2 p span{
-    color: #897f4a
+.page14 {
+    margin-top:0px;
 }
+
+.page14 > p {
+    line-height: 33px;
+}
+
+.page14 > p > span {
+    color: #897f4a;
+    padding-right: 12px;
+}
+
+
+ul.fourteen li {
+    list-style: none;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+ul.fourteen {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 td.page4 h3 {
@@ -225,9 +503,7 @@ td.page5 h3 {
 
 }
 
-h3.page1 {
-    line-height: 30px;
-}
+
 
 table.bias h4 {
     font-size: 16px;
@@ -276,7 +552,7 @@ td.page15 p span {
 }
 
 .pbox4 {
-    border: 4px solid #897f4a;
+    border: 6px solid #897f4a;
     padding: 0px 20px;
     color: #897f4a;
     margin-top: 150px;
