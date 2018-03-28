@@ -98,7 +98,7 @@ class ReportsController extends Controller
         }
     }
 
-    public function show($code){
+    public function showHtml($code){
 
         if(Auth::user()->role == 'admin')
             return redirect("/home");
@@ -130,7 +130,7 @@ class ReportsController extends Controller
     }
 
 
-    public function showPdf($code){
+    public function show($code){
 
         if(Auth::user()->role == 'admin')
             return redirect("/home");
