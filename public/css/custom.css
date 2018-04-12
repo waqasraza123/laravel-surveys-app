@@ -46,5 +46,9 @@ ul.info li {
 }
 
 .middle-box h1 {
-    font-size: 58px;
+    font-size: 45px;
+}
+
+.middle-box img {
+    width: 180px;
 }

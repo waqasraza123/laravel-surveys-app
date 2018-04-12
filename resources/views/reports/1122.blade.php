@@ -848,24 +848,25 @@
 
     @include('reports.partials.header')
 
-    <table class="internal">
+    <table class="internal" style="margin-bottom: 0px">
         <tr>
             <td>
-                <h4>4. Your Appetite for Investment Risk - 1112 Profile:</h4>
+                <h4>4. Your Appetite for Investment Risk - 1112 Profile: </h4>
             </td>
         </tr>
+
         <tr>
             <td>
 
-            @if($data["part7"] == "5")
+            @if($data["part6"] == "5")
                     <img src="{{ base_path('public/images/reports/highp.png') }}" width="100%" alt="">
-                @elseif($data["part7"] == "4")
+                @elseif($data["part6"] == "4")
                     <img src="{{ base_path('public/images/reports/moderate_to_high.png') }}" width="100%" alt="">
-                @elseif($data["part7"] == "3")
+                @elseif($data["part6"] == "3")
                     <img src="{{ base_path('public/images/reports/moderate.png') }}" width="100%" alt="">
-                @elseif($data["part7"] == "2")
+                @elseif($data["part6"] == "2")
                     <img src="{{ base_path('public/images/reports/low_to_moderate.png') }}" width="100%" alt="">
-                @elseif($data["part7"] == "1")
+                @elseif($data["part6"] == "1")
                     <img src="{{ base_path('public/images/reports/lowp.png') }}" width="100%" alt="">
                 @endif
             </td>
@@ -875,7 +876,7 @@
         <td>
 
 
-        @if($data["part7"] == "5")
+        @if($data["part6"] == "5")
 
             <p>Your investment ‘appetite for risk’ is the extent to which you feel comfortable accepting a level of risk associated with a particular asset class or sub class. It is part biology, your genetic ‘DNA’, and how this is shaped through experience, including
                 messages from parents and significant others. Psychologists believe that messages are accepted as true by the brain with little filtering up until the age of seven. Repeated messages create deep neural pathways in your brain that are ingrained and unconscious,
@@ -888,7 +889,7 @@
                 deposits, savings and cheque accounts, cash management trusts, bullion and cash equivalents.</p>
 
 
-        @elseif($data["part7"] == "4")
+        @elseif($data["part6"] == "4")
 
             <p>Your investment ‘appetite for risk’ is the extent to which you feel comfortable accepting a level of risk associated with a particular asset class or sub class. It is part biology, your genetic ‘DNA’, and how this is shaped through experience, including messages
                 from parents and significant others. Psychologists believe that messages are accepted as true by the brain with little filtering up until the age of seven. Repeated messages create deep neural pathways in your brain that are ingrained and unconscious, shaping
@@ -901,7 +902,7 @@
                 trusts, bullion and/or cash equivalents.</p>
 
 
-        @elseif($data["part7"] == "3")
+        @elseif($data["part6"] == "3")
 
             <p>Your investment ‘appetite for risk’ is the extent to which you feel comfortable accepting a level of risk associated with a particular asset class or sub class. It is part biology, your genetic ‘DNA’, and how this is shaped through experience, including messages from parents
                 and significant others. Psychologists believe that messages are accepted as true by the brain with little filtering up until the age of seven. Repeated messages create deep neural pathways in your brain that are ingrained and unconscious, shaping your attitudes and beliefs.
@@ -913,7 +914,7 @@
                 government bonds, corporate bonds, mortgages and some hybrid securities. It also indicates that you are comfortable with bank deposits, terms deposits, savings and cheque accounts, cash management trusts, bullion and/or cash equivalents.</p>
 
 
-        @elseif($data["part7"] == "2")
+        @elseif($data["part6"] == "2")
 
             <p>Your investment ‘appetite for risk’ is the extent to which you feel comfortable accepting a level of risk associated with a particular asset class or sub class. It is part biology, your genetic ‘DNA’, and how this is shaped through experience, including messages from parents and significant others. Psychologists believe
                 that messages are accepted as true by the brain with little filtering up until the age of seven. Repeated messages create deep neural
@@ -924,7 +925,7 @@
                 risk category and below, as indicated in the ‘Asset Pyramid’ above. This means that are most comfortable with defensive assets that produce a fixed rate of return, and could include government bonds, corporate bonds, mortgages and some hybrid securities, and also low risk options including bank deposits, terms deposits, savings and cheque accounts, cash management trusts, bullion and/or cash equivalents.</p>
 
 
-        @elseif($data["part7"] == "1")
+        @elseif($data["part6"] == "1")
 
             <p>Your investment ‘appetite for risk’ is the extent to which you feel comfortable accepting a level of risk associated with a particular asset class or sub class. It is part biology, your genetic ‘DNA’, and how this is shaped through experience, including messages from parents and significant others. Psychologists
                 believe that messages are accepted as true by the brain with little filtering up until the age of seven. Repeated messages create deep neural pathways in your brain that are ingrained and unconscious, shaping your attitudes and beliefs. Thus, financial ‘programming’ is passed on from parent to child, generation to
@@ -934,6 +935,9 @@
                 ‘Asset Pyramid’ above. This means that are most comfortable with defensive assets that could include bank deposits, terms deposits, savings and cheque accounts, cash management trusts, bullion and/or cash equivalents.</p>
 
         @endif
+
+            <p>Investment decision-making represents an inner struggle between your rational mind and your emotions. You prefer investments supported by the facts and data, and those that appeal to your heart. However, your level of risk is mitigated through detailed and thorough analysis. This ensures that any potential investment risk has been fully analyzed and scrutinized, and that you are aware of the risks involved when making your investment decisions. Ultimately, the level of appropriate risk depends upon three factors; your investment appetite for risk, your financial objectives and the amount of time you have to reach your financial objectives, i.e. your ‘investment window’. Talk to your trusted financial adviser about your portfolio construction and appropriate asset classes most suitable for you given your risk profile, investment goals and your investment window.
+            </p>
 
         </td>
     </tr>

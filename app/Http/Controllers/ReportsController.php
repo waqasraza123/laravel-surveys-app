@@ -451,8 +451,8 @@ class ReportsController extends Controller
             "astronomy" => "blue",
             "investing" => "blue",
 
-            "fantasy_sports " => "blue",
-            "crosswords " => "blue",
+            "fantasy_sports" => "blue",
+            "crosswords" => "blue",
 
             "home_improvements" => "green",
             "cooking" => "green",
@@ -467,8 +467,8 @@ class ReportsController extends Controller
             "travel" => "red",
             "sport" => "red",
 
-            "entertaining " => "red",
-            "musical_composing " => "red",
+            "entertaining" => "red",
+            "musical_composing" => "red",
 
             "sailing" => "yellow",
             "arts_crafts" => "yellow",

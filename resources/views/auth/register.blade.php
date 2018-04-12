@@ -8,7 +8,7 @@
     /*}*/
 
     .gray-bg, .bg-muted {
-        background: url(images/bg.jpg) no-repeat center center fixed;
+        background: url(images/652568722.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -164,7 +164,17 @@
 
                     <div class="form-group{{ $errors->has('state') && old('role') == 'firm' ? ' has-error' : '' }}">
 
-                            <input id="state" placeholder="State" type="text" class="form-control" name="state" value="{{ old('state') }}">
+                        <select class="form-control" id="state" name="state">
+                            <option value="ACT">ACT</option>
+                            <option value="NSW">NSW</option>
+                            <option value="NT">NT</option>
+                            <option value="QLD">QLD</option>
+                            <option value="SA">SA</option>
+                            <option value="TAS">TAS</option>
+                            <option value="VIC">VIC</option>
+                            <option value="WA">WA</option>
+
+                        </select>
 
                             @if ($errors->has('state') && old('role') == 'firm')
                                 <span class="help-block">
@@ -228,8 +238,18 @@
 
 
 
-                <div class="form-group">
-                    <div class="checkbox i-checks"><label> <input type="checkbox" required><i></i><span style="color: #fff">I Agree to the Terms & Conditions</span> </label></div>
+                <div class="form-group" style="margin-bottom: 30px">
+                    <div class="checkbox i-checks"><label style="padding-top: 5px"> <input type="checkbox" id="terms"  required><i></i> </label>
+
+
+                    <span style="color: #fff; cursor: pointer;" data-toggle="modal" data-target="#myModal">
+                                Click here to read and agree to the terms & conditions
+                            </span>
+                    </div>
+
+                    {{--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>--}}
+
+
                 </div>
 
 
@@ -249,6 +269,34 @@
                     </div>
 
             </form>
+
+
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Terms & Conditions</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Terms to go here....</p>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="checkbox i-checks"><label> <input type="checkbox" id="agree" required><i></i><span>I Agree to the Terms & Conditions</span> </label></div>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
 
             </div>
 
@@ -286,5 +334,22 @@
                 }
             })
         })
+
+
+
+
+            $("#agree").change(function() {
+                if(this.checked) {
+                    $('#terms').prop('checked', true);
+                }
+            });
+
+
+            $("#agree").change(function() {
+                if(!this.checked) {
+                    $('#terms').prop('checked', false);
+                }
+            });
+
     </script>
 @endsection

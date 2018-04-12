@@ -22,7 +22,7 @@
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 
-                            <input id="name" placeholder="Personal Name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                            <input id="name" placeholder="Financial Adviser Name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
                             @if ($errors->has('name'))
                                 <span class="help-block">

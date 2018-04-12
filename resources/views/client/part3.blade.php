@@ -13,9 +13,9 @@
                         <h1 class="logo-name" style="font-size: 65px; margin-left: -5px;">Part C</h1>
 
                         <h2>Instructions</h2>
-                        Please select up to 4 favourite subjects whilst you were at school
+                        Please select up to 6 favourite subjects whilst you were at school.
                         </br>
-                        Note: You can select less than 4 if you wish
+                        Note: You can select less than 6 if you wish.
 
                         <div class="ibox float-e-margins" style="margin-top: 40px">
                             <div class="ibox-content">
@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="religion" value="true" @if(isset($saved_input["politics"])) checked @endif> Politics
+                                                <input type="checkbox" name="politics" value="true" @if(isset($saved_input["politics"])) checked @endif> Politics
                                             </label>
                                         </div>
                                         <div class="checkbox">
@@ -96,7 +96,7 @@
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="politics" value="true" @if(isset($saved_input["english_literature"])) checked @endif> English Literature
+                                                <input type="checkbox" name="english_literature" value="true" @if(isset($saved_input["english_literature"])) checked @endif> English Literature
                                             </label>
                                         </div>
                                         <div class="checkbox">
@@ -127,11 +127,11 @@
         var theCheckboxes = $("input[type='checkbox']");
         theCheckboxes.click(function()
         {
-            if (theCheckboxes.filter(":checked").length > 4){
+            if (theCheckboxes.filter(":checked").length > 6){
                 this.checked = false;
                 swal(
                     'Alert!',
-                    "You cannot select more than 4 options."
+                    "You cannot select more than 6 options."
                 );
             }
         });

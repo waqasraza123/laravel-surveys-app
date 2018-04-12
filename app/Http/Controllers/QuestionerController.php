@@ -227,7 +227,7 @@ class QuestionerController extends Controller
 //1
             "My investment decisions are based on the facts, figures and the data.",
 //2
-            "I am generally conservative in my approach, preferring investments that are proven, reliable & produce steady returns/growth",
+            "I am generally conservative in my approach, preferring investments that are proven, reliable & produce steady returns/growth.",
 //3
             "I select my investments based on their potential to make a meaningful contributon to society as well as financial returns. ",
 //4
@@ -255,7 +255,7 @@ class QuestionerController extends Controller
 //15
             "I make my investment decisions in accordance with on my personal principles, values and beliefs. ",
 //16
-            "I base my investment decisions more on intuition and 'gut feel' rather than facts and data . ",
+            "I base my investment decisions more on intuition and 'gut feel' rather than facts and data. ",
 //17
             "I like to solve complex or difficult problems that challenge my intellect. ",
 //18
@@ -325,9 +325,9 @@ class QuestionerController extends Controller
 //50
             "I like to do things in a methodical, systematic and step-by-step fashion.  ",
 //51
-            "I sometimes stuggle to keep my emotions in check",
+            "I sometimes stuggle to keep my emotions in check.",
 //52
-            "I rely on my gut instinct to guide me in most situations",
+            "I rely on my gut instinct to guide me in most situations.",
 //53
             "I conduct thorough due dilligence on all potential investments, calculating best-case and worst-case scenarios. ",
 //54
@@ -339,7 +339,7 @@ class QuestionerController extends Controller
 //57
             "I might purchase property based solely the numbers and potential returns, sight unseen. ",
 //58
-            "My approach to investing is cautious, meticulous and detailed",
+            "My approach to investing is cautious, meticulous and detailed.",
 //59
             "I will often meet a new person and feel like I have known them for years. ",
 //60
@@ -396,9 +396,9 @@ class QuestionerController extends Controller
             "I prefer a Financial Adviser that has a successful track record in providing their clients with success over the long haul.",
             "I prefer a Financial Adviser who has strong technical skills in terms of products, cash flow, taxation, retirement and estate planning.",
             "I prefer a Financial Adviser who recommends sectors or shares that have an established and successful track record.",
-            "I prefer a Financial Adviser who is client focused and puts my needs ahead of their own interests.",
+            "I prefer a Financial Adviser that places my needs and interests ahead of their own needs and interests during the advice process.",
 
-            "I prefer a Financial Adviser who is a good communicator, listens to my needs and concerns and is responsive.",
+            "I prefer a Financial Adviser that really listens to my needs and demonstrates a high level of empathy and understanding based on two-way communication.",
             "I prefer a Financial Adviser who is professional and ethical, who is reliable, authentic, dedicated and transparent in all aspects of the advice process.",
             "I prefer a Financial Adviser who makes their recommendations based on a thorough grasp of the data, facts and rational analysis.",
             "I prefer a Financial Adviser who appreciates, understands and complies with all relevant legislation and regulations when providing financial advice.",
